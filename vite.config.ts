@@ -5,18 +5,6 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
-  // Validate required environment variables for production builds
-  if (mode === "production") {
-    const ga4Id = process.env.VITE_GA4_ID;
-    if (!ga4Id || ga4Id.startsWith("G-XXXXXXXXXX")) {
-      console.warn(
-        "⚠️  WARNING: VITE_GA4_ID is not properly configured. " +
-        "Update .env with your actual GA4 Measurement ID (format: G-XXXXXXXXXX with 10 alphanumeric characters). " +
-        "Proceeding with build but analytics will not work."
-      );
-    }
-  }
-
   return {
     server: {
       host: "::",
@@ -42,7 +30,7 @@ export default defineConfig(({ mode }) => {
         transformIndexHtml: {
           order: "pre",
           handler(html) {
-            const ga4Id = process.env.VITE_GA4_ID || "G-XXXXXXXXXX";
+            const ga4Id = "G-QZ5PVSKE6W";
             return html.replace(/__VITE_GA4_ID__/g, ga4Id);
           },
         },
