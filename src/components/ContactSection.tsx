@@ -189,7 +189,7 @@ const ContactSection = () => {
               <span className="font-medium">واتساب</span>
             </a>
             <a
-              href="https://www.instagram.com/vynexmedia.jo?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              href="https://instagram.com/vynexmedia.jo"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-foreground hover:text-primary transition-colors"
