@@ -1,8 +1,31 @@
+# Vynex Media robots.txt - SEO & Security Optimized
+# Allow all search engines with appropriate crawl rules
+
+User-agent: *
+Allow: /
+Allow: /blog/
+Allow: /services/
+Allow: /portfolio/
+Allow: /about/
+Allow: /contact/
+Allow: /faq/
+
+# Disallow admin and private areas (security)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+Disallow: /search/
+Disallow: /*.json$
+Disallow: /node_modules/
+
+# Search engine specific rules
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 0
 
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Twitterbot
 Allow: /
@@ -10,5 +33,8 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
-Allow: /
+# Sitemap references
+Sitemap: https://vynexmedia.com/sitemap.xml
+Sitemap: https://vynexmedia.com/sitemap-blog.xml
+
+# Last updated: 2026-01-24

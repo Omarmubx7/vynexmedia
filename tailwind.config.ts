@@ -14,11 +14,11 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Open Sans', 'sans-serif'],
-        serif: ['Montserrat', 'sans-serif'],
-        heading: ['Montserrat', 'sans-serif'],
-        montserrat: ['Montserrat', 'sans-serif'],
-        opensans: ['Open Sans', 'sans-serif'],
+        sans: ['Cairo', 'Poppins', 'sans-serif'],
+        heading: ['Cairo', 'Poppins', 'sans-serif'],
+        body: ['Cairo', 'Poppins', 'sans-serif'],
+        cairo: ['Cairo', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
