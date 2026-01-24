@@ -6,7 +6,6 @@ const navLinks = [
   { href: '#about', label: 'من نحن' },
   { href: '#services', label: 'خدماتنا' },
   { href: '#portfolio', label: 'أعمالنا' },
-  { href: '#packages', label: 'الباقات' },
   { href: '#contact', label: 'تواصل معنا' },
 ];
 
