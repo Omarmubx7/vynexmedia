@@ -1,18 +1,7 @@
 import { ArrowDown } from 'lucide-react';
 import heroBg from '@/assets/hero-bg.jpg';
-import grid1 from '@/assets/1.png';
-import grid2 from '@/assets/2.png';
-import grid3 from '@/assets/3.png';
-import grid4 from '@/assets/4.png';
-import grid5 from '@/assets/5.png';
-import grid6 from '@/assets/6.png';
-import grid7 from '@/assets/7.png';
-import grid8 from '@/assets/8.png';
-import grid9 from '@/assets/9.png';
 
 const HeroSection = () => {
-  const gridImages = [grid1, grid2, grid3, grid4, grid5, grid6, grid7, grid8, grid9];
-  
   return (
     <section
       id="hero"
@@ -76,17 +65,11 @@ const HeroSection = () => {
                   
                   {/* Instagram-like Grid */}
                   <div className="p-4 pt-12 grid grid-cols-3 gap-1">
-                    {gridImages.map((image, i) => (
+                    {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((i) => (
                       <div
                         key={i}
-                        className="aspect-square rounded-sm overflow-hidden"
-                      >
-                        <img 
-                          src={image} 
-                          alt={`Grid ${i + 1}`}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
+                        className="aspect-square bg-gradient-to-br from-primary/30 to-primary/10 rounded-sm"
+                      />
                     ))}
                   </div>
                 </div>

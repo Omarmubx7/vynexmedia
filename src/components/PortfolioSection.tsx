@@ -4,6 +4,13 @@ import portfolioCafe1 from '@/assets/portfolio-cafe-1.jpg';
 import portfolioProduct2 from '@/assets/portfolio-product-2.jpg';
 import portfolioFood2 from '@/assets/portfolio-food-2.jpg';
 
+const portfolioImages = [
+  { image: portfolioFood1, category: 'تصوير أطعمة', label: 'Food Photography' },
+  { image: portfolioProduct1, category: 'تصوير منتجات', label: 'Product Shoot' },
+  { image: portfolioCafe1, category: 'تصوير كافيهات', label: 'Café Session' },
+  { image: portfolioProduct2, category: 'تصوير منتجات', label: 'Product Flatlay' },
+];
+
 const portfolioReels = [
   { 
     embedUrl: 'https://www.instagram.com/reel/DQY_bhfDAHW/embed',
@@ -47,6 +54,30 @@ const PortfolioSection = () => {
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             A glimpse of our work
           </p>
+        </div>
+
+        {/* Portfolio Images Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-8">
+          {portfolioImages.map((item, index) => (
+            <div
+              key={index}
+              className="portfolio-item group"
+            >
+              <img
+                src={item.image}
+                alt={item.label}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 z-10 flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity">
+                <span className="text-primary text-sm font-medium mb-1">
+                  {item.category}
+                </span>
+                <span className="text-foreground font-bold text-lg">
+                  {item.label}
+                </span>
+              </div>
+            </div>
+          ))}
         </div>
 
         {/* Reels Section */}
