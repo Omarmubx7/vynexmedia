@@ -18,11 +18,7 @@ const ContentPackages = () => {
     const serviceSchema = createServiceSchema(
       'باقات محتوى متكاملة',
       'باقات شاملة تجمع تصوير وفيديو وتحرير لجميع احتياجات التسويق الرقمي',
-      '$$$',
-      {
-        areaServed: 'Jordan, Middle East',
-        availableLanguage: 'ar, en',
-      }
+      '$$$'
     );
     addSchemaMarkup(serviceSchema);
   }, []);

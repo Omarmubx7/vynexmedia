@@ -4,7 +4,6 @@ const quickLinks = [
   { href: '#hero', label: 'الرئيسية' },
   { href: '#services', label: 'خدماتنا' },
   { href: '#portfolio', label: 'أعمالنا' },
-  { href: '#packages', label: 'الباقات' },
   { href: '#contact', label: 'تواصل معنا' },
 ];
 

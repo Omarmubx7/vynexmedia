@@ -18,11 +18,7 @@ const ProductPhotography = () => {
     const serviceSchema = createServiceSchema(
       'تصوير منتجات احترافي',
       'خدمات تصوير منتجات عالية الجودة للمتاجر الإلكترونية والشركات',
-      '$$$',
-      {
-        areaServed: 'Jordan, Middle East',
-        availableLanguage: 'ar, en',
-      }
+      '$$$'
     );
     addSchemaMarkup(serviceSchema);
   }, []);

@@ -18,11 +18,7 @@ const RestaurantPhotography = () => {
     const serviceSchema = createServiceSchema(
       'تصوير مطاعم وكافيهات احترافي',
       'خدمات تصوير عالية الجودة لمطاعمك وكافيهك تجعل الطعام يبدو أشهى',
-      '$$$',
-      {
-        areaServed: 'Jordan, Middle East',
-        availableLanguage: 'ar, en',
-      }
+      '$$$'
     );
     addSchemaMarkup(serviceSchema);
   }, []);
