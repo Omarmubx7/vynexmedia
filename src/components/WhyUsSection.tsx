@@ -19,7 +19,7 @@ const benefits = [
 ];
 
 // Variable that can be updated later
-const VIDEOS_PRODUCED = 150;
+const VIDEOS_PRODUCED = 50;
 
 const WhyUsSection = () => {
   return (
