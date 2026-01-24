@@ -15,7 +15,6 @@ const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: '',
     projectType: '',
-    socialLink: '',
     whatsapp: '',
     message: '',
   });
@@ -28,7 +27,6 @@ const ContactSection = () => {
       const { error } = await supabase.from('contact_submissions').insert({
         full_name: formData.name.trim(),
         project_type: formData.projectType,
-        social_link: formData.socialLink.trim() || null,
         whatsapp_number: formData.whatsapp.trim(),
         message: formData.message.trim() || null,
       });
@@ -39,7 +37,6 @@ const ContactSection = () => {
       setFormData({
         name: '',
         projectType: '',
-        socialLink: '',
         whatsapp: '',
         message: '',
       });
@@ -110,22 +107,6 @@ const ContactSection = () => {
                     </option>
                   ))}
                 </select>
-              </div>
-
-              {/* Social Link */}
-              <div>
-                <label htmlFor="socialLink" className="block text-foreground font-medium mb-2 text-right">
-                  رابط حساب إنستغرام أو تيك توك
-                </label>
-                <input
-                  type="url"
-                  id="socialLink"
-                  name="socialLink"
-                  value={formData.socialLink}
-                  onChange={handleChange}
-                  className="w-full bg-background border border-border rounded-xl px-4 py-3 text-foreground text-right focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all"
-                  placeholder="https://instagram.com/..."
-                />
               </div>
 
               {/* WhatsApp */}
