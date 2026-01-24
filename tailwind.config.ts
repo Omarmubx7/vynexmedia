@@ -14,9 +14,11 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Cairo', 'Inter', 'sans-serif'],
-        cairo: ['Cairo', 'sans-serif'],
-        inter: ['Inter', 'sans-serif'],
+        sans: ['Open Sans', 'sans-serif'],
+        serif: ['Montserrat', 'sans-serif'],
+        heading: ['Montserrat', 'sans-serif'],
+        montserrat: ['Montserrat', 'sans-serif'],
+        opensans: ['Open Sans', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
