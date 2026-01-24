@@ -180,7 +180,7 @@ const ContactSection = () => {
           {/* Social Links */}
           <div className="flex items-center justify-center gap-6 mt-8">
             <a
-              href="https://wa.me/962XXXXXXXXX"
+              href="https://wa.me/962790720994"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-foreground hover:text-primary transition-colors"
@@ -189,7 +189,7 @@ const ContactSection = () => {
               <span className="font-medium">واتساب</span>
             </a>
             <a
-              href="https://instagram.com/vynexmedia"
+              href="https://www.instagram.com/vynexmedia.jo?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-foreground hover:text-primary transition-colors"

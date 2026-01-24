@@ -51,7 +51,7 @@ const Footer = () => {
             <div className="flex items-center justify-center md:justify-start gap-4">
               {/* Instagram */}
               <a
-                href="https://instagram.com/vynexmedia"
+                href="https://www.instagram.com/vynexmedia.jo?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-foreground/10 flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground transition-all"
@@ -75,7 +75,7 @@ const Footer = () => {
 
               {/* WhatsApp */}
               <a
-                href="https://wa.me/962XXXXXXXXX"
+                href="https://wa.me/962790720994"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-foreground/10 flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground transition-all"
