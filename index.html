@@ -70,13 +70,13 @@
     <link rel="sitemap" href="https://vynexmedia.com/sitemap.xml" type="application/xml" />
     
     <!-- Google Analytics 4 -->
-    <!-- Replace G-XXXXX with your actual GA4 Measurement ID -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXX"></script>
+    <!-- GA4 Measurement ID injected from VITE_GA4_ID environment variable at build time -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=__VITE_GA4_ID__"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-XXXXX');
+      gtag('config', '__VITE_GA4_ID__');
     </script>
   </head>
   <body>
