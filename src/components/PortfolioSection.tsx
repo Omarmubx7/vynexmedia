@@ -4,13 +4,24 @@ import portfolioCafe1 from '@/assets/portfolio-cafe-1.jpg';
 import portfolioProduct2 from '@/assets/portfolio-product-2.jpg';
 import portfolioFood2 from '@/assets/portfolio-food-2.jpg';
 
-const portfolioItems = [
+const portfolioImages = [
   { image: portfolioFood1, category: 'تصوير أطعمة', label: 'Food Photography' },
   { image: portfolioProduct1, category: 'تصوير منتجات', label: 'Product Shoot' },
   { image: portfolioCafe1, category: 'تصوير كافيهات', label: 'Café Session' },
   { image: portfolioProduct2, category: 'تصوير منتجات', label: 'Product Flatlay' },
-  { image: portfolioFood2, category: 'تصوير مطاعم', label: 'Restaurant' },
-  { image: portfolioFood1, category: 'Reels Edit', label: 'Short Form Video' },
+];
+
+const portfolioReels = [
+  { 
+    embedUrl: 'https://www.instagram.com/reel/DR1q8wXCMe6/embed',
+    category: 'Reels Edit',
+    label: 'Short Form Video'
+  },
+  { 
+    embedUrl: 'https://www.instagram.com/reel/DRUgK4vCCoG/embed',
+    category: 'Reels Edit',
+    label: 'Short Form Video'
+  },
 ];
 
 const PortfolioSection = () => {
@@ -25,9 +36,9 @@ const PortfolioSection = () => {
           </p>
         </div>
 
-        {/* Portfolio Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-          {portfolioItems.map((item, index) => (
+        {/* Portfolio Images Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-8">
+          {portfolioImages.map((item, index) => (
             <div
               key={index}
               className="portfolio-item group"
@@ -47,6 +58,29 @@ const PortfolioSection = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Reels Section */}
+        <div className="mb-8">
+          <h3 className="text-xl font-bold text-foreground mb-6 text-center">Reels & Short Videos</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+            {portfolioReels.map((reel, index) => (
+              <div
+                key={index}
+                className="relative rounded-xl overflow-hidden bg-card border border-border"
+              >
+                <iframe
+                  src={reel.embedUrl}
+                  className="w-full aspect-[9/16] max-h-[500px]"
+                  frameBorder="0"
+                  scrolling="no"
+                  allowTransparency={true}
+                  allowFullScreen={true}
+                  title={`Instagram Reel ${index + 1}`}
+                />
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* CTA */}
