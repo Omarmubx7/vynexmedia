@@ -25,9 +25,8 @@ const portfolioReels = [
     category: 'Reels Edit',
     label: 'Short Form Video'
   },
-
   { 
-    embedUrl: 'https://www.instagram.com/reel/DTujn8ljYO3/embed',
+    embedUrl: 'https://www.instagram.com/reel/DRUgK4vCCoG/embed',
     category: 'Reels Edit',
     label: 'Short Form Video'
   },
