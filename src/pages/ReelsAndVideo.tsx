@@ -28,24 +28,65 @@ const ReelsAndVideo = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative py-20 md:py-32 bg-gradient-to-b from-primary/10 via-background to-background">
-        <div className="container mx-auto px-4">
+      <section className="relative py-20 md:py-32 bg-gradient-to-b from-primary/15 via-background to-background overflow-hidden">
+        {/* Background shapes */}
+        <div className="absolute inset-0 opacity-40">
+          <div className="absolute top-10 right-10 w-96 h-96 bg-primary/30 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-20 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 font-cairo">
-              ريلز وفيديوهات احترافية
+            <div className="mb-6 inline-block">
+              <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold">🎬 خدمات فيديو احترافية</span>
+            </div>
+            
+            <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 font-cairo leading-tight">
+              ريلز وفيديوهات
+              <span className="block text-primary">احترافية وجذابة</span>
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8">
-              نسوق منتجاتك بفيديوهات احترافية تجعلك تفيروز على التواصل
+            
+            <p className="text-xl md:text-2xl text-muted-foreground mb-10 leading-relaxed">
+              نسوق منتجاتك بفيديوهات احترافية تجعلك تتفيروز على منصات التواصل الاجتماعي
             </p>
-            <a
-              href="https://wa.me/962790720994"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary inline-flex items-center gap-3 text-lg"
-            >
-              <MessageCircle className="w-6 h-6" />
-              اطلب فيديو الآن
-            </a>
+            
+            <div className="flex flex-col md:flex-row gap-4 justify-center">
+              <a
+                href="https://wa.me/962790720994"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary inline-flex items-center justify-center gap-3 text-lg px-8 py-4"
+              >
+                <MessageCircle className="w-6 h-6" />
+                اطلب فيديو الآن
+              </a>
+              <a
+                href="#pricing"
+                className="inline-flex items-center justify-center gap-3 text-lg px-8 py-4 border-2 border-primary text-primary hover:bg-primary/5 rounded-lg transition-all"
+              >
+                شوف الأسعار
+                <ArrowRight className="w-6 h-6" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-12 md:py-16 bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 border-y border-primary/10">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto grid md:grid-cols-4 gap-6 md:gap-8">
+            {[
+              { stat: '500+', label: 'فيديو تم إنتاجه' },
+              { stat: '98%', label: 'رضا العملاء' },
+              { stat: '2M+', label: 'مشاهدة كلية' },
+              { stat: '24h', label: 'استجابة سريعة' },
+            ].map((item, idx) => (
+              <div key={idx} className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">{item.stat}</div>
+                <p className="text-muted-foreground text-sm">{item.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -352,49 +393,58 @@ const ReelsAndVideo = () => {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 md:py-24 bg-secondary/30">
-        <div className="container mx-auto px-4">
+      <section className="py-16 md:py-24 bg-gradient-to-b from-background via-secondary/20 to-background relative overflow-hidden">
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl -mr-48 -mt-48"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl -ml-48 -mb-48"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
-              أسئلة شائعة
-            </h2>
+            <div className="text-center mb-14">
+              <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-4">استفسارات</span>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                أسئلة شائعة
+              </h2>
+              <p className="text-muted-foreground text-lg">إجابات على أكثر الأسئلة التي نسمعها</p>
+            </div>
 
             <div className="space-y-4">
               {[
                 {
                   q: 'كم من الوقت يأخذ التحرير؟',
-                  a: '3-5 أيام عادة، حسب طول الفيديو وعدد التعديلات.',
+                  a: '3-5 أيام عادة، حسب طول الفيديو وعدد التعديلات. يمكننا تسريع العملية في الحالات الطارئة.',
                 },
                 {
                   q: 'هل تقدمون مراجعات وتعديلات؟',
-                  a: 'نعم، مراجعات غير محدودة حتى تكون راضي تماماً.',
+                  a: 'نعم، مراجعات غير محدودة حتى تكون راضي تماماً بالنتيجة النهائية. رضاك أولويتنا الأولى.',
                 },
                 {
-                  q: 'ما هي الصيغ المتاحة؟',
-                  a: 'MP4، MOV، WebM لـ Instagram, TikTok, Facebook, YouTube وغيرها.',
+                  q: 'ما هي الصيغ والدقة المتاحة؟',
+                  a: '4K و Full HD متاح. صيغ: MP4، MOV، WebM مُحسّنة لـ Instagram, TikTok, Facebook, YouTube وغيرها.',
                 },
                 {
                   q: 'هل تقدمون موسيقى احترافية؟',
-                  a: 'نعم، موسيقى بدون حقوق ملكية احترافية تناسب فيديوك.',
+                  a: 'نعم، موسيقى بدون حقوق ملكية احترافية من مكتبات عالمية تناسب فيديوك تماماً.',
                 },
                 {
-                  q: 'هل يمكن إضافة نصوص وتأثيرات؟',
-                  a: 'بالتأكيد، نضيف نصوص وتأثيرات احترافية حسب احتياجك.',
+                  q: 'هل يمكن إضافة نصوص وتأثيرات بصرية؟',
+                  a: 'بالتأكيد، نضيف نصوص وتأثيرات بصرية احترافية حسب احتياجك وطابع علامتك التجارية.',
                 },
                 {
-                  q: 'هل يمكن تصوير فيديو من الآن وتحريره لاحقاً؟',
-                  a: 'نعم، يمكن تأجيل التحرير حتى 3 أشهر بدون مشكلة.',
+                  q: 'ما هو الفرق بين الريل والفيديو الكامل؟',
+                  a: 'الريل قصير (15-30 ثانية) للمشاركة السريعة، الفيديو الكامل أطول (60-90 ثانية) لشرح تفصيلي.',
                 },
               ].map((faq, idx) => (
                 <details
                   key={idx}
-                  className="group glass-card rounded-xl p-6 cursor-pointer transition-all"
+                  className="group glass-card rounded-xl border border-primary/10 hover:border-primary/30 transition-all cursor-pointer overflow-hidden hover:shadow-lg hover:shadow-primary/10"
                 >
-                  <summary className="flex items-center justify-between font-bold text-foreground text-lg">
-                    {faq.q}
-                    <span className="transition-transform group-open:rotate-180">▼</span>
+                  <summary className="flex items-center justify-between p-6 font-bold text-foreground text-lg group-open:bg-primary/5 group-open:border-b group-open:border-primary/10 transition-all">
+                    <span className="text-right">{faq.q}</span>
+                    <span className="transition-transform group-open:rotate-180 flex-shrink-0 mr-4 text-primary">▼</span>
                   </summary>
-                  <p className="text-muted-foreground mt-4 text-right">{faq.a}</p>
+                  <p className="text-muted-foreground p-6 pt-0 text-right leading-relaxed">{faq.a}</p>
                 </details>
               ))}
             </div>
@@ -403,32 +453,43 @@ const ReelsAndVideo = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-16 md:py-24 bg-primary/10">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              جاهز لنصور فيديوك؟
-            </h2>
-            <p className="text-xl text-muted-foreground mb-8">
-              تواصل معنا لحجز جلسة تصوير أو لطلب تحرير فيديو موجود
-            </p>
+      <section className="py-16 md:py-24 bg-gradient-to-b from-background to-primary/10 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-40">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl -ml-48 -mt-48"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl -mr-48 -mb-48"></div>
+        </div>
 
-            <div className="flex flex-col md:flex-row gap-4 justify-center">
-              <a
-                href="https://wa.me/962790720994"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary inline-flex items-center justify-center gap-3"
-              >
-                <MessageCircle className="w-6 h-6" />
-                واتساب
-              </a>
-              <a
-                href="mailto:info@vynexmedia.com"
-                className="btn-primary border border-primary text-primary bg-transparent inline-flex items-center justify-center gap-3"
-              >
-                البريد الإلكتروني
-              </a>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-3xl mx-auto">
+            <div className="glass-card rounded-2xl p-8 md:p-12 border-2 border-primary/30 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                جاهز لنصور فيديوك الاحترافي؟
+              </h2>
+              <p className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed">
+                تواصل معنا الآن لحجز جلسة تصوير أو لطلب تحرير احترافي. استجابة سريعة خلال 24 ساعة
+              </p>
+
+              <div className="flex flex-col md:flex-row gap-4 justify-center mb-8">
+                <a
+                  href="https://wa.me/962790720994"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary inline-flex items-center justify-center gap-3 text-lg px-8 py-4"
+                >
+                  <MessageCircle className="w-6 h-6" />
+                  تواصل عبر WhatsApp
+                </a>
+                <a
+                  href="tel:+962790720994"
+                  className="btn-secondary inline-flex items-center justify-center gap-3 text-lg px-8 py-4 border-2 border-primary text-primary hover:bg-primary/5 transition-all"
+                >
+                  📞 اتصل بنا
+                </a>
+              </div>
+
+              <p className="text-muted-foreground text-sm">
+                💬 الرد في أقل من ساعة | 📍 موقعنا في عمّان | 🎬 تصوير بمعدات احترافية
+              </p>
             </div>
           </div>
         </div>
