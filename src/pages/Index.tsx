@@ -6,7 +6,6 @@ import WhyUsSection from '@/components/WhyUsSection';
 import PortfolioSection from '@/components/PortfolioSection';
 import ProcessSection from '@/components/ProcessSection';
 import PackagesSection from '@/components/PackagesSection';
-import TestimonialsSection from '@/components/TestimonialsSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import StickyCTA from '@/components/StickyCTA';
@@ -22,7 +21,6 @@ const Index = () => {
       <PortfolioSection />
       <ProcessSection />
       <PackagesSection />
-      <TestimonialsSection />
       <ContactSection />
       <Footer />
       <StickyCTA />
