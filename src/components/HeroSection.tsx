@@ -1,5 +1,4 @@
 import { ArrowDown } from 'lucide-react';
-import heroBg from '@/assets/hero-bg.jpg';
 import grid1 from '@/assets/1.png';
 import grid2 from '@/assets/2.png';
 import grid3 from '@/assets/3.png';
@@ -18,14 +17,9 @@ const HeroSection = () => {
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background Image with Overlay */}
+      {/* Background with Gradient */}
       <div className="absolute inset-0 z-0">
-        <img
-          src={heroBg}
-          alt="Cinematic Background"
-          className="w-full h-full object-cover opacity-60"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
       </div>
 
       {/* Animated Glow Effect */}
