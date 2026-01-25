@@ -5,32 +5,31 @@ import portfolioProduct2 from '@/assets/portfolio-product-2.jpg';
 import portfolioFood2 from '@/assets/portfolio-food-2.jpg';
 
 const portfolioReels = [
-  { 
-    embedUrl: 'https://www.instagram.com/reel/DQY_bhfDAHW/embed',
-    category: 'Reels Edit',
-    label: 'Short Form Video'
-  },
-  { 
-    embedUrl: 'https://www.instagram.com/reel/DOdQ9BbDBxk/embed',
-    category: 'Reels Edit',
-    label: 'Short Form Video'
-  },
-  { 
-    embedUrl: 'https://www.instagram.com/reel/DPbcKbsjLzq/embed',
-    category: 'Reels Edit',
-    label: 'Short Form Video'
-  },
-  { 
-    embedUrl: 'https://www.instagram.com/reel/DRhQ1uNCDGz/embed',
-    category: 'Reels Edit',
-    label: 'Short Form Video'
-  },
-  { 
-    embedUrl: 'https://www.instagram.com/reel/DRUgK4vCCoG/embed',
-    category: 'Reels Edit',
-    label: 'Short Form Video'
-  },
-];
+  { embedUrl: 'https://www.instagram.com/reel/DTvXwejDTuF/embed', category: 'Reels Edit', label: 'Short Form Video' },
+  { embedUrl: 'https://www.instagram.com/reel/DTPymKUDO-o/embed', category: 'Reels Edit', label: 'Short Form Video' },
+  { embedUrl: 'https://www.instagram.com/reel/DTIgFSwDCwf/embed', category: 'Reels Edit', label: 'Short Form Video' },
+  { embedUrl: 'https://www.instagram.com/reel/DTDFT-RjGaI/embed', category: 'Reels Edit', label: 'Short Form Video' },
+  { embedUrl: 'https://www.instagram.com/reel/DSpalaCjCnO/embed', category: 'Reels Edit', label: 'Short Form Video' },
+  { embedUrl: 'https://www.instagram.com/reel/DSYGlmYjK0d/embed', category: 'Reels Edit', label: 'Short Form Video' },
+  { embedUrl: 'https://www.instagram.com/reel/DSR6pYsDOBq/embed', category: 'Reels Edit', label: 'Short Form Video' },
+  { embedUrl: 'https://www.instagram.com/reel/DRMuOIJjIrK/embed', category: 'Reels Edit', label: 'Short Form Video' },
+  { embedUrl: 'https://www.instagram.com/reel/DQqzBsIDIRs/embed', category: 'Reels Edit', label: 'Short Form Video' },
+  { embedUrl: 'https://www.instagram.com/reel/DQY_bhfDAHW/embed', category: 'Reels Edit', label: 'Short Form Video' },
+  { embedUrl: 'https://www.instagram.com/reel/DQCE8MtjNcH/embed', category: 'Reels Edit', label: 'Short Form Video' },
+  { embedUrl: 'https://www.instagram.com/reel/DP1IarYjJvn/embed', category: 'Reels Edit', label: 'Short Form Video' },
+  { embedUrl: 'https://www.instagram.com/reel/DPruinWjD66/embed', category: 'Reels Edit', label: 'Short Form Video' },
+  { embedUrl: 'https://www.instagram.com/reel/DPjEnY1DN7z/embed', category: 'Reels Edit', label: 'Short Form Video' },
+  { embedUrl: 'https://www.instagram.com/reel/DPbcKbsjLzq/embed', category: 'Reels Edit', label: 'Short Form Video' },
+  { embedUrl: 'https://www.instagram.com/reel/DOdQ9BbDBxk/embed', category: 'Reels Edit', label: 'Short Form Video' },
+  { embedUrl: 'https://www.instagram.com/reel/DPEW4tTjECd/embed', category: 'Reels Edit', label: 'Short Form Video' },
+  { embedUrl: 'https://www.instagram.com/reel/DPGgBLWjN_9/embed', category: 'Reels Edit', label: 'Short Form Video' },
+  { embedUrl: 'https://www.instagram.com/reel/DPL9KFajORn/embed', category: 'Reels Edit', label: 'Short Form Video' },
+  { embedUrl: 'https://www.instagram.com/reel/DPY1piijExy/embed', category: 'Reels Edit', label: 'Short Form Video' },
+  { embedUrl: 'https://www.instagram.com/reel/DMFqk13sGG1/embed', category: 'Reels Edit', label: 'Short Form Video' },
+  { embedUrl: 'https://www.instagram.com/reel/DMgckd1MQWq/embed', category: 'Reels Edit', label: 'Short Form Video' },
+  { embedUrl: 'https://www.instagram.com/reel/DMk50UCNQvr/embed', category: 'Reels Edit', label: 'Short Form Video' },
+  { embedUrl: 'https://www.instagram.com/reel/DMvIwqxsroZ/embed', category: 'Reels Edit', label: 'Short Form Video' },
+  { embedUrl: 'https://www.instagram.com/reel/DNBogfvsm5_/embed', category: 'Reels Edit', label: 'Short Form Video' },
 
 const PortfolioSection = () => {
   return (
