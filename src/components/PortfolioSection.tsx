@@ -1,8 +1,4 @@
-import portfolioFood1 from '@/assets/portfolio-food-1.jpg';
-import portfolioProduct1 from '@/assets/portfolio-product-1.jpg';
-import portfolioCafe1 from '@/assets/portfolio-cafe-1.jpg';
-import portfolioProduct2 from '@/assets/portfolio-product-2.jpg';
-import portfolioFood2 from '@/assets/portfolio-food-2.jpg';
+
 
 const portfolioReels = [
   { embedUrl: 'https://www.instagram.com/reel/DTvXwejDTuF/embed', category: 'Reels Edit', label: 'Short Form Video' },
@@ -30,6 +26,7 @@ const portfolioReels = [
   { embedUrl: 'https://www.instagram.com/reel/DMk50UCNQvr/embed', category: 'Reels Edit', label: 'Short Form Video' },
   { embedUrl: 'https://www.instagram.com/reel/DMvIwqxsroZ/embed', category: 'Reels Edit', label: 'Short Form Video' },
   { embedUrl: 'https://www.instagram.com/reel/DNBogfvsm5_/embed', category: 'Reels Edit', label: 'Short Form Video' },
+];
 
 const PortfolioSection = () => {
   return (
@@ -57,9 +54,11 @@ const PortfolioSection = () => {
                   className="w-full aspect-[9/16] max-h-[500px]"
                   frameBorder="0"
                   scrolling="no"
+                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
                   allowTransparency={true}
                   allowFullScreen={true}
                   title={`Instagram Reel ${index + 1}`}
+                  aria-label={`Instagram Reel ${index + 1}`}
                 />
               </div>
             ))}
