@@ -24,6 +24,7 @@ const RestaurantPhotography = () => {
   }, []);
 
   return (
+
     <div dir="rtl" className="min-h-screen bg-background overflow-x-hidden">
       <Navbar />
 
@@ -48,6 +49,14 @@ const RestaurantPhotography = () => {
             </a>
           </div>
         </div>
+      </section>
+
+      {/* Video Section */}
+      <section className="py-8 flex justify-center bg-background">
+        <video controls width="640" className="rounded-xl shadow-lg">
+          <source src={require("@/assets/test.mp4")} type="video/mp4" />
+          متصفحك لا يدعم تشغيل الفيديو.
+        </video>
       </section>
 
       {/* Service Overview */}
