@@ -7,7 +7,6 @@ const portfolioReels = [
   { embedUrl: 'https://www.instagram.com/reel/DTDFT-RjGaI/embed', category: 'Reels Edit', label: 'Short Form Video' },
   { embedUrl: 'https://www.instagram.com/reel/DSpalaCjCnO/embed', category: 'Reels Edit', label: 'Short Form Video' },
   { embedUrl: 'https://www.instagram.com/reel/DSYGlmYjK0d/embed', category: 'Reels Edit', label: 'Short Form Video' },
-  { embedUrl: 'https://www.instagram.com/reel/DSR6pYsDOBq/embed', category: 'Reels Edit', label: 'Short Form Video' },
   { embedUrl: 'https://www.instagram.com/reel/DRMuOIJjIrK/embed', category: 'Reels Edit', label: 'Short Form Video' },
   { embedUrl: 'https://www.instagram.com/reel/DQqzBsIDIRs/embed', category: 'Reels Edit', label: 'Short Form Video' },
   { embedUrl: 'https://www.instagram.com/reel/DQY_bhfDAHW/embed', category: 'Reels Edit', label: 'Short Form Video' },
