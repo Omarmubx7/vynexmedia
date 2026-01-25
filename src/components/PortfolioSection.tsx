@@ -64,6 +64,23 @@ const PortfolioSection = () => {
           </div>
         </div>
 
+        {/* Phone Grid Section */}
+        <div className="mb-8">
+          <h3 className="text-xl font-bold text-foreground mb-6 text-center">عملاء وثقوا فينا</h3>
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4 max-w-3xl mx-auto">
+            {[...Array(15)].map((_, i) => (
+              <div key={i} className="bg-card rounded-lg overflow-hidden flex items-center justify-center aspect-square border border-border">
+                <img
+                  src={require(`../assets/${i + 1}.png`)}
+                  alt={`Client logo ${i + 1}`}
+                  className="object-contain w-full h-full p-2"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* CTA */}
         <div className="text-center mt-12">
           <p className="text-muted-foreground text-lg mb-6">
