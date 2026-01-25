@@ -1,4 +1,4 @@
-import { defineConfig } from "vite";
+import { defineConfig, type Plugin } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
@@ -27,13 +27,13 @@ export default defineConfig(({ mode }) => {
       {
         name: "inject-env-variables",
         transformIndexHtml: {
-          order: "pre",
-          handler(html) {
+          order: "pre" as const,
+          handler(html: string) {
             const ga4Id = "G-QZ5PVSKE6W";
             return html.replace(/__VITE_GA4_ID__/g, ga4Id);
           },
         },
-      },
+      } as Plugin,
     ].filter(Boolean),
     resolve: {
       alias: {
