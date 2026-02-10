@@ -31,21 +31,21 @@ const HeroSection = () => {
           <div className="flex-1 text-center lg:text-right">
             <div className="animate-fade-up">
               <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6">
-                <span className="gradient-text">Vynex Media</span>
+                <span className="text-foreground">نصوّر شغلك بطريقة</span>
                 <br />
-                <span className="text-foreground">نخلي براندك يحكي عنك بكل لقطة</span>
+                <span className="gradient-text">تخليه يبيع عنك</span>
               </h1>
             </div>
 
             <div className="animate-fade-up delay-100">
               <p className="text-lg md:text-xl text-muted-foreground mb-4 max-w-2xl mx-auto lg:mx-0 lg:mr-0 leading-relaxed">
-               فريق إنتاج بصري يصور ويعدّل فيديوهات  خبراء بتصوير المنتجات، shoots للمطاعم والكافيهات، وتحرير Reels وShorts جاهزة للسوشيال
+                استوديو تصوير في عمّان نشتغل مع البراندات الصغيرة والمتاجر عشان نطلع لهم صور وفيديوهات تشهي وتشد الزبون.
               </p>
             </div>
 
             <div className="animate-fade-up delay-200">
               <p className="text-base text-primary/80 font-medium mb-8 italic">
-                Visual media agency turning your ideas into scroll stopping content.
+                A small visual studio in Amman, obsessed with clean shots and tasty frames.
               </p>
             </div>
 
@@ -77,7 +77,7 @@ const HeroSection = () => {
                       >
                         <img 
                           src={image} 
-                          alt={`Grid ${i + 1}`}
+                          alt={`عمل سابق ${i + 1}`}
                           className="w-full h-full object-cover"
                         />
                       </div>

@@ -1,29 +1,33 @@
-import { Camera, Film, Users, Utensils } from 'lucide-react';
+import { Camera, Utensils, Film, Users, ChevronLeft } from 'lucide-react';
 
 const services = [
   {
     icon: Camera,
-    title: 'تصوير منتجات باحترافية',
-    description: 'جلسات تصوير مخصصة بإضاءة مدروسة وتفاصيل واضحة تخلي منتجك يبرز ويجذب العملاء فوراً.',
-    tagline: 'Professional product photography that sells.',
+    title: 'تصوير منتجات',
+    audience: 'متاجر أونلاين، براندات ناشئة، مشاريع منزلية',
+    result: 'صور مرتبة وواضحة تخلي العميل يفهم المنتج من أول نظرة.',
+    package: 'باقة ستارت أب: 10 صور منتجات + 1 ريل قصير',
   },
   {
     icon: Utensils,
     title: 'تصوير مطاعم وكافيهات',
-    description: 'نلتقط أجواء المكان والأطباق بجودة عالية عشان تعرض تجربة زبونك الأصلية على السوشيال ميديا.',
-    tagline: 'Food & lifestyle photography for hospitality.',
+    audience: 'مطاعم، كافيهات، وأي مكان يقدم تجربة حلوة',
+    result: 'صور وفيديوهات تخلي الناس تقول: لازم أروح أجرب.',
+    package: 'تغطية 2–3 أطباق مميزة + ريل أجواء المكان',
   },
   {
     icon: Film,
-    title: 'مونتاج Reels وShorts',
-    description: 'نحوّل لقطاتك لفيديوهات قصيرة سريعة الإيقاع جاهزة للنشر على إنستغرام وتيك توك.',
-    tagline: 'Scroll-stopping short-form video editing.',
+    title: 'مونتاج ريلز وتيك توك',
+    audience: 'أصحاب مشاريع عندهم فيديو خام أو محتوى يحتاج ترتيب',
+    result: 'ريلز سريعة، جذابة، جاهزة للنشر مع موسيقى وترتيب نصوص.',
+    package: null,
   },
   {
     icon: Users,
-    title: 'إدارة السوشيال ميديا',
-    description: 'تخطيط محتوى، نشر منتظم، وتفاعل مع الجمهور - كل شي بدلك عشان تركز على شغلك.',
-    tagline: 'Complete social media management.',
+    title: 'إدارة محتوى سوشيال ميديا',
+    audience: 'براندات تحتاج تخطيط محتوى، تقويم شهري، وجدولة منشورات',
+    result: 'محتوى منتظم ومنظم يخلي حسابك فعّال بدون ما تتعب.',
+    package: 'خطة محتوى شهرية + 8 تصاميم + 4 ريلز',
   },
 ];
 
@@ -35,7 +39,7 @@ const ServicesSection = () => {
         <div className="text-center mb-16">
           <h2 className="section-title text-foreground mb-4">خدماتنا</h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            حلول بصرية متكاملة تناسب كل أحجام المشاريع والميزانيات
+            كل خدمة مصممة عشان تخدم نوع معين من المشاريع — اختار اللي يناسبك
           </p>
         </div>
 
@@ -55,12 +59,29 @@ const ServicesSection = () => {
               <h3 className="text-2xl font-bold text-foreground mb-4 text-right leading-tight">
                 {service.title}
               </h3>
-              <p className="text-muted-foreground leading-relaxed mb-6 text-right">
-                {service.description}
+
+              {/* Audience */}
+              <div className="flex items-start gap-2 mb-3">
+                <ChevronLeft className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
+                <p className="text-muted-foreground text-sm">
+                  <span className="text-foreground font-medium">لمين: </span>
+                  {service.audience}
+                </p>
+              </div>
+
+              {/* Result */}
+              <p className="text-muted-foreground leading-relaxed mb-4 text-right">
+                {service.result}
               </p>
-              <p className="text-primary font-medium text-sm">
-                {service.tagline}
-              </p>
+
+              {/* Package */}
+              {service.package && (
+                <div className="bg-primary/5 border border-primary/20 rounded-lg px-4 py-3 text-right">
+                  <p className="text-primary font-semibold text-sm">
+                    📦 {service.package}
+                  </p>
+                </div>
+              )}
             </div>
           ))}
         </div>

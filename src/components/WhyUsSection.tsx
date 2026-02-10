@@ -1,25 +1,27 @@
-import { Heart, Clock, Wallet } from 'lucide-react';
+import { MessageSquare, Package, Image, RefreshCw } from 'lucide-react';
 
-const benefits = [
+const promises = [
   {
-    icon: Heart,
-    title: 'محتوى مصمم لجمهورك',
-    description: 'ندرس طبيعة الجمهور والمنصات قبل التصوير عشان كل صورة وفيديو يوصل الرسالة الصح.',
+    icon: MessageSquare,
+    title: 'استشارة مجانية أولاً',
+    description: 'جلسة استشارة مجانية قبل أي شغل عشان نفهم بزنسك ونعرف شو تحتاج بالظبط.',
   },
   {
-    icon: Wallet,
-    title: 'جودة سينمائية بأسعار تناسب المشاريع الصغيرة',
-    description: 'خدماتنا موجهة لأصحاب البزنس الناشئ، نعطيك جودة عالية بميزانية معقولة.',
+    icon: Package,
+    title: 'باكدجات واضحة',
+    description: 'باكدجات واضحة وأسعار تناسب المشاريع الصغيرة والمتوسطة — بدون مفاجآت.',
   },
   {
-    icon: Clock,
-    title: 'تسليم سريع وجدول واضح',
-    description: 'نلتزم بمواعيد التسليم وخطة عمل واضحة من اليوم الأول.',
+    icon: Image,
+    title: 'جاهز للنشر',
+    description: 'نسلّمك الصور والفيديوهات جاهزة للنشر على إنستغرام وتيك توك بالمقاسات الصحيحة.',
+  },
+  {
+    icon: RefreshCw,
+    title: 'تعديلات لحد ما ترضى',
+    description: 'نقدّم تعديلات لغاية ما توصل للنتيجة اللي في بالك (ضمن عدد منطقي من المرات).',
   },
 ];
-
-// Variable that can be updated later
-const VIDEOS_PRODUCED = 50;
 
 const WhyUsSection = () => {
   return (
@@ -30,40 +32,27 @@ const WhyUsSection = () => {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="section-title text-foreground mb-4">ليش تختار Vynex Media؟</h2>
+          <h2 className="section-title text-foreground mb-4">ليش تختارنا؟</h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Why Choose Vynex Media?
+            وعود ملموسة مش كلام عام
           </p>
         </div>
 
-        {/* Benefits Grid */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
-          {benefits.map((benefit, index) => (
-            <div key={index} className="text-center group">
-              <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/20 group-hover:scale-110 transition-all">
-                <benefit.icon className="w-10 h-10 text-primary" />
+        {/* Promises Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          {promises.map((promise, index) => (
+            <div key={index} className="glass-card rounded-2xl p-6 text-center group">
+              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-5 group-hover:bg-primary/20 group-hover:scale-110 transition-all">
+                <promise.icon className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="text-xl font-bold text-foreground mb-3">
-                {benefit.title}
+              <h3 className="text-lg font-bold text-foreground mb-3">
+                {promise.title}
               </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                {benefit.description}
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                {promise.description}
               </p>
             </div>
           ))}
-        </div>
-
-        {/* Social Proof */}
-        <div className="glass-card rounded-2xl p-8 md:p-12 text-center max-w-3xl mx-auto">
-          <div className="flex items-center justify-center gap-4 mb-4">
-            <span className="text-5xl md:text-6xl font-bold gradient-text">{VIDEOS_PRODUCED}+</span>
-          </div>
-          <p className="text-lg md:text-xl text-foreground">
-            فيديو قصير تم إنتاجه لمطاعم، كافيهات ومتاجر أونلاين في الأردن
-          </p>
-          <p className="text-muted-foreground mt-2 text-sm">
-            Short-form videos produced for restaurants, cafés and online stores in Jordan
-          </p>
         </div>
       </div>
     </section>

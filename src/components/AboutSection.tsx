@@ -1,17 +1,17 @@
-import { Sparkles, Target, Users } from 'lucide-react';
+import { Heart, Camera, Handshake } from 'lucide-react';
 
 const values = [
   {
-    icon: Sparkles,
-    text: 'إبداع بصري يناسب هوية البراند',
+    icon: Heart,
+    text: 'فريق صغير وقريب من العميل، مو وكالة ضخمة',
   },
   {
-    icon: Target,
-    text: 'تركيز على النتائج والتفاعل',
+    icon: Camera,
+    text: 'نركز على إنتاج بصري يخدم البزنس مش بس يطلع حلو',
   },
   {
-    icon: Users,
-    text: 'تجربة مرنة تناسب أصحاب المشاريع الصغيرة والمتوسطة',
+    icon: Handshake,
+    text: 'نشتغل معك خطوة بخطوة من الفكرة لآخر فوتو وريّل',
   },
 ];
 
@@ -29,8 +29,16 @@ const AboutSection = () => {
               مين إحنا؟
             </h2>
 
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">
-              Vynex Media وكالة إنتاج بصري وتركيزنا إننا نحول أفكارك لصور وفيديوهات حقيقية توصل لجمهورك الصحيح. نشتغل مع براندات، مطاعم، كافيهات، ومتاجر أونلاين ونبني لهم محتوى يشبه هويتهم ويزيد تفاعلهم.
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-4">
+              بدأنا Vynex Media من حب حقيقي للتصوير، خصوصاً تصوير الأكل والمنتجات. كنا نشوف أصحاب مشاريع صغيرة ومطاعم عندهم شغل حلو بس ما يعرفوا يوصلوه للناس بالطريقة الصح.
+            </p>
+
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-4">
+              فقررنا نبني استوديو صغير في عمّان متخصص بالإنتاج البصري للبراندات الناشئة والمتاجر والمطاعم. إحنا مو وكالة ضخمة — إحنا فريق صغير يحب الشغل الإبداعي ويهتم بكل تفصيلة.
+            </p>
+
+            <p className="text-lg text-primary font-semibold leading-relaxed mb-8">
+              نشتغل معك خطوة بخطوة من الفكرة لآخر فوتو وريّل، ونركز على نتيجة حقيقية مش بس صورة حلوة.
             </p>
 
             {/* Values */}
@@ -59,8 +67,8 @@ const AboutSection = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-3xl flex items-center justify-center">
                   <div className="text-center p-8">
                     <span className="text-7xl md:text-8xl font-bold gradient-text">V</span>
-                    <p className="text-primary font-bold text-xl mt-4">Visual Arts</p>
-                    <p className="text-muted-foreground text-sm mt-1">& Social Content</p>
+                    <p className="text-primary font-bold text-xl mt-4">Visual Studio</p>
+                    <p className="text-muted-foreground text-sm mt-1">عمّان، الأردن</p>
                   </div>
                 </div>
               </div>

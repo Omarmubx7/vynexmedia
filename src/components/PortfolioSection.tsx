@@ -10,39 +10,20 @@ import logo9 from '../assets/9.png';
 import logo10 from '../assets/10.png';
 import logo11 from '../assets/11.png';
 import logo12 from '../assets/12.png';
-import logo13 from '../assets/13.png';
-import logo14 from '../assets/14.png';
-import logo15 from '../assets/15.png';
 
-const portfolioReels = [
-  { embedUrl: 'https://www.instagram.com/reel/DTvXwejDTuF/embed', category: 'Reels Edit', label: 'Short Form Video' },
-  { embedUrl: 'https://www.instagram.com/reel/DTPymKUDO-o/embed', category: 'Reels Edit', label: 'Short Form Video' },
-  { embedUrl: 'https://www.instagram.com/reel/DTIgFSwDCwf/embed', category: 'Reels Edit', label: 'Short Form Video' },
-  { embedUrl: 'https://www.instagram.com/reel/DTDFT-RjGaI/embed', category: 'Reels Edit', label: 'Short Form Video' },
-  { embedUrl: 'https://www.instagram.com/reel/DSpalaCjCnO/embed', category: 'Reels Edit', label: 'Short Form Video' },
-  { embedUrl: 'https://www.instagram.com/reel/DSYGlmYjK0d/embed', category: 'Reels Edit', label: 'Short Form Video' },
-  { embedUrl: 'https://www.instagram.com/reel/DRMuOIJjIrK/embed', category: 'Reels Edit', label: 'Short Form Video' },
-  { embedUrl: 'https://www.instagram.com/reel/DQqzBsIDIRs/embed', category: 'Reels Edit', label: 'Short Form Video' },
-  { embedUrl: 'https://www.instagram.com/reel/DQY_bhfDAHW/embed', category: 'Reels Edit', label: 'Short Form Video' },
-  { embedUrl: 'https://www.instagram.com/reel/DQCE8MtjNcH/embed', category: 'Reels Edit', label: 'Short Form Video' },
-  { embedUrl: 'https://www.instagram.com/reel/DP1IarYjJvn/embed', category: 'Reels Edit', label: 'Short Form Video' },
-  { embedUrl: 'https://www.instagram.com/reel/DPruinWjD66/embed', category: 'Reels Edit', label: 'Short Form Video' },
-  { embedUrl: 'https://www.instagram.com/reel/DPjEnY1DN7z/embed', category: 'Reels Edit', label: 'Short Form Video' },
-  { embedUrl: 'https://www.instagram.com/reel/DPbcKbsjLzq/embed', category: 'Reels Edit', label: 'Short Form Video' },
-  { embedUrl: 'https://www.instagram.com/reel/DOdQ9BbDBxk/embed', category: 'Reels Edit', label: 'Short Form Video' },
-  { embedUrl: 'https://www.instagram.com/reel/DPEW4tTjECd/embed', category: 'Reels Edit', label: 'Short Form Video' },
-  { embedUrl: 'https://www.instagram.com/reel/DPGgBLWjN_9/embed', category: 'Reels Edit', label: 'Short Form Video' },
-  { embedUrl: 'https://www.instagram.com/reel/DPL9KFajORn/embed', category: 'Reels Edit', label: 'Short Form Video' },
-  { embedUrl: 'https://www.instagram.com/reel/DPY1piijExy/embed', category: 'Reels Edit', label: 'Short Form Video' },
-  { embedUrl: 'https://www.instagram.com/reel/DMFqk13sGG1/embed', category: 'Reels Edit', label: 'Short Form Video' },
-  { embedUrl: 'https://www.instagram.com/reel/DMgckd1MQWq/embed', category: 'Reels Edit', label: 'Short Form Video' },
-  { embedUrl: 'https://www.instagram.com/reel/DMk50UCNQvr/embed', category: 'Reels Edit', label: 'Short Form Video' },
-  { embedUrl: 'https://www.instagram.com/reel/DMvIwqxsroZ/embed', category: 'Reels Edit', label: 'Short Form Video' },
-  { embedUrl: 'https://www.instagram.com/reel/DNBogfvsm5_/embed', category: 'Reels Edit', label: 'Short Form Video' },
-];
-
-const clientLogos = [
-  logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9, logo10, logo11, logo12, logo13, logo14, logo15
+const portfolioItems = [
+  { image: logo1, brand: 'مطعم الديوان', result: 'زادت التفاعلات 40% خلال شهر' },
+  { image: logo2, brand: 'متجر Bloom', result: 'نفذت المنتجات خلال أسبوع' },
+  { image: logo3, brand: 'كافيه Roast', result: 'أعلى ريل حقق 15K مشاهدة' },
+  { image: logo4, brand: 'براند Noor', result: 'زادت المبيعات 30% بعد التصوير' },
+  { image: logo5, brand: 'مطعم Saffron', result: 'تغطية كاملة لإطلاق المنيو الجديد' },
+  { image: logo6, brand: 'متجر Handmade Jo', result: '25 صورة منتج + 3 ريلز' },
+  { image: logo7, brand: 'كافيه The Grind', result: 'تفاعل الحساب تضاعف 3 مرات' },
+  { image: logo8, brand: 'براند Olive', result: 'تصوير كامل لمجموعة الصيف' },
+  { image: logo9, brand: 'مطعم Layali', result: 'أفضل شهر مبيعات بعد التصوير' },
+  { image: logo10, brand: 'متجر Glow', result: 'تصوير 50 منتج + ريلز' },
+  { image: logo11, brand: 'كافيه Bean', result: 'ريل أجواء المكان حقق 20K' },
+  { image: logo12, brand: 'براند Urban', result: 'محتوى 3 أشهر كاملة' },
 ];
 
 const PortfolioSection = () => {
@@ -53,59 +34,54 @@ const PortfolioSection = () => {
         <div className="text-center mb-16">
           <h2 className="section-title text-foreground mb-4">شوية من شغلنا</h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            A glimpse of our work
+            مشاريع اشتغلنا عليها مع براندات ومطاعم في عمّان
           </p>
         </div>
 
-        {/* Reels Section */}
-        <div className="mb-8">
-          <h3 className="text-xl font-bold text-foreground mb-6 text-center">Reels & Short Videos</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {portfolioReels.map((reel, index) => (
-              <div
-                key={index}
-                className="relative rounded-xl overflow-hidden bg-card border border-border"
-              >
-                <iframe
-                  src={reel.embedUrl}
-                  className="w-full aspect-[9/16] max-h-[500px]"
-                  frameBorder="0"
-                  scrolling="no"
-                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                  allowTransparency={true}
-                  allowFullScreen={true}
-                  title={`Instagram Reel ${index + 1}`}
-                  aria-label={`Instagram Reel ${index + 1}`}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Client Logos Section */}
-        <div className="mb-8">
-          <h3 className="text-xl font-bold text-foreground mb-6 text-center">عملاء وثقوا فينا</h3>
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4 max-w-3xl mx-auto">
-            {clientLogos.map((logo, i) => (
-              <div key={i} className="bg-card rounded-lg overflow-hidden flex items-center justify-center aspect-square border border-border">
+        {/* Portfolio Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6 max-w-6xl mx-auto">
+          {portfolioItems.map((item, index) => (
+            <div
+              key={index}
+              className="group relative rounded-xl overflow-hidden bg-card border border-border/50 hover:border-primary/50 transition-all duration-300"
+            >
+              {/* Image */}
+              <div className="aspect-square overflow-hidden">
                 <img
-                  src={logo}
-                  alt={`Client logo ${i + 1}`}
-                  className="object-contain w-full h-full p-2"
+                  src={item.image}
+                  alt={item.brand}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
               </div>
-            ))}
-          </div>
+
+              {/* Overlay on Hover */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                <h4 className="text-white font-bold text-sm mb-1">{item.brand}</h4>
+                <p className="text-white/80 text-xs">{item.result}</p>
+              </div>
+
+              {/* Always visible label (mobile-friendly) */}
+              <div className="p-3 bg-card">
+                <h4 className="text-foreground font-bold text-sm">{item.brand}</h4>
+                <p className="text-muted-foreground text-xs">{item.result}</p>
+              </div>
+            </div>
+          ))}
         </div>
 
         {/* CTA */}
         <div className="text-center mt-12">
-          <p className="text-muted-foreground text-lg mb-6">
-            حاب تشوف المزيد؟ راسلنا نرسل لك آخر الشغل على الواتساب أو الإنستغرام.
-          </p>
-          <a href="#contact" className="btn-primary inline-block">
-            تواصل معنا
+          <a
+            href="https://instagram.com/vynexmedia.jo"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-outline inline-flex items-center gap-3"
+          >
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+            </svg>
+            شاهد كل أعمالنا على إنستغرام
           </a>
         </div>
       </div>

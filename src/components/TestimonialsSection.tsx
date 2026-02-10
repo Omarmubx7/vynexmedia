@@ -1,20 +1,28 @@
 import { Quote } from 'lucide-react';
+import logo1 from '../assets/1.png';
+import logo2 from '../assets/2.png';
+import logo3 from '../assets/3.png';
+import logo4 from '../assets/4.png';
+import logo5 from '../assets/5.png';
+import logo6 from '../assets/6.png';
+
+const clientLogos = [logo1, logo2, logo3, logo4, logo5, logo6];
 
 const testimonials = [
   {
-    name: 'أحمد المصري',
+    name: 'أحمد',
     role: 'صاحب مطعم',
-    content: 'شغل احترافي جداً! الصور والفيديوهات رفعت تفاعلنا على الإنستغرام بشكل ملحوظ. شكراً Vynex Media!',
+    content: 'الصورة خلت المنيو يبين أرتب بكثير، والناس صارت تطلب الأطباق اللي ركزنا عليها بالتصوير. أحسن قرار اتخذناه.',
   },
   {
-    name: 'سارة العمري',
+    name: 'سارة',
     role: 'صاحبة متجر أونلاين',
-    content: 'من أول جلسة تصوير حسيت بالفرق. المنتجات صارت تبين بشكل أفضل والمبيعات زادت.',
+    content: 'من أول جلسة تصوير المنتجات صارت تبين باحترافية على الموقع. المبيعات زادت والعملاء صاروا يثقوا أكثر بالبراند.',
   },
   {
-    name: 'خالد الحسن',
+    name: 'خالد',
     role: 'مدير كافيه',
-    content: 'الفريق فاهم شو يبغى الجمهور. الـ Reels اللي سووها لنا حققت آلاف المشاهدات.',
+    content: 'الريلز اللي سووها لنا حققت آلاف المشاهدات وصار الناس يجوا المكان ويقولوا شفناكم على إنستغرام.',
   },
 ];
 
@@ -24,10 +32,24 @@ const TestimonialsSection = () => {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="section-title text-foreground mb-4">آراء عملائنا</h2>
+          <h2 className="section-title text-foreground mb-4">عملاء وثقوا فينا</h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            What our clients say
+            آراء حقيقية من أصحاب مشاريع اشتغلنا معهم
           </p>
+        </div>
+
+        {/* Client Logos */}
+        <div className="flex flex-wrap justify-center gap-6 mb-16 max-w-3xl mx-auto">
+          {clientLogos.map((logo, i) => (
+            <div key={i} className="w-20 h-20 md:w-24 md:h-24 bg-card rounded-xl overflow-hidden flex items-center justify-center border border-border/50 hover:border-primary/30 transition-colors">
+              <img
+                src={logo}
+                alt={`عميل ${i + 1}`}
+                className="object-contain w-full h-full p-2"
+                loading="lazy"
+              />
+            </div>
+          ))}
         </div>
 
         {/* Testimonials Grid */}
@@ -43,7 +65,7 @@ const TestimonialsSection = () => {
               </div>
 
               {/* Content */}
-              <p className="text-foreground leading-relaxed mb-6 text-right relative z-10">
+              <p className="text-foreground leading-relaxed mb-6 text-right relative z-10 text-sm md:text-base">
                 "{testimonial.content}"
               </p>
 

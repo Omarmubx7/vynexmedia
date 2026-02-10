@@ -6,7 +6,7 @@ import { toast } from 'sonner';
 const projectTypes = [
   { value: 'products', label: 'منتجات' },
   { value: 'restaurant', label: 'مطعم / كافيه' },
-  { value: 'online-store', label: 'متجر أونلاين' },
+  { value: 'social-content', label: 'محتوى سوشيال ميديا' },
   { value: 'other', label: 'غيره' },
 ];
 
@@ -24,6 +24,8 @@ const ContactSection = () => {
     name: '',
     projectType: '',
     whatsapp: '',
+    budget: '',
+    instagram: '',
     message: '',
   });
 
@@ -76,7 +78,11 @@ const ContactSection = () => {
         full_name: formData.name.trim(),
         project_type: formData.projectType,
         whatsapp_number: formData.whatsapp.replace(/[\s-]/g, ''),
-        message: formData.message.trim() || null,
+        message: [
+          formData.message.trim(),
+          formData.budget ? `الميزانية: ${formData.budget}` : '',
+          formData.instagram ? `إنستغرام/موقع: ${formData.instagram}` : '',
+        ].filter(Boolean).join('\n') || null,
       });
 
       if (error) throw error;
@@ -86,6 +92,8 @@ const ContactSection = () => {
         name: '',
         projectType: '',
         whatsapp: '',
+        budget: '',
+        instagram: '',
         message: '',
       });
     } catch (error) {
@@ -104,14 +112,14 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 md:py-32 bg-secondary/30">
+    <section id="contact" className="py-20 md:py-32">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12">
             <h2 className="section-title text-foreground mb-4">جاهز نشتغل على محتواك؟</h2>
             <p className="text-muted-foreground text-lg">
-              عبّي النموذج الجاي أو تواصل معنا مباشرة على الواتساب علشان نرجع لك بأفضل حل يناسب مشروعك.
+              عبّي النموذج وراح نرجع لك بأنسب حل لمشروعك
             </p>
           </div>
 
@@ -121,7 +129,7 @@ const ContactSection = () => {
               {/* Name */}
               <div>
                 <label htmlFor="name" className="block text-foreground font-medium mb-2 text-right">
-                  الاسم الكامل
+                  الاسم
                 </label>
                 <input
                   type="text"
@@ -174,7 +182,7 @@ const ContactSection = () => {
               </div>
 
               {/* WhatsApp */}
-              <div className="md:col-span-2">
+              <div>
                 <label htmlFor="whatsapp" className="block text-foreground font-medium mb-2 text-right">
                   رقم الواتساب
                 </label>
@@ -196,6 +204,38 @@ const ContactSection = () => {
                     <span>{errors.whatsapp}</span>
                   </div>
                 )}
+              </div>
+
+              {/* Budget */}
+              <div>
+                <label htmlFor="budget" className="block text-foreground font-medium mb-2 text-right">
+                  ميزانيتك التقريبية
+                </label>
+                <input
+                  type="text"
+                  id="budget"
+                  name="budget"
+                  value={formData.budget}
+                  onChange={handleChange}
+                  className="w-full bg-background border border-border rounded-xl px-4 py-3 text-foreground text-right focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all"
+                  placeholder="مثال: 100-200 دينار"
+                />
+              </div>
+
+              {/* Instagram / Website */}
+              <div className="md:col-span-2">
+                <label htmlFor="instagram" className="block text-foreground font-medium mb-2 text-right">
+                  رابط إنستغرام أو موقعك (اختياري)
+                </label>
+                <input
+                  type="text"
+                  id="instagram"
+                  name="instagram"
+                  value={formData.instagram}
+                  onChange={handleChange}
+                  className="w-full bg-background border border-border rounded-xl px-4 py-3 text-foreground text-right focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all"
+                  placeholder="@username أو رابط الموقع"
+                />
               </div>
             </div>
 
@@ -240,21 +280,31 @@ const ContactSection = () => {
               ) : (
                 <Send className="w-5 h-5" />
               )}
-              {isSubmitting ? 'جاري الإرسال...' : 'ابدأ مع Vynex Media'}
+              {isSubmitting ? 'جاري الإرسال...' : 'أرسل طلبك'}
             </button>
+
+            {/* Note */}
+            <p className="text-center text-muted-foreground text-sm mt-4">
+              نرجع لك خلال 24 ساعة على واتساب برسالة صوتية نشرح فيها أنسب باقة لك 🎙️
+            </p>
           </form>
 
-          {/* Social Links */}
-          <div className="flex items-center justify-center gap-6 mt-8">
+          {/* WhatsApp Direct CTA */}
+          <div className="mt-8 text-center">
+            <p className="text-muted-foreground mb-4">أو تواصل معنا مباشرة</p>
             <a
-              href="https://wa.me/962790720994"
+              href="https://wa.me/962790720994?text=%D8%AD%D8%A7%D8%A8%D8%A8%20%D8%A3%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D8%AA%D8%B5%D9%88%D9%8A%D8%B1%20%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%D9%8A"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-foreground hover:text-primary transition-colors"
+              className="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#20BD5A] text-white font-bold px-8 py-4 rounded-xl transition-all hover:-translate-y-1 shadow-lg"
             >
               <MessageCircle className="w-6 h-6" />
-              <span className="font-medium">واتساب</span>
+              <span>حابب أستفسر عن تصوير لمشروعي</span>
             </a>
+          </div>
+
+          {/* Social Links */}
+          <div className="flex items-center justify-center gap-6 mt-6">
             <a
               href="https://instagram.com/vynexmedia.jo"
               target="_blank"
@@ -262,7 +312,7 @@ const ContactSection = () => {
               className="flex items-center gap-2 text-foreground hover:text-primary transition-colors"
             >
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
               </svg>
               <span className="font-medium">إنستغرام</span>
             </a>
