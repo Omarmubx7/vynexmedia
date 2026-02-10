@@ -14,11 +14,11 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Cairo', 'Poppins', 'sans-serif'],
-        heading: ['Cairo', 'Poppins', 'sans-serif'],
-        body: ['Cairo', 'Poppins', 'sans-serif'],
+        sans: ['Cairo', 'Inter', 'sans-serif'],
+        heading: ['Cairo', 'Inter', 'sans-serif'],
+        body: ['Cairo', 'Inter', 'sans-serif'],
         cairo: ['Cairo', 'sans-serif'],
-        poppins: ['Poppins', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -99,7 +99,7 @@ export default {
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'hero-pattern': 'linear-gradient(135deg, hsl(20 15% 4%) 0%, hsl(20 20% 12%) 50%, hsl(20 15% 6%) 100%)',
+        'hero-pattern': 'linear-gradient(135deg, hsl(35 18% 95%) 0%, hsl(35 15% 92%) 100%)',
       },
     },
   },

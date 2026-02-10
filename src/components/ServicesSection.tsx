@@ -33,36 +33,36 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="py-20 md:py-32">
-      <div className="container mx-auto px-4">
+    <section id="services" className="py-[72px] md:py-24">
+      <div className="max-w-[1200px] mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="section-title text-foreground mb-4">خدماتنا</h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+        <div className="text-center mb-14">
+          <h2 className="section-title text-foreground mb-3">خدماتنا</h2>
+          <p className="text-muted-foreground text-base max-w-lg mx-auto">
             كل خدمة مصممة عشان تخدم نوع معين من المشاريع — اختار اللي يناسبك
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid md:grid-cols-2 gap-5 lg:gap-6">
           {services.map((service, index) => (
             <div
               key={index}
-              className="group cursor-pointer border border-border/50 hover:border-primary/50 rounded-xl p-8 hover:bg-secondary/20 transition-all duration-300"
+              className="glass-card p-6 group cursor-pointer hover:border-primary/40 transition-all duration-300"
             >
               {/* Icon */}
-              <div className="w-16 h-16 rounded-xl bg-primary/5 flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-colors">
-                <service.icon className="w-8 h-8 text-primary group-hover:scale-110 transition-transform" />
+              <div className="w-12 h-12 rounded-xl bg-primary/8 flex items-center justify-center mb-5 group-hover:bg-primary/15 transition-colors">
+                <service.icon className="w-6 h-6 text-primary group-hover:scale-110 transition-transform" />
               </div>
 
               {/* Content */}
-              <h3 className="text-2xl font-bold text-foreground mb-4 text-right leading-tight">
+              <h3 className="text-xl font-semibold text-foreground mb-3 text-right">
                 {service.title}
               </h3>
 
               {/* Audience */}
-              <div className="flex items-start gap-2 mb-3">
-                <ChevronLeft className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
+              <div className="flex items-start gap-2 mb-2">
+                <ChevronLeft className="w-4 h-4 text-secondary mt-1 flex-shrink-0" />
                 <p className="text-muted-foreground text-sm">
                   <span className="text-foreground font-medium">لمين: </span>
                   {service.audience}
@@ -70,14 +70,14 @@ const ServicesSection = () => {
               </div>
 
               {/* Result */}
-              <p className="text-muted-foreground leading-relaxed mb-4 text-right">
+              <p className="text-muted-foreground text-sm leading-relaxed mb-4 text-right">
                 {service.result}
               </p>
 
               {/* Package */}
               {service.package && (
-                <div className="bg-primary/5 border border-primary/20 rounded-lg px-4 py-3 text-right">
-                  <p className="text-primary font-semibold text-sm">
+                <div className="bg-primary/5 border border-primary/15 rounded-full px-4 py-2 text-right inline-block">
+                  <p className="text-primary font-semibold text-xs">
                     📦 {service.package}
                   </p>
                 </div>

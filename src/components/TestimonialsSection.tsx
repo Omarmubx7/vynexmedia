@@ -28,20 +28,20 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   return (
-    <section className="py-20 md:py-32">
-      <div className="container mx-auto px-4">
+    <section className="py-[72px] md:py-24 bg-white">
+      <div className="max-w-[1200px] mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="section-title text-foreground mb-4">عملاء وثقوا فينا</h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+        <div className="text-center mb-14">
+          <h2 className="section-title text-foreground mb-3">عملاء وثقوا فينا</h2>
+          <p className="text-muted-foreground text-base max-w-lg mx-auto">
             آراء حقيقية من أصحاب مشاريع اشتغلنا معهم
           </p>
         </div>
 
         {/* Client Logos */}
-        <div className="flex flex-wrap justify-center gap-6 mb-16 max-w-3xl mx-auto">
+        <div className="flex flex-wrap justify-center gap-5 mb-14 max-w-2xl mx-auto">
           {clientLogos.map((logo, i) => (
-            <div key={i} className="w-20 h-20 md:w-24 md:h-24 bg-card rounded-xl overflow-hidden flex items-center justify-center border border-border/50 hover:border-primary/30 transition-colors">
+            <div key={i} className="w-16 h-16 md:w-20 md:h-20 bg-background rounded-xl overflow-hidden flex items-center justify-center border border-border hover:border-primary/30 transition-colors">
               <img
                 src={logo}
                 alt={`عميل ${i + 1}`}
@@ -53,29 +53,29 @@ const TestimonialsSection = () => {
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-5 max-w-5xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="glass-card rounded-2xl p-8 relative"
+              className="glass-card p-6 relative"
             >
               {/* Quote Icon */}
-              <div className="absolute top-6 left-6 text-primary/20">
-                <Quote size={48} />
+              <div className="absolute top-5 left-5 text-primary/15">
+                <Quote size={36} />
               </div>
 
               {/* Content */}
-              <p className="text-foreground leading-relaxed mb-6 text-right relative z-10 text-sm md:text-base">
+              <p className="text-foreground leading-relaxed mb-5 text-right relative z-10 text-sm">
                 "{testimonial.content}"
               </p>
 
               {/* Author */}
-              <div className="flex items-center gap-4 justify-end">
+              <div className="flex items-center gap-3 justify-end">
                 <div className="text-right">
-                  <p className="font-bold text-foreground">{testimonial.name}</p>
-                  <p className="text-muted-foreground text-sm">{testimonial.role}</p>
+                  <p className="font-semibold text-foreground text-sm">{testimonial.name}</p>
+                  <p className="text-muted-foreground text-xs">{testimonial.role}</p>
                 </div>
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-primary/50 flex items-center justify-center text-primary-foreground font-bold">
+                <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold text-sm">
                   {testimonial.name.charAt(0)}
                 </div>
               </div>

@@ -23,27 +23,26 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-background/95 backdrop-blur-md border-b border-border'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+          ? 'bg-white/95 backdrop-blur-md border-b border-border shadow-sm'
           : 'bg-transparent'
-      }`}
+        }`}
     >
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+      <div className="max-w-[1200px] mx-auto px-4">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="#hero" className="flex items-center gap-2">
-            <span className="text-2xl font-bold gradient-text">Vynex</span>
-            <span className="text-xl text-foreground font-medium">Media</span>
+          <a href="#hero" className="flex items-center gap-1.5">
+            <span className="text-xl font-bold text-primary">Vynex</span>
+            <span className="text-lg text-foreground font-medium">Media</span>
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-7">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-foreground/80 hover:text-primary transition-colors font-medium"
+                className="text-foreground/70 hover:text-primary transition-colors font-medium text-sm"
               >
                 {link.label}
               </a>
@@ -53,7 +52,7 @@ const Navbar = () => {
           {/* CTA Button */}
           <a
             href="#contact"
-            className="hidden md:block btn-primary text-sm"
+            className="hidden md:block btn-primary text-sm py-2.5 px-5"
           >
             احجز استشارة مجانية
           </a>
@@ -63,23 +62,22 @@ const Navbar = () => {
             className="md:hidden text-foreground p-2"
             onClick={() => setIsOpen(!isOpen)}
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </div>
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden absolute top-full left-0 right-0 bg-background/98 backdrop-blur-lg border-b border-border transition-all duration-300 ${
-          isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
-        }`}
+        className={`md:hidden absolute top-full left-0 right-0 bg-white/98 backdrop-blur-lg border-b border-border transition-all duration-300 ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
+          }`}
       >
-        <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
+        <div className="max-w-[1200px] mx-auto px-4 py-4 flex flex-col gap-3">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-foreground/80 hover:text-primary transition-colors font-medium py-2"
+              className="text-foreground/70 hover:text-primary transition-colors font-medium py-2 text-sm"
               onClick={() => setIsOpen(false)}
             >
               {link.label}

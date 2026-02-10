@@ -25,27 +25,24 @@ const promises = [
 
 const WhyUsSection = () => {
   return (
-    <section className="py-20 md:py-32 relative overflow-hidden">
-      {/* Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary/10 rounded-full blur-[100px] -z-10" />
-
-      <div className="container mx-auto px-4">
+    <section className="py-[72px] md:py-24 bg-white">
+      <div className="max-w-[1200px] mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="section-title text-foreground mb-4">ليش تختارنا؟</h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+        <div className="text-center mb-14">
+          <h2 className="section-title text-foreground mb-3">ليش تختارنا؟</h2>
+          <p className="text-muted-foreground text-base max-w-lg mx-auto">
             وعود ملموسة مش كلام عام
           </p>
         </div>
 
         {/* Promises Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 max-w-5xl mx-auto">
           {promises.map((promise, index) => (
-            <div key={index} className="glass-card rounded-2xl p-6 text-center group">
-              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-5 group-hover:bg-primary/20 group-hover:scale-110 transition-all">
-                <promise.icon className="w-8 h-8 text-primary" />
+            <div key={index} className="glass-card p-6 text-center group">
+              <div className="w-14 h-14 rounded-full bg-secondary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-secondary/20 group-hover:scale-105 transition-all">
+                <promise.icon className="w-6 h-6 text-secondary" />
               </div>
-              <h3 className="text-lg font-bold text-foreground mb-3">
+              <h3 className="text-base font-semibold text-foreground mb-2">
                 {promise.title}
               </h3>
               <p className="text-muted-foreground text-sm leading-relaxed">

@@ -2,63 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 @layer base {
   :root {
-    /* Dark cinematic palette */
-    --background: 20 15% 6%;
-    --foreground: 40 20% 95%;
+    /* Light clean palette */
+    --background: 35 18% 95%;       /* #F7F5F2 */
+    --foreground: 0 0% 7%;          /* #111111 */
 
-    --card: 20 15% 10%;
-    --card-foreground: 40 20% 95%;
+    --card: 0 0% 100%;              /* #FFFFFF */
+    --card-foreground: 0 0% 7%;
 
-    --popover: 20 15% 8%;
-    --popover-foreground: 40 20% 95%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 7%;
 
-    /* Vynex Orange - #F39C12 */
-    --primary: 39 90% 51%;
-    --primary-foreground: 20 15% 6%;
+    /* Vynex Warm Orange CTA - #F5A623 */
+    --primary: 38 91% 55%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 20 10% 18%;
-    --secondary-foreground: 40 20% 95%;
+    --secondary: 180 100% 27%;      /* #008C8C teal */
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 20 10% 15%;
-    --muted-foreground: 30 10% 60%;
+    --muted: 35 15% 90%;
+    --muted-foreground: 0 0% 40%;
 
-    --accent: 39 90% 51%;
-    --accent-foreground: 20 15% 6%;
+    --accent: 180 100% 27%;         /* teal */
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 40 20% 95%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 20 15% 20%;
-    --input: 20 15% 15%;
-    --ring: 39 90% 51%;
+    --border: 35 10% 88%;
+    --input: 35 10% 92%;
+    --ring: 38 91% 55%;
 
     --radius: 0.75rem;
 
-    /* Custom Vynex tokens */
-    --glow-orange: 39 90% 51%;
-    --dark-brown: 20 20% 8%;
-    --warm-black: 20 15% 4%;
-    --cream: 40 30% 90%;
-    
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(20 15% 4%) 0%, hsl(20 20% 12%) 50%, hsl(20 15% 6%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(20 15% 12%) 0%, hsl(20 15% 8%) 100%);
-    --gradient-orange: linear-gradient(135deg, hsl(39 90% 51%) 0%, hsl(30 95% 45%) 100%);
-    --gradient-text: linear-gradient(135deg, hsl(39 90% 55%) 0%, hsl(45 100% 65%) 100%);
-
-    /* Shadows */
-    --shadow-glow: 0 0 60px -10px hsl(39 90% 51% / 0.3);
-    --shadow-card: 0 25px 50px -12px hsl(0 0% 0% / 0.5);
-    --shadow-button: 0 10px 30px -5px hsl(39 90% 51% / 0.4);
-  }
-
-  .dark {
-    --background: 20 15% 6%;
-    --foreground: 40 20% 95%;
+    /* Custom tokens */
+    --teal: 180 100% 27%;
   }
 }
 
@@ -73,45 +54,43 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Cairo', 'Poppins', sans-serif;
+    font-family: 'Cairo', 'Inter', sans-serif;
     font-weight: 400;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.2px;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Cairo', 'Poppins', sans-serif;
+    font-family: 'Cairo', 'Inter', sans-serif;
     font-weight: 700;
-    letter-spacing: -0.5px;
-    line-height: 1.2;
+    letter-spacing: -0.3px;
+    line-height: 1.3;
+    color: hsl(var(--foreground));
   }
 
   h1 {
-    font-weight: 900;
-    font-size: clamp(2.5rem, 8vw, 4rem);
-    letter-spacing: -1px;
+    font-weight: 700;
+    font-size: clamp(2rem, 6vw, 2.5rem);
   }
 
   h2 {
-    font-weight: 800;
-    font-size: clamp(1.75rem, 5vw, 2.5rem);
-    letter-spacing: -0.8px;
+    font-weight: 600;
+    font-size: clamp(1.5rem, 4vw, 1.75rem);
   }
 
   h3 {
-    font-weight: 700;
-    font-size: clamp(1.25rem, 3vw, 1.75rem);
-    letter-spacing: -0.5px;
+    font-weight: 600;
+    font-size: clamp(1.1rem, 3vw, 1.35rem);
   }
 
   h4, h5, h6 {
     font-weight: 600;
-    letter-spacing: -0.3px;
   }
 
   p, span, a {
-    font-family: 'Cairo', 'Poppins', sans-serif;
+    font-family: 'Cairo', 'Inter', sans-serif;
     font-weight: 400;
-    line-height: 1.6;
+    line-height: 1.7;
+    font-size: 1rem;
   }
 
   strong, b {
@@ -120,8 +99,8 @@
 
   /* RTL Support */
   [dir="rtl"] {
-    font-family: 'Cairo', 'Poppins', sans-serif;
-    letter-spacing: 0.3px;
+    font-family: 'Cairo', 'Inter', sans-serif;
+    letter-spacing: 0.2px;
   }
 
   [dir="rtl"] h1,
@@ -130,142 +109,77 @@
   [dir="rtl"] h4,
   [dir="rtl"] h5,
   [dir="rtl"] h6 {
-    font-family: 'Cairo', 'Poppins', sans-serif;
-    letter-spacing: -0.5px;
+    font-family: 'Cairo', 'Inter', sans-serif;
   }
 }
 
 @layer components {
-  /* Hero background with film texture */
-  .hero-gradient {
-    background: var(--gradient-hero);
-    position: relative;
-  }
-
-  .hero-gradient::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    opacity: 0.03;
-    pointer-events: none;
-  }
-
-  /* Glowing text effect */
-  .text-glow {
-    text-shadow: 0 0 40px hsl(39 90% 51% / 0.5);
-  }
-
-  /* Orange gradient text */
-  .gradient-text {
-    background: var(--gradient-text);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  /* Card with hover effect */
-  .glass-card {
-    background: var(--gradient-card);
-    border: 1px solid hsl(var(--border));
-    backdrop-filter: blur(10px);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .glass-card:hover {
-    border-color: hsl(var(--primary) / 0.5);
-    box-shadow: var(--shadow-glow);
-    transform: translateY(-4px);
-  }
-
-  /* Primary button with glow */
+  /* Primary CTA button — pill shape */
   .btn-primary {
-    background: var(--gradient-orange);
+    background: hsl(var(--primary));
     color: hsl(var(--primary-foreground));
-    font-weight: 700;
-    padding: 1rem 2rem;
-    border-radius: var(--radius);
-    transition: all 0.3s ease;
-    box-shadow: var(--shadow-button);
+    font-weight: 600;
+    padding: 0.875rem 2rem;
+    border-radius: 999px;
+    transition: all 0.25s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
   }
 
   .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 15px 40px -5px hsl(39 90% 51% / 0.5);
+    filter: brightness(1.05);
+    box-shadow: 0 6px 20px hsl(38 91% 55% / 0.25);
   }
 
-  /* Outline button */
+  /* Outline button — pill shape */
   .btn-outline {
     background: transparent;
     color: hsl(var(--foreground));
     font-weight: 600;
-    padding: 1rem 2rem;
-    border-radius: var(--radius);
+    padding: 0.875rem 2rem;
+    border-radius: 999px;
     border: 2px solid hsl(var(--primary));
-    transition: all 0.3s ease;
+    transition: all 0.25s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
   }
 
   .btn-outline:hover {
-    background: hsl(var(--primary) / 0.1);
+    background: hsl(var(--primary) / 0.08);
     transform: translateY(-2px);
   }
 
-  /* Section styling */
+  /* Section title */
   .section-title {
-    @apply text-3xl md:text-4xl lg:text-5xl font-bold;
-    font-family: 'Cairo', 'Poppins', sans-serif;
-    font-weight: 800;
-    letter-spacing: -0.8px;
+    @apply text-2xl md:text-3xl font-semibold;
+    font-family: 'Cairo', 'Inter', sans-serif;
+    color: hsl(var(--foreground));
   }
 
-  /* Typography utilities for premium feel */
-  .text-hero {
-    font-family: 'Cairo', 'Poppins', sans-serif;
-    font-weight: 900;
-    font-size: clamp(2.5rem, 8vw, 4rem);
-    letter-spacing: -1px;
-    line-height: 1.1;
+  /* Card style */
+  .glass-card {
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease;
   }
 
-  .text-display {
-    font-family: 'Cairo', 'Poppins', sans-serif;
-    font-weight: 800;
-    font-size: clamp(1.75rem, 5vw, 2.5rem);
-    letter-spacing: -0.8px;
+  .glass-card:hover {
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.07);
+    transform: translateY(-3px);
   }
 
-  .text-heading {
-    font-family: 'Cairo', 'Poppins', sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-  }
-
-  .text-subheading {
-    font-family: 'Cairo', 'Poppins', sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.3px;
-  }
-
-  .text-body {
-    font-family: 'Cairo', 'Poppins', sans-serif;
-    font-weight: 400;
-    line-height: 1.6;
-    letter-spacing: 0.3px;
-  }
-
-  .text-caption {
-    font-family: 'Cairo', 'Poppins', sans-serif;
-    font-weight: 500;
-    font-size: 0.875rem;
-    letter-spacing: 0.5px;
-  }
-
+  /* Gradient text (orange) */
   .gradient-text {
-    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary) / 0.7));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font-weight: 900;
+    color: hsl(var(--primary));
+    font-weight: 700;
+    -webkit-text-fill-color: hsl(var(--primary));
   }
 
   /* Animated underline */
@@ -277,51 +191,18 @@
     content: '';
     position: absolute;
     bottom: -8px;
-    left: 0;
-    width: 60px;
-    height: 4px;
-    background: var(--gradient-orange);
+    right: 0;
+    width: 50px;
+    height: 3px;
+    background: hsl(var(--primary));
     border-radius: 2px;
   }
 
-  /* Portfolio grid item */
+  /* Portfolio item */
   .portfolio-item {
-    @apply relative overflow-hidden rounded-xl;
+    @apply relative overflow-hidden;
+    border-radius: 18px;
     aspect-ratio: 4/5;
-  }
-
-  .portfolio-item::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, hsl(0 0% 0% / 0.8) 0%, transparent 50%);
-    z-index: 1;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  .portfolio-item:hover::before {
-    opacity: 1;
-  }
-
-  /* Timeline step */
-  .timeline-step {
-    @apply relative;
-  }
-
-  .timeline-step::before {
-    content: '';
-    position: absolute;
-    top: 2.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 2px;
-    height: calc(100% + 2rem);
-    background: hsl(var(--border));
-  }
-
-  .timeline-step:last-child::before {
-    display: none;
   }
 
   /* Sticky CTA for mobile */
@@ -341,7 +222,7 @@
   @keyframes fadeUp {
     from {
       opacity: 0;
-      transform: translateY(30px);
+      transform: translateY(20px);
     }
     to {
       opacity: 1;
@@ -362,16 +243,16 @@
 
   @keyframes float {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
+    50% { transform: translateY(-12px); }
   }
 
-  /* Pulse glow */
+  /* Pulse glow — subtle for light theme */
   .animate-pulse-glow {
-    animation: pulseGlow 2s ease-in-out infinite;
+    animation: pulseGlow 2.5s ease-in-out infinite;
   }
 
   @keyframes pulseGlow {
-    0%, 100% { box-shadow: 0 0 20px hsl(39 90% 51% / 0.3); }
-    50% { box-shadow: 0 0 40px hsl(39 90% 51% / 0.6); }
+    0%, 100% { box-shadow: 0 4px 15px hsl(38 91% 55% / 0.15); }
+    50% { box-shadow: 0 6px 25px hsl(38 91% 55% / 0.3); }
   }
 }
