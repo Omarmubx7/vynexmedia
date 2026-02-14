@@ -79,10 +79,22 @@ const Footer = () => {
               <p className="text-2xl font-black tracking-extratight text-black uppercase italic leading-none hover:text-primary transition-colors cursor-pointer">
                 +962 79 072 0994
               </p>
-              <p className="text-[11px] font-black tracking-[0.4em] text-black/60 mt-6 leading-relaxed uppercase">
-                Studio d'Image <br />
-                Amman, Jordan
-              </p>
+              <div className="flex flex-col gap-6">
+                <p className="text-[11px] font-black tracking-[0.4em] text-black/60 leading-relaxed uppercase">
+                  Studio d'Image <br />
+                  Amman, Jordan
+                </p>
+                <div className="group cursor-none">
+                  <p className="text-[10px] font-black tracking-[0.6em] text-black/20 uppercase group-hover:text-primary transition-colors">
+                    31.9454° N / 35.9284° E
+                  </p>
+                </div>
+                <div className="mt-8 pt-8 border-t border-black/5">
+                  <span className="text-[9px] font-black tracking-[0.8em] text-black/10 uppercase italic">
+                    Architectural Integrity.
+                  </span>
+                </div>
+              </div>
             </div>
 
           </div>

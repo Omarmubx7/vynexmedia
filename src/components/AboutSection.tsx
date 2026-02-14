@@ -17,74 +17,74 @@ const values = [
 
 const AboutSection = () => {
   return (
-    <section id="story" className="py-24 md:py-48 relative bg-white overflow-hidden">
+    <section id="story" className="py-32 md:py-64 relative bg-white overflow-hidden">
       <div className="absolute inset-0 bg-grid opacity-[0.2] z-0" />
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-dots opacity-[0.2] z-0" />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-[1400px] mx-auto">
-          <div className="grid lg:grid-cols-2 gap-24 items-start">
-
-            {/* Left side: Editorial Typography */}
-            <div className="lg:sticky lg:top-48">
+          {/* Narrative Block 1: The Core */}
+          <div className="grid lg:grid-cols-2 gap-32 items-center mb-64">
+            <div className="animate-reveal">
               <span className="inline-block py-1.5 px-4 bg-primary/10 text-primary text-[10px] uppercase tracking-[0.4em] font-bold rounded-full mb-10">
                 The DNA
               </span>
-              <h2 className="text-5xl md:text-9xl font-black tracking-extratight text-black uppercase italic leading-[0.8] animate-reveal">
-                Service <br /> <span className="text-primary not-italic text-outline text-black">Matrix.</span>
+              <h2 className="text-6xl md:text-9xl font-black tracking-extratight text-black uppercase italic leading-[0.85] mb-12">
+                Crafting <br /> <span className="text-primary not-italic text-outline text-black">Identity.</span>
               </h2>
-
-              <div className="space-y-10 text-xl text-black/60 leading-relaxed max-w-xl font-bold tracking-tight uppercase italic">
+              <div className="space-y-12 text-2xl text-black/60 leading-relaxed max-w-xl font-bold tracking-tight uppercase italic">
                 <p>
-                  بدأنا Vynex Media من حب حقيقي للتصوير، خصوصاً تصوير الأكل والمنتجات. كنا نشوف أصحاب مشاريع صغيرة ومطاعم عندهم شغل حلو بس ما يعرفوا يوصلوه للناس بالطريقة الصح.
+                  We are not an agency. We are a boutique visual collective. Every frame is a calculated move in your brand's master narrative.
                 </p>
-                <p className="text-black not-italic normal-case font-black border-l-2 border-primary pl-8 py-2">
-                  "إحنا مو وكالة ضخمة — إحنا فريق صغير يحب الشغل الإبداعي ويهتم بكل تفصيلة."
-                </p>
-                <p>
-                  نشتغل معك خطوة بخطوة من الفكرة لآخر فوتو وريّل، ونركز على نتيجة حقيقية مش بس صورة حلوة.
-                </p>
+                <div dir="rtl" className="text-right border-r-4 border-primary pr-12 py-4">
+                  <p className="text-4xl md:text-5xl font-black text-black leading-tight font-cairo italic">
+                    إحنا مو وكالة ضخمة — إحنا فريق يهتم بكل تفصيلة.
+                  </p>
+                </div>
               </div>
             </div>
 
-            {/* Right side: Values Grid */}
-            <div className="grid gap-1 mt-12 lg:mt-0 bg-black/5 p-[1px] border border-black/5 overflow-hidden rounded-sm">
-              {values.map((value, index) => (
-                <div
-                  key={index}
-                  className="group bg-white p-16 md:p-24 transition-all duration-700 hover:bg-black relative overflow-hidden"
-                >
-                  <div className="absolute top-0 right-0 p-8 text-[120px] font-black text-black/[0.01] transition-colors leading-none pointer-events-none text-outline">
-                    {/* Removed high-contrast 0{index + 1} */}
-                  </div>
-
-                  <div className="relative z-10">
-                    <div className="w-16 h-16 rounded-full border border-black/5 flex items-center justify-center mb-10 group-hover:bg-primary group-hover:border-primary transition-all duration-700">
-                      <value.icon className="w-8 h-8 text-black group-hover:text-white transition-colors" strokeWidth={1} />
-                    </div>
-                    <p className="text-2xl md:text-3xl font-black tracking-extratight text-black leading-tight group-hover:text-white transition-colors uppercase italic">
-                      {value.text}
-                    </p>
-                  </div>
-                </div>
-              ))}
-
-              {/* Architectural Detail Card */}
-              <div className="p-16 md:p-24 bg-white/50 backdrop-blur-md flex flex-col md:flex-row items-center justify-between gap-12 group">
-                <div className="flex-1">
-                  <h4 className="text-[10px] font-black tracking-[0.5em] uppercase text-black/20 mb-3 group-hover:text-primary transition-colors">Headquarters</h4>
-                  <p className="text-3xl font-black tracking-extratight uppercase">Amman, Jordan</p>
-                </div>
-                <div className="hidden md:block w-px h-16 bg-black/5" />
-                <div className="flex-1 md:text-right">
-                  <h4 className="text-[10px] font-black tracking-[0.5em] uppercase text-black/20 mb-3 group-hover:text-primary transition-colors">Availability</h4>
-                  <p className="text-3xl font-black tracking-extratight uppercase italic">Global Access</p>
-                </div>
+            <div className="relative aspect-[4/5] overflow-hidden rounded-sm animate-fade-up delay-200 cursor-none">
+              <img
+                src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1200&auto=format&fit=crop"
+                alt="Vynex Media Studio DNA"
+                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 scale-110 hover:scale-100"
+              />
+              <div className="absolute bottom-10 left-10 text-[10px] font-black tracking-[0.5em] text-white/40 uppercase vertical-text">
+                EST. 2024 / AMMAN
               </div>
             </div>
           </div>
+
+          {/* Narrative Block 2: The Philosophy */}
+          <div className="grid lg:grid-cols-3 gap-[1px] bg-black/5 border border-black/5 animate-fade-up delay-300">
+            {[
+              { title: 'Connection', desc: 'Personal interaction over corporate scale.' },
+              { title: 'Growth', desc: 'Visuals as a vehicle for business expansion.' },
+              { title: 'Logic', desc: 'Strategic concepts from the first frame.' },
+            ].map((value, idx) => (
+              <div key={idx} className="bg-white p-24 md:p-32 group hover:bg-black transition-all duration-700">
+                <h4 className="text-[10px] font-black tracking-[0.5em] uppercase text-black/20 group-hover:text-primary mb-12 transition-colors">
+                  0{idx + 1}
+                </h4>
+                <p className="text-4xl font-black tracking-extratight text-black leading-tight group-hover:text-white transition-colors uppercase italic mb-8">
+                  {value.title}
+                </p>
+                <p className="text-black/40 text-sm font-bold tracking-tight uppercase group-hover:text-white/40 transition-colors">
+                  {value.desc}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
+
+      <style dangerouslySetInnerHTML={{
+        __html: `
+        .vertical-text {
+          writing-mode: vertical-rl;
+          transform: rotate(180deg);
+        }
+      `}} />
     </section>
   );
 };

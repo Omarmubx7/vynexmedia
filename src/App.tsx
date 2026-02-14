@@ -11,27 +11,32 @@ import ProductPhotography from "./pages/ProductPhotography";
 import ReelsAndVideo from "./pages/ReelsAndVideo";
 import RestaurantPhotography from "./pages/RestaurantPhotography";
 import ContentPackages from "./pages/ContentPackages";
+import SmoothScroll from "./components/ui/SmoothScroll";
+import CustomCursor from "./components/ui/CustomCursor";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/privacy" element={<PrivacyPolicy />} />
-          <Route path="/faq" element={<FAQ />} />
-          <Route path="/services/products" element={<ProductPhotography />} />
-          <Route path="/services/video" element={<ReelsAndVideo />} />
-          <Route path="/services/gastronomy" element={<RestaurantPhotography />} />
-          <Route path="/services/packages" element={<ContentPackages />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      <SmoothScroll>
+        <CustomCursor />
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
+            <Route path="/faq" element={<FAQ />} />
+            <Route path="/services/products" element={<ProductPhotography />} />
+            <Route path="/services/video" element={<ReelsAndVideo />} />
+            <Route path="/services/gastronomy" element={<RestaurantPhotography />} />
+            <Route path="/services/packages" element={<ContentPackages />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </SmoothScroll>
     </TooltipProvider>
   </QueryClientProvider>
 );

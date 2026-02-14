@@ -30,16 +30,27 @@ const HeroSection = () => {
             </h1>
           </div>
 
-          <div className="max-w-3xl mx-auto animate-fade-up delay-200">
-            <p className="text-xl sm:text-2xl font-bold tracking-tight text-black/50 mb-16 leading-relaxed max-w-2xl mx-auto uppercase italic lowercase">
-              Excellence. <span className="text-black/10">/</span> Agility. <span className="text-black/10">/</span> Commitment.
-            </p>
+          <div className="grid md:grid-cols-3 gap-12 md:gap-24 items-start w-full mt-32 border-t border-black/5 pt-24 animate-fade-up delay-400">
+            {[
+              { title: 'Excellence.', desc: 'Undeviating commitment to quality.' },
+              { title: 'Agility.', desc: 'Rapid response in a shifting market.' },
+              { title: 'Commitment.', desc: 'Dedicated partnership beyond the frame.' },
+            ].map((item, idx) => (
+              <div key={idx} className="text-left group cursor-none">
+                <h3 className="text-4xl md:text-5xl font-black tracking-extratight text-black uppercase italic mb-4 group-hover:text-primary transition-colors">
+                  {item.title}
+                </h3>
+                <p className="text-[10px] font-black tracking-[0.4em] text-black/20 uppercase">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
 
-            <div dir="rtl" className="text-right sm:text-center">
-              <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold text-black mb-12 leading-[1.2] max-w-4xl mx-auto font-cairo">
-                نصوّر <span className="text-primary italic">رؤيتك</span> بكل <span className="text-outline text-black">تفصيـــل.</span>
-              </h2>
-            </div>
+          <div dir="rtl" className="w-full mt-32 text-right">
+            <h2 className="text-4xl md:text-7xl font-black text-black leading-[1.1] max-w-5xl font-cairo animate-reveal">
+              نصوّر <span className="text-primary italic">رؤيتك</span> بكل <span className="text-outline text-black">تفصيـــل.</span>
+            </h2>
           </div>
 
           <div className="animate-fade-up delay-300 flex flex-wrap gap-8 justify-center items-center">

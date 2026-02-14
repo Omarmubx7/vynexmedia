@@ -54,6 +54,8 @@
 
   html {
     scroll-behavior: smooth;
+    cursor: none;
+    /* Hide default for CustomCursor */
   }
 
   body {
@@ -61,6 +63,48 @@
     font-family: 'Inter', 'Cairo', sans-serif;
     font-weight: 400;
     letter-spacing: -0.01em;
+    cursor: none;
+    /* Secondary fallback */
+  }
+
+  /* Lenis smooth scroll styling */
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  .lenis.lenis-scrolling iframe {
+    pointer-events: none;
+  }
+
+  /* Custom Scrollbar for Boutique feel */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 99px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.3);
   }
 
   h1,
