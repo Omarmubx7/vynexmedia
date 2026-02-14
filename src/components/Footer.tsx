@@ -11,77 +11,49 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="py-[120px] md:py-[160px] bg-black text-[var(--foreground)] relative border-t border-[var(--foreground)]/10 overflow-hidden">
+    <footer className="py-[120px] md:py-[160px] bg-transparent text-[var(--foreground)] relative border-t border-[var(--foreground)]/10">
       <div className="container max-w-[1400px] mx-auto px-10">
-        <div className="grid lg:grid-cols-2 gap-20 lg:gap-32 items-start mb-32">
+        <div className="flex flex-col md:flex-row justify-between items-start gap-20 mb-32">
           <div>
-            <h2 className="section-title mb-12">
-              Visionary.<br />
-              Connected.<br />
-              Global.
-            </h2>
-            <div className="flex items-center gap-6">
-              <a
-                href="https://instagram.com/thegloriousinc"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-12 h-12 rounded-full border border-[var(--foreground)]/10 flex items-center justify-center hover:bg-[var(--foreground)] hover:text-black transition-all"
-              >
-                <Instagram size={20} strokeWidth={1.5} />
-              </a>
-              <a
-                href="https://wa.me/962790720994"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-12 h-12 rounded-full border border-[var(--foreground)]/10 flex items-center justify-center hover:bg-[var(--foreground)] hover:text-black transition-all"
-              >
-                <MessageCircle size={20} strokeWidth={1.5} />
-              </a>
-            </div>
+            <h4 className="text-[11px] font-bold tracking-[0.4em] text-[var(--foreground)]/20 uppercase mb-8">Direct Channel</h4>
+            <a href="mailto:hello@vynex.io" className="text-4xl md:text-6xl font-extrabold text-[var(--foreground)] hover:text-primary transition-colors tracking-tighter">hello@vynex.io</a>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-20">
-            <div className="flex flex-col gap-8">
-              <span className="text-[12px] font-bold tracking-[0.3em] text-[var(--foreground)]/20 uppercase">Navigation</span>
-              {quickLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="text-[18px] font-medium text-[var(--foreground)]/70 hover:text-primary transition-colors uppercase tracking-tight"
-                >
-                  {link.label}
-                </a>
-              ))}
-            </div>
-            <div className="flex flex-col gap-8">
-              <span className="text-[12px] font-bold tracking-[0.3em] text-[var(--foreground)]/20 uppercase">Liaison</span>
-              <a href="mailto:hello@vynex.io" className="text-[18px] font-medium text-[var(--foreground)] hover:text-primary transition-colors">hello@vynex.io</a>
-              <p className="text-[18px] font-medium text-[var(--foreground)]">+962 79 072 0994</p>
-              <div className="mt-4">
-                <p className="text-[14px] text-[var(--foreground)]/40 leading-relaxed uppercase tracking-widest">
-                  Studio d'Image / Amman, Jordan<br />
-                  31.9454° N / 35.9284° E
-                </p>
-              </div>
-            </div>
+          <div className="flex items-center gap-12">
+            <a
+              href="https://instagram.com/thegloriousinc"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[14px] font-bold uppercase tracking-[0.2em] hover:text-primary transition-all pb-1 border-b border-transparent hover:border-primary"
+            >
+              Instagram
+            </a>
+            <a
+              href="https://wa.me/962790720994"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[14px] font-bold uppercase tracking-[0.2em] hover:text-primary transition-all pb-1 border-b border-transparent hover:border-primary"
+            >
+              WhatsApp
+            </a>
           </div>
         </div>
 
-        <div className="pt-12 border-t border-[var(--foreground)]/10 flex flex-col md:flex-row justify-between items-center gap-8">
-          <p className="text-[11px] font-medium text-[var(--foreground)]/30 uppercase tracking-[0.2em]">
-            &copy; {currentYear} Vynex Media. Boutique Visual Studio.
-          </p>
-          <div className="flex items-center gap-8">
+        <div className="pt-12 border-t border-[var(--foreground)]/5 flex flex-col md:flex-row justify-between items-center gap-8">
+          <div className="flex gap-12">
+            <p className="text-[11px] font-medium text-[var(--foreground)]/30 uppercase tracking-[0.2em]">
+              &copy; {currentYear} Vynex Media.
+            </p>
             <a href="/privacy" className="text-[11px] font-medium text-[var(--foreground)]/30 hover:text-[var(--foreground)] transition-colors uppercase tracking-[0.2em]">Privacy</a>
-            <a
-              href="https://mubx.dev"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[11px] font-bold text-primary uppercase tracking-[0.2em]"
-            >
-              Made by mubx.dev
-            </a>
           </div>
+          <a
+            href="https://mubx.dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[11px] font-bold text-primary uppercase tracking-[0.2em]"
+          >
+            Studio by mubx.dev
+          </a>
         </div>
       </div>
     </footer>

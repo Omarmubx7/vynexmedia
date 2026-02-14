@@ -21,13 +21,12 @@ const promises = [
 
 const WhyUsSection = () => {
   return (
-    <section id="why-us" className="py-[120px] md:py-[160px] bg-black relative">
+    <section id="why-us" className="py-[120px] md:py-[160px] bg-transparent relative">
       <div className="container max-w-[1400px] mx-auto px-10">
         <div className="grid lg:grid-cols-2 gap-20 lg:gap-32 items-start mb-32">
           <div>
             <h2 className="section-title">
-              The Vynex<br />
-              Standard.
+              Logic.
             </h2>
           </div>
           <div>
@@ -53,20 +52,15 @@ const WhyUsSection = () => {
           {promises.map((promise, index) => (
             <div key={index} className="p-12 md:p-16 bg-black group hover:bg-[#050505] transition-colors flex flex-col justify-between">
               <div>
-                <span className="text-[12px] font-bold tracking-[0.3em] text-[var(--foreground)]/20 uppercase group-hover:text-primary transition-colors mb-8 block">
-                  Promise 0{index + 1}
+                <span className="text-[11px] font-bold tracking-[0.4em] text-[var(--foreground)]/20 uppercase group-hover:text-primary transition-colors mb-8 block">
+                  Step 0{index + 1}
                 </span>
                 <h3 className="text-3xl font-bold text-[var(--foreground)] mb-6 uppercase tracking-tight">
                   {promise.title}
                 </h3>
-                <p className="text-[var(--foreground)]/60 font-medium leading-relaxed max-w-sm mb-12">
+                <p className="text-[var(--foreground)]/60 font-medium leading-relaxed max-w-sm">
                   {promise.desc}
                 </p>
-              </div>
-              <div className="mt-auto">
-                <a href="#contact" className="btn-arrow group">
-                  Learn more <span className="arrow">→</span>
-                </a>
               </div>
             </div>
           ))}

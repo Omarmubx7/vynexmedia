@@ -25,11 +25,11 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section id="expertise" className="py-[120px] md:py-[160px] bg-black relative">
+    <section id="expertise" className="py-[120px] md:py-[160px] bg-transparent relative">
       <div className="container max-w-[1400px] mx-auto px-10">
         <div className="mb-24">
           <h2 className="section-title">
-            Expertise &<br />Mastery.
+            Services.
           </h2>
         </div>
 
@@ -51,15 +51,9 @@ const ServicesSection = () => {
                   {service.title}
                 </h3>
 
-                <p className="text-[var(--foreground)]/60 mb-12 max-w-sm font-medium leading-relaxed">
+                <p className="text-[var(--foreground)]/60 max-w-sm font-medium leading-relaxed">
                   {service.desc}
                 </p>
-
-                <div className="mt-auto">
-                  <a href="#contact" className="btn-arrow group">
-                    Learn more <span className="arrow">→</span>
-                  </a>
-                </div>
               </div>
             </div>
           ))}

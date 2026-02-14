@@ -92,7 +92,7 @@ const ContactSection = () => {
   const inputError = "border-red-500 focus:border-red-500";
 
   return (
-    <section id="contact" className="py-24 md:py-48 bg-black relative overflow-hidden">
+    <section id="contact" className="py-24 md:py-48 bg-transparent relative overflow-hidden">
       <div className="absolute inset-0 bg-grid opacity-[0.2] z-0" />
       <div className="absolute top-0 left-0 w-1/2 h-full bg-dots opacity-[0.1] z-0" />
 
@@ -102,11 +102,8 @@ const ContactSection = () => {
 
             {/* Left side: Editorial Typography & Info */}
             <div className="lg:sticky lg:top-48">
-              <span className="inline-block py-1.5 px-4 bg-primary/10 text-primary text-[10px] uppercase tracking-[0.4em] font-bold rounded-full mb-10">
-                Liaison
-              </span>
-              <h2 className="text-5xl md:text-9xl font-black tracking-extratight text-[var(--foreground)] mb-16 uppercase italic leading-[0.8]">
-                Start a <br /> <span className="text-primary not-italic text-outline text-[var(--foreground)]">Project.</span>
+              <h2 className="section-title mb-16 italic">
+                Initiate<br />Narrative.
               </h2>
 
               <div className="space-y-16 mb-20">

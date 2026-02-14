@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from 'react';
 const DotGridCanvas: React.FC = () => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const mouseRef = useRef({ x: -1000, y: -1000 });
+    const scrollYRef = useRef(0);
 
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -22,13 +23,13 @@ const DotGridCanvas: React.FC = () => {
 
         const dots: Dot[] = [];
         const config = {
-            dotSpacing: 15,
-            dotBaseRadius: 1.5,
-            dotMaxRadius: 5,
-            dotBaseOpacity: 0.15, // Adjusted for screen visibility on black
-            dotMaxOpacity: 1,
-            interactionRadius: 200,
-            animationSpeed: 0.05
+            dotSpacing: 18,
+            dotBaseRadius: 1.2,
+            dotMaxRadius: 4.5,
+            dotBaseOpacity: 0.1,
+            dotMaxOpacity: 0.8,
+            interactionRadius: 250,
+            animationSpeed: 0.04
         };
 
         const handleResize = () => {
@@ -37,10 +38,14 @@ const DotGridCanvas: React.FC = () => {
             initDots();
         };
 
+        const handleScroll = () => {
+            scrollYRef.current = window.scrollY;
+        };
+
         const initDots = () => {
             dots.length = 0;
-            const cols = Math.ceil(canvas.width / config.dotSpacing);
-            const rows = Math.ceil(canvas.height / config.dotSpacing);
+            const cols = Math.ceil(canvas.width / config.dotSpacing) + 1;
+            const rows = Math.ceil(canvas.height / config.dotSpacing) + 1;
 
             for (let i = 0; i < cols; i++) {
                 for (let j = 0; j < rows; j++) {
@@ -63,9 +68,13 @@ const DotGridCanvas: React.FC = () => {
         const animate = () => {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+            const scrollOffset = (scrollYRef.current * 0.2) % config.dotSpacing;
+
             dots.forEach(dot => {
+                const adjustedY = dot.y - scrollOffset;
+
                 const dx = mouseRef.current.x - dot.x;
-                const dy = mouseRef.current.y - dot.y;
+                const dy = mouseRef.current.y - adjustedY;
                 const distance = Math.sqrt(dx * dx + dy * dy);
 
                 if (distance < config.interactionRadius) {
@@ -77,12 +86,11 @@ const DotGridCanvas: React.FC = () => {
                     dot.targetOpacity = config.dotBaseOpacity;
                 }
 
-                // Smooth interpolation
                 dot.radius += (dot.targetRadius - dot.radius) * config.animationSpeed;
                 dot.opacity += (dot.targetOpacity - dot.opacity) * config.animationSpeed;
 
                 ctx.beginPath();
-                ctx.arc(dot.x, dot.y, dot.radius, 0, Math.PI * 2);
+                ctx.arc(dot.x, adjustedY, dot.radius, 0, Math.PI * 2);
                 ctx.fillStyle = `rgba(204, 204, 204, ${dot.opacity})`;
                 ctx.fill();
             });
@@ -92,6 +100,7 @@ const DotGridCanvas: React.FC = () => {
 
         window.addEventListener('resize', handleResize);
         window.addEventListener('mousemove', handleMouseMove);
+        window.addEventListener('scroll', handleScroll, { passive: true });
 
         handleResize();
         animate();
@@ -99,6 +108,7 @@ const DotGridCanvas: React.FC = () => {
         return () => {
             window.removeEventListener('resize', handleResize);
             window.removeEventListener('mousemove', handleMouseMove);
+            window.removeEventListener('scroll', handleScroll);
         };
     }, []);
 
@@ -106,7 +116,6 @@ const DotGridCanvas: React.FC = () => {
         <canvas
             ref={canvasRef}
             className="fixed inset-0 w-full h-full pointer-events-none z-[0] bg-black"
-            style={{ mixBlendMode: 'screen' }}
         />
     );
 };

@@ -2,36 +2,35 @@ import { Instagram } from 'lucide-react';
 
 const portfolioItems = [
   {
-    title: 'Project Alpha',
+    title: 'Luxe Gastronomy',
     category: 'Product Narrative',
-    video: 'https://player.vimeo.com/external/494252666.sd.mp4?s=721e25e94f1c7d6e6b4e7a83d3e6d8a3d3d3d3d3&profile_id=165',
+    image: 'https://images.unsplash.com/photo-1550966842-30cae8406480?auto=format&fit=crop&q=80&w=1200',
   },
   {
-    title: 'Project Beta',
+    title: 'Digital Identity',
     category: 'Gastronomy Content',
-    video: 'https://player.vimeo.com/external/494252666.sd.mp4?s=721e25e94f1c7d6e6b4e7a83d3e6d8a3d3d3d3d3&profile_id=165',
+    image: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&q=80&w=1200',
   },
   {
-    title: 'Project Gamma',
+    title: 'Cinematic Flow',
     category: 'Visual Editing',
-    video: 'https://player.vimeo.com/external/494252666.sd.mp4?s=721e25e94f1c7d6e6b4e7a83d3e6d8a3d3d3d3d3&profile_id=165',
+    image: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80&w=1200',
   },
   {
-    title: 'Project Delta',
+    title: 'Brand Resonance',
     category: 'Identity Support',
-    video: 'https://player.vimeo.com/external/494252666.sd.mp4?s=721e25e94f1c7d6e6b4e7a83d3e6d8a3d3d3d3d3&profile_id=165',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200',
   },
 ];
 
 const PortfolioSection = () => {
   return (
-    <section id="portfolio" className="py-[120px] md:py-[160px] bg-black">
+    <section id="portfolio" className="py-[120px] md:py-[160px] bg-transparent">
       <div className="container max-w-[1400px] mx-auto px-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-12">
           <div>
             <h2 className="section-title">
-              Selected<br />
-              Works.
+              Collaborations.
             </h2>
           </div>
           <div>
@@ -41,7 +40,7 @@ const PortfolioSection = () => {
               rel="noopener noreferrer"
               className="btn-arrow group"
             >
-              Explore Instagram <span className="arrow">→</span>
+              Explore Archive <span className="arrow">→</span>
             </a>
           </div>
         </div>
@@ -50,13 +49,10 @@ const PortfolioSection = () => {
           {portfolioItems.map((item, index) => (
             <div key={index} className="group cursor-pointer">
               <div className="aspect-[16/9] overflow-hidden bg-[var(--foreground)]/5 relative mb-8">
-                <video
-                  src={item.video}
+                <img
+                  src={item.image}
+                  alt={item.title}
                   className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-700"
-                  muted
-                  loop
-                  playsInline
-                  autoPlay
                 />
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
               </div>

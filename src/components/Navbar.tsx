@@ -3,9 +3,9 @@ import { Menu, X } from 'lucide-react';
 import MagneticButton from './ui/MagneticButton';
 
 const navLinks = [
-  { href: '#story', label: 'Story' },
-  { href: '#expertise', label: 'Expertise' },
-  { href: '#portfolio', label: 'Work' },
+  { href: '#story', label: 'Our DNA' },
+  { href: '#expertise', label: 'Services' },
+  { href: '#portfolio', label: 'Collaborations' },
   { href: '#contact', label: 'Contact' },
 ];
 
@@ -38,8 +38,7 @@ const Navbar = () => {
           {/* Logo - Magnetic */}
           <MagneticButton strength={20}>
             <a href="#hero" className="group flex items-center gap-2 py-2">
-              <span className="logo-dots text-[12px] tracking-[2px] text-primary group-hover:scale-110 transition-transform">:::</span>
-              <span className="text-[16px] font-semibold text-[var(--foreground)] uppercase">Vynex Media</span>
+              <span className="text-[16px] font-semibold text-[var(--foreground)] uppercase tracking-wider">Vynex Media</span>
             </a>
           </MagneticButton>
 

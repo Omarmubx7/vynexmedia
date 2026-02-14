@@ -28,7 +28,7 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   return (
-    <section id="testimonials" className="py-24 md:py-48 bg-black relative overflow-hidden">
+    <section id="testimonials" className="py-24 md:py-48 bg-transparent relative overflow-hidden">
       <div className="absolute inset-0 bg-grid opacity-[0.2] z-0" />
       <div className="absolute top-0 right-0 w-1/3 h-full bg-dots opacity-[0.1] z-0" />
 
@@ -37,14 +37,11 @@ const TestimonialsSection = () => {
           {/* Header */}
           <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-32 gap-12">
             <div className="max-w-3xl">
-              <span className="inline-block py-1.5 px-4 bg-primary/10 text-primary text-[10px] uppercase tracking-[0.4em] font-bold rounded-full mb-10">
-                Praise
-              </span>
-              <h2 className="text-5xl md:text-9xl font-black tracking-extratight text-[var(--foreground)] uppercase italic leading-[0.8]">
-                Client <br /> <span className="text-primary not-italic text-outline text-[var(--foreground)]">Stories.</span>
+              <h2 className="section-title">
+                Client Stories.
               </h2>
             </div>
-            <p className="text-xl font-bold tracking-extratight text-[var(--foreground)]/40 max-w-sm leading-relaxed mb-4 uppercase italic">
+            <p className="text-xl font-bold tracking-extratight text-black/40 max-w-sm leading-relaxed mb-4 uppercase italic">
               Authentic narratives from visionaries who leveraged our lens to scale their impact.
             </p>
           </div>

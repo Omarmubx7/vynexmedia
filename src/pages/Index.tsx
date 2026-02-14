@@ -20,12 +20,12 @@ const Index = () => {
     addSchemaMarkup(vynexOrganizationSchema);
     // Add Breadcrumb schema
     addSchemaMarkup(createBreadcrumbSchema([
-      { name: 'الرئيسية', url: 'https://vynexmedia.com/' },
-      { name: 'Home', url: 'https://vynexmedia.com/en/' }
+      { name: 'Home', url: 'https://vynexmedia.com/' }
     ]));
   }, []);
+
   return (
-    <div dir="rtl" className="min-h-screen bg-background overflow-x-hidden bg-grain">
+    <div dir="ltr" className="min-h-screen bg-transparent overflow-x-hidden">
       <Navbar />
       <HeroSection />
       <AboutSection />
