@@ -11,10 +11,25 @@ const DotGridCanvas: React.FC = () => {
         const ctx = canvas.getContext('2d');
         if (!ctx) return;
 
-        const dots: { x: number; y: number; baseX: number; baseY: number; phase: number }[] = [];
-        const dotSpacing = 15;
-        const dotRadius = 1.5;
-        let time = 0;
+        interface Dot {
+            x: number;
+            y: number;
+            radius: number;
+            opacity: number;
+            targetRadius: number;
+            targetOpacity: number;
+        }
+
+        const dots: Dot[] = [];
+        const config = {
+            dotSpacing: 15,
+            dotBaseRadius: 1.5,
+            dotMaxRadius: 5,
+            dotBaseOpacity: 0.15, // Adjusted for screen visibility on black
+            dotMaxOpacity: 1,
+            interactionRadius: 200,
+            animationSpeed: 0.05
+        };
 
         const handleResize = () => {
             canvas.width = window.innerWidth;
@@ -24,14 +39,18 @@ const DotGridCanvas: React.FC = () => {
 
         const initDots = () => {
             dots.length = 0;
-            for (let x = 0; x < canvas.width; x += dotSpacing) {
-                for (let y = 0; y < canvas.height; y += dotSpacing) {
+            const cols = Math.ceil(canvas.width / config.dotSpacing);
+            const rows = Math.ceil(canvas.height / config.dotSpacing);
+
+            for (let i = 0; i < cols; i++) {
+                for (let j = 0; j < rows; j++) {
                     dots.push({
-                        x,
-                        y,
-                        baseX: x,
-                        baseY: y,
-                        phase: Math.random() * Math.PI * 2
+                        x: i * config.dotSpacing,
+                        y: j * config.dotSpacing,
+                        radius: config.dotBaseRadius,
+                        opacity: config.dotBaseOpacity,
+                        targetRadius: config.dotBaseRadius,
+                        targetOpacity: config.dotBaseOpacity
                     });
                 }
             }
@@ -42,31 +61,29 @@ const DotGridCanvas: React.FC = () => {
         };
 
         const animate = () => {
-            time += 0.01;
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
             dots.forEach(dot => {
-                const waveX = Math.sin(time + dot.baseX * 0.01) * 2;
-                const waveY = Math.cos(time + dot.baseY * 0.01) * 2;
-
-                const currentX = dot.baseX + waveX;
-                const currentY = dot.baseY + waveY;
-
-                const dx = mouseRef.current.x - currentX;
-                const dy = mouseRef.current.y - currentY;
+                const dx = mouseRef.current.x - dot.x;
+                const dy = mouseRef.current.y - dot.y;
                 const distance = Math.sqrt(dx * dx + dy * dy);
 
-                let scale = 1;
-                let opacity = 0.08;
-
-                if (distance < 250) {
-                    scale = 1 + (250 - distance) / 50;
-                    opacity = 0.3 + (250 - distance) / 300;
+                if (distance < config.interactionRadius) {
+                    const force = (config.interactionRadius - distance) / config.interactionRadius;
+                    dot.targetRadius = config.dotBaseRadius + (config.dotMaxRadius - config.dotBaseRadius) * force;
+                    dot.targetOpacity = config.dotBaseOpacity + (config.dotMaxOpacity - config.dotBaseOpacity) * force;
+                } else {
+                    dot.targetRadius = config.dotBaseRadius;
+                    dot.targetOpacity = config.dotBaseOpacity;
                 }
 
+                // Smooth interpolation
+                dot.radius += (dot.targetRadius - dot.radius) * config.animationSpeed;
+                dot.opacity += (dot.targetOpacity - dot.opacity) * config.animationSpeed;
+
                 ctx.beginPath();
-                ctx.arc(currentX, currentY, dotRadius * scale, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`;
+                ctx.arc(dot.x, dot.y, dot.radius, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(255, 255, 255, ${dot.opacity})`;
                 ctx.fill();
             });
 
