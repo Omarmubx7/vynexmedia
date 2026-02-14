@@ -119,7 +119,7 @@ const ContactSection = () => {
                 <div className="group cursor-pointer">
                   <h4 className="text-[10px] font-black tracking-[0.5em] uppercase text-black/20 mb-4 group-hover:text-primary transition-colors">Global Link</h4>
                   <p className="text-4xl font-black tracking-extratight uppercase">
-                    +962 790 720 994
+                    +962 79 072 0994
                   </p>
                 </div>
               </div>
@@ -132,7 +132,7 @@ const ContactSection = () => {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-8 group"
                 >
-                  <div className="w-20 h-20 rounded-full border border-black/5 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-700">
+                  <div className="w-20 h-20 rounded-full border border-black/5 flex items-center justify-center group-hover:bg-[#25D366] group-hover:border-[#25D366] transition-all duration-700">
                     <MessageCircle size={32} className="group-hover:text-white transition-colors" strokeWidth={1.5} />
                   </div>
                   <div>
@@ -153,9 +153,11 @@ const ContactSection = () => {
                       type="text" id="name" name="name" value={formData.name}
                       onChange={handleChange} required
                       className={`${inputBase} ${errors.name ? inputError : ""}`}
-                      placeholder="Your Name"
+                      placeholder="Your Full Name"
+                      aria-label="Full Name"
+                      aria-invalid={!!errors.name}
                     />
-                    <label className="absolute -top-5 left-0 text-[9px] font-black tracking-[0.3em] uppercase text-black/20 group-focus-within:text-primary transition-colors">Client Label</label>
+                    <label className="absolute -top-5 left-0 text-[9px] font-black tracking-[0.3em] uppercase text-black/40 group-focus-within:text-primary transition-colors">Full Name</label>
                   </div>
 
                   {/* WhatsApp */}
@@ -164,9 +166,11 @@ const ContactSection = () => {
                       type="tel" id="whatsapp" name="whatsapp" value={formData.whatsapp}
                       onChange={handleChange} required
                       className={`${inputBase} ${errors.whatsapp ? inputError : ""}`}
-                      placeholder="+962 7XX XXX XXX"
+                      placeholder="+962 79 072 0994"
+                      aria-label="WhatsApp Number"
+                      aria-invalid={!!errors.whatsapp}
                     />
-                    <label className="absolute -top-5 left-0 text-[9px] font-black tracking-[0.3em] uppercase text-black/20 group-focus-within:text-primary transition-colors">Digital Contact</label>
+                    <label className="absolute -top-5 left-0 text-[9px] font-black tracking-[0.3em] uppercase text-black/40 group-focus-within:text-primary transition-colors">Digital Contact</label>
                   </div>
 
                   {/* Project Type */}
@@ -175,13 +179,15 @@ const ContactSection = () => {
                       id="projectType" name="projectType" value={formData.projectType}
                       onChange={handleChange} required
                       className={inputBase}
+                      aria-label="Selection of Expertise"
+                      aria-invalid={!!errors.projectType}
                     >
                       <option value="" disabled>Select Expertise</option>
                       {projectTypes.map((type) => (
                         <option key={type.value} value={type.value}>{type.label}</option>
                       ))}
                     </select>
-                    <label className="absolute -top-5 left-0 text-[9px] font-black tracking-[0.3em] uppercase text-black/20 group-focus-within:text-primary transition-colors">Inquiry Type</label>
+                    <label className="absolute -top-5 left-0 text-[9px] font-black tracking-[0.3em] uppercase text-black/40 group-focus-within:text-primary transition-colors">Inquiry Type</label>
                   </div>
 
                   {/* Budget */}
@@ -190,9 +196,10 @@ const ContactSection = () => {
                       type="text" id="budget" name="budget" value={formData.budget}
                       onChange={handleChange}
                       className={inputBase}
-                      placeholder="Estimated Scale"
+                      placeholder="e.g. 500 - 1000 JOD"
+                      aria-label="Estimated Scale in JOD"
                     />
-                    <label className="absolute -top-5 left-0 text-[9px] font-black tracking-[0.3em] uppercase text-black/20 group-focus-within:text-primary transition-colors">Resource Tier</label>
+                    <label className="absolute -top-5 left-0 text-[9px] font-black tracking-[0.3em] uppercase text-black/40 group-focus-within:text-primary transition-colors">Resource Tier (JOD)</label>
                   </div>
 
                   {/* Social/Link */}

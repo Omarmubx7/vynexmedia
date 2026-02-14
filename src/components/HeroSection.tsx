@@ -31,13 +31,15 @@ const HeroSection = () => {
           </div>
 
           <div className="max-w-3xl mx-auto animate-fade-up delay-200">
-            <p className="text-xl sm:text-2xl font-bold tracking-tight text-black/40 mb-16 leading-relaxed max-w-2xl mx-auto uppercase italic lowercase">
+            <p className="text-xl sm:text-2xl font-bold tracking-tight text-black/50 mb-16 leading-relaxed max-w-2xl mx-auto uppercase italic lowercase">
               Excellence. <span className="text-black/10">/</span> Agility. <span className="text-black/10">/</span> Commitment.
             </p>
 
-            <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold tracking-extratight text-black mb-12 leading-[1] max-w-4xl mx-auto">
-              نصوّر <span className="text-primary italic">رؤيتك</span> بكل <span className="text-outline text-black">تفصيل.</span>
-            </h2>
+            <div dir="rtl" className="text-right sm:text-center">
+              <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold text-black mb-12 leading-[1.2] max-w-4xl mx-auto font-cairo">
+                نصوّر <span className="text-primary italic">رؤيتك</span> بكل <span className="text-outline text-black">تفصيـــل.</span>
+              </h2>
+            </div>
           </div>
 
           <div className="animate-fade-up delay-300 flex flex-wrap gap-8 justify-center items-center">
@@ -61,12 +63,11 @@ const HeroSection = () => {
             </MagneticButton>
           </div>
 
-          {/* Scroll Down */}
+          {/* Scroll Down Hint */}
           <div className="absolute bottom-12 left-1/2 -translate-x-1/2 hidden md:block opacity-20 hover:opacity-100 transition-opacity">
             <MagneticButton strength={20}>
-              <a href="#about" className="flex flex-col items-center gap-4">
-                <span className="text-[9px] uppercase tracking-[0.5em] font-bold translate-y-2">Navigate</span>
-                <ArrowDown size={12} strokeWidth={2} />
+              <a href="#story" className="flex flex-col items-center gap-4">
+                <ArrowDown size={16} strokeWidth={1} />
               </a>
             </MagneticButton>
           </div>

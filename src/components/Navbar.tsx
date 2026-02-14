@@ -3,11 +3,11 @@ import { Menu, X } from 'lucide-react';
 import MagneticButton from './ui/MagneticButton';
 
 const navLinks = [
-  { href: '#hero', label: 'Home' },
-  { href: '#about', label: 'Story' },
-  { href: '#services', label: 'Expertise' },
-  { href: '#portfolio', label: 'Work' },
-  { href: '#contact', label: 'Contact' },
+  { href: '/#hero', label: 'Home' },
+  { href: '/#story', label: 'Story' },
+  { href: '/#expertise', label: 'Expertise' },
+  { href: '/#portfolio', label: 'Portfolio' },
+  { href: '/#contact', label: 'Contact' },
 ];
 
 const Navbar = () => {

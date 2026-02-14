@@ -26,7 +26,7 @@
     --secondary-foreground: 0 0% 98%;
 
     --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
+    --muted-foreground: 0 0% 35%;
 
     --accent: 0 0% 9%;
     --accent-foreground: 0 0% 98%;
@@ -38,7 +38,12 @@
     --input: 0 0% 90%;
     --ring: 0 0% 2%;
 
-    --radius: 0.5rem;
+    --radius: 0.1rem;
+  }
+
+  :focus-visible {
+    outline: 2px solid hsl(var(--primary));
+    outline-offset: 2px;
   }
 }
 
@@ -96,18 +101,15 @@
     font-weight: 700;
   }
 
-  /* RTL Support */
-  [dir="rtl"] {
-    font-family: 'Inter', 'Cairo', sans-serif;
-  }
-
+  [dir="rtl"],
   [dir="rtl"] h1,
   [dir="rtl"] h2,
   [dir="rtl"] h3,
   [dir="rtl"] h4,
   [dir="rtl"] h5,
   [dir="rtl"] h6 {
-    font-family: 'Inter', 'Cairo', sans-serif;
+    font-family: 'Cairo', 'Inter', sans-serif;
+    letter-spacing: normal !important;
   }
 }
 
@@ -228,10 +230,12 @@
 
   @keyframes reveal {
     0% {
-      transform: translateY(100%);
+      opacity: 0;
+      transform: translateY(40px);
     }
 
     100% {
+      opacity: 1;
       transform: translateY(0);
     }
   }

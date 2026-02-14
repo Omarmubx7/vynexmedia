@@ -34,7 +34,7 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="py-24 md:py-48 bg-white relative overflow-hidden">
+    <section id="expertise" className="py-24 md:py-48 bg-white relative overflow-hidden">
       <div className="absolute inset-0 bg-grid opacity-[0.2] z-0" />
       <div className="absolute top-0 left-0 w-full h-[1px] bg-black/5" />
 
@@ -46,7 +46,7 @@ const ServicesSection = () => {
               Expertise
             </span>
             <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12">
-              <h2 className="text-5xl md:text-9xl font-black tracking-extratight text-black uppercase italic leading-[0.8]">
+              <h2 className="text-5xl md:text-9xl font-black tracking-extratight text-black uppercase italic leading-[0.8] animate-reveal">
                 Service <br /> <span className="text-primary not-italic text-outline text-black">Matrix.</span>
               </h2>
               <p className="text-xl font-bold tracking-extratight text-black/40 max-w-sm leading-relaxed uppercase italic">
@@ -56,19 +56,18 @@ const ServicesSection = () => {
           </div>
 
           {/* Border Grid Services */}
-          <div className="grid lg:grid-cols-2 gap-[1px] bg-black/5 border border-black/5 rounded-sm overflow-hidden">
+          <div className="grid lg:grid-cols-2 gap-[1px] bg-black/5 border border-black/5 rounded-sm overflow-hidden animate-fade-up delay-200">
             {services.map((service, index) => (
               <div
                 key={index}
                 className="p-12 md:p-32 bg-white group transition-all duration-700 relative overflow-hidden"
               >
-                {/* Number Overlay */}
-                <div className="absolute top-10 right-10 text-[100px] font-black text-black/[0.03] group-hover:text-primary/10 transition-colors leading-none pointer-events-none tracking-extratight text-outline">
-                  0{index + 1}
-                </div>
-
-                <div className="relative z-10 flex flex-col h-full">
-                  <div className="mb-16">
+                {/* Content Overlay */}
+                <div className="relative z-10 flex flex-col h-full bg-white transition-colors duration-500 hover:bg-black/5">
+                  <div className="flex items-start justify-between mb-12">
+                    <div className="text-[60px] md:text-[80px] font-black text-black/[0.05] leading-none tracking-extratight text-outline">
+                      0{index + 1}
+                    </div>
                     <div className="w-16 h-16 rounded-full border border-black/5 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-700">
                       <service.icon className="w-8 h-8 text-black group-hover:text-white transition-colors" strokeWidth={1} />
                     </div>
@@ -78,7 +77,7 @@ const ServicesSection = () => {
                     {service.title}
                   </h3>
 
-                  <p className="text-black/40 text-xl group-hover:text-black/60 transition-colors mb-16 leading-relaxed font-bold tracking-tight">
+                  <p className="text-black/60 text-xl mb-16 leading-relaxed font-bold tracking-tight">
                     {service.result}
                   </p>
 

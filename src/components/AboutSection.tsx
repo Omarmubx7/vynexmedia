@@ -17,7 +17,7 @@ const values = [
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-24 md:py-48 relative bg-white overflow-hidden">
+    <section id="story" className="py-24 md:py-48 relative bg-white overflow-hidden">
       <div className="absolute inset-0 bg-grid opacity-[0.2] z-0" />
       <div className="absolute top-0 right-0 w-1/2 h-full bg-dots opacity-[0.2] z-0" />
 
@@ -30,11 +30,11 @@ const AboutSection = () => {
               <span className="inline-block py-1.5 px-4 bg-primary/10 text-primary text-[10px] uppercase tracking-[0.4em] font-bold rounded-full mb-10">
                 The DNA
               </span>
-              <h2 className="text-5xl md:text-9xl font-black tracking-extratight text-black mb-16 uppercase italic leading-[0.8]">
-                Crafting <br /> <span className="text-primary not-italic text-outline text-black">Identity.</span>
+              <h2 className="text-5xl md:text-9xl font-black tracking-extratight text-black uppercase italic leading-[0.8] animate-reveal">
+                Service <br /> <span className="text-primary not-italic text-outline text-black">Matrix.</span>
               </h2>
 
-              <div className="space-y-10 text-xl text-black/40 leading-relaxed max-w-xl font-bold tracking-tight uppercase italic">
+              <div className="space-y-10 text-xl text-black/60 leading-relaxed max-w-xl font-bold tracking-tight uppercase italic">
                 <p>
                   بدأنا Vynex Media من حب حقيقي للتصوير، خصوصاً تصوير الأكل والمنتجات. كنا نشوف أصحاب مشاريع صغيرة ومطاعم عندهم شغل حلو بس ما يعرفوا يوصلوه للناس بالطريقة الصح.
                 </p>
@@ -54,8 +54,8 @@ const AboutSection = () => {
                   key={index}
                   className="group bg-white p-16 md:p-24 transition-all duration-700 hover:bg-black relative overflow-hidden"
                 >
-                  <div className="absolute top-0 right-0 p-8 text-[120px] font-black text-black/[0.02] group-hover:text-white/[0.03] transition-colors leading-none pointer-events-none text-outline">
-                    0{index + 1}
+                  <div className="absolute top-0 right-0 p-8 text-[120px] font-black text-black/[0.01] transition-colors leading-none pointer-events-none text-outline">
+                    {/* Removed high-contrast 0{index + 1} */}
                   </div>
 
                   <div className="relative z-10">

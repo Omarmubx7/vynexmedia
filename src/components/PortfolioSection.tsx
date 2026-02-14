@@ -1,17 +1,12 @@
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Instagram } from 'lucide-react';
 import MagneticButton from './ui/MagneticButton';
-import logo1 from '../assets/1.png';
-import logo2 from '../assets/2.png';
-import logo3 from '../assets/3.png';
-import logo4 from '../assets/4.png';
-import logo5 from '../assets/5.png';
-import logo6 from '../assets/6.png';
-import logo7 from '../assets/7.png';
-import logo8 from '../assets/8.png';
-import logo9 from '../assets/9.png';
-import logo10 from '../assets/10.png';
-import logo11 from '../assets/11.png';
-import logo12 from '../assets/12.png';
+// Premium placeholders for visual work
+const logo1 = 'https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1200&auto=format&fit=crop'; // Lebanese Mezze
+const logo2 = 'https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=1200&auto=format&fit=crop'; // Minimalist Skincare
+const logo3 = 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200&auto=format&fit=crop'; // Industrial Coffee
+const logo4 = 'https://images.unsplash.com/photo-1586717791821-3f44a563dc4c?q=80&w=1200&auto=format&fit=crop'; // Branding/Stationery
+const logo5 = 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1200&auto=format&fit=crop'; // Modern Fusion Dish
+const logo6 = 'https://images.unsplash.com/photo-1610433226490-482f3fb874e1?q=80&w=1200&auto=format&fit=crop'; // Artisanal Pottery
 
 const portfolioItems = [
   { image: logo1, brand: 'DIWAN RESTAURANT', type: 'Food Content', result: '+40% Reach' },
@@ -55,8 +50,8 @@ const PortfolioSection = () => {
                 <div className="absolute inset-0 transition-transform duration-1000 group-hover:scale-110">
                   <img
                     src={item.image}
-                    alt={item.brand}
-                    className="w-full h-full object-cover grayscale-[0.5] group-hover:grayscale-0 transition-all duration-700"
+                    alt={`${item.brand} - ${item.type} project by Vynex Media`}
+                    className="w-full h-full object-cover grayscale-[0.3] group-hover:grayscale-0 transition-all duration-700"
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500" />
@@ -95,8 +90,9 @@ const PortfolioSection = () => {
                 rel="noopener noreferrer"
                 className="group flex flex-col items-center gap-10"
               >
-                <div className="w-24 h-24 rounded-full border border-black/5 group-hover:bg-black group-hover:border-black transition-all duration-700 flex items-center justify-center">
-                  <ArrowRight className="w-8 h-8 group-hover:text-white transition-colors" />
+                <div className="w-24 h-24 rounded-full border border-black/5 group-hover:bg-black group-hover:border-black transition-all duration-700 flex items-center justify-center relative">
+                  <ArrowRight className="w-8 h-8 group-hover:text-white transition-colors absolute group-hover:translate-x-4 opacity-0 group-hover:opacity-100 duration-500" />
+                  <Instagram className="w-8 h-8 group-hover:text-white transition-colors group-hover:-translate-x-4 duration-500" />
                 </div>
                 <div className="text-center">
                   <h4 className="text-[11px] font-bold tracking-[0.5em] uppercase text-black/20 mb-3 group-hover:text-primary transition-colors">Visual Archive</h4>

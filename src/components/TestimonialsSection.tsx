@@ -10,19 +10,19 @@ const clientLogos = [logo1, logo2, logo3, logo4, logo5, logo6];
 
 const testimonials = [
   {
-    name: 'Ahmad M.',
-    role: 'Gastronomy Proprietor',
-    content: 'The visual precision elevated our menu to a tier of luxury we hadn’t imagined. Conversions on high-value dishes increased immediately.',
+    quote: "Vynex didn't just take photos; they understood the soul of our kitchen. Their reels drove more traffic in a week than we saw in a month.",
+    author: "Zaid Al-Najjar",
+    role: "Founder, Diwan Restaurant",
   },
   {
-    name: 'Sara K.',
-    role: 'Boutique Founder',
-    content: 'Partnering with Vynex for our product narrative gave us the high-fidelity identity needed to compete in a global market.',
+    quote: "The visual identity they built for Bloom Store is exactly what we needed to enter the premium market. Pure excellence.",
+    author: "Lina Kawar",
+    role: "Director, Bloom Store",
   },
   {
-    name: 'Khaled J.',
-    role: 'Media Director',
-    content: 'Their reel production is unparalleled. We saw a triple-digit increase in organic engagement within the first month of collaboration.',
+    quote: "Agile, professional, and with a rare eye for detail. They've become an essential part of our brand's growth.",
+    author: "Samer Oweis",
+    role: "Head of Marketing, Roast Cafe",
   },
 ];
 
@@ -50,34 +50,26 @@ const TestimonialsSection = () => {
           </div>
 
           {/* Testimonials Grid */}
-          <div className="grid md:grid-cols-3 gap-[1px] bg-black/5 border border-black/5 rounded-sm overflow-hidden mb-32">
-            {testimonials.map((testimonial, index) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-16 lg:gap-24">
+            {testimonials.map((t, index) => (
               <div
                 key={index}
-                className="p-16 md:p-20 bg-white flex flex-col justify-between group transition-all duration-700 relative overflow-hidden"
+                className="group relative flex flex-col h-full animate-fade-up"
+                style={{ animationDelay: `${index * 100}ms` }}
               >
-                {/* Number Overlay */}
-                <div className="absolute top-10 right-10 text-[120px] font-black text-black/[0.02] group-hover:text-primary/5 transition-colors leading-none pointer-events-none tracking-extratight text-outline">
-                  0{index + 1}
-                </div>
-
-                <div className="mb-16 relative z-10">
-                  <Quote className="w-16 h-16 text-primary/10 group-hover:text-primary transition-colors mb-10" strokeWidth={1} />
-                  <p className="text-2xl md:text-3xl font-black tracking-extratight text-black leading-relaxed italic group-hover:text-black transition-colors">
-                    "{testimonial.content}"
+                <div className="flex-1 pb-12 border-b border-black/[0.05]">
+                  <p className="text-2xl font-black tracking-extratight text-black/80 leading-relaxed italic uppercase mb-12">
+                    "{t.quote}"
                   </p>
                 </div>
 
-                <div className="relative z-10 flex items-center gap-6 pt-10 border-t border-black/[0.05]">
-                  <div className="w-14 h-14 rounded-full bg-black flex items-center justify-center text-white font-black text-sm group-hover:bg-primary transition-colors">
-                    {testimonial.name.charAt(0)}
-                  </div>
+                <div className="pt-10 flex items-center justify-between">
                   <div>
-                    <p className="text-xl font-black tracking-extratight text-black uppercase leading-none mb-2">
-                      {testimonial.name}
-                    </p>
-                    <p className="text-[10px] font-black tracking-[0.3em] uppercase text-black/20 italic">
-                      {testimonial.role}
+                    <h4 className="text-[12px] font-black tracking-[0.4em] text-black uppercase mb-1">
+                      {t.author}
+                    </h4>
+                    <p className="text-[10px] font-bold tracking-[0.2em] text-primary uppercase">
+                      {t.role}
                     </p>
                   </div>
                 </div>

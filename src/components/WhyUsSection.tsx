@@ -52,16 +52,18 @@ const WhyUsSection = () => {
           <div className="grid md:grid-cols-2 gap-[1px] bg-white/10 border border-white/10 overflow-hidden rounded-sm">
             {promises.map((promise, index) => (
               <div key={index} className="p-16 md:p-24 bg-[#050505] group transition-all duration-700 hover:bg-[#0a0a0a] relative overflow-hidden">
-                {/* Number Overlay */}
-                <div className="absolute top-10 right-10 text-[100px] font-black text-white/[0.02] group-hover:text-primary/10 transition-colors leading-none pointer-events-none tracking-extratight text-outline">
-                  0{index + 1}
-                </div>
-
                 <div className="relative z-10">
                   <div className="mb-16">
                     <div className="w-16 h-16 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-700">
                       <promise.icon className="w-8 h-8 text-white group-hover:text-white transition-colors" strokeWidth={1} />
                     </div>
+                  </div>
+
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-24 opacity-40 hover:opacity-100 transition-opacity duration-1000">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Partner" className="h-8 md:h-10 object-contain grayscale hover:grayscale-0 transition-all" />
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Meta_Platforms_Inc._logo.svg" alt="Meta Partner" className="h-8 md:h-10 object-contain grayscale hover:grayscale-0 transition-all" />
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Notion-logo.svg" alt="Notion Partner" className="h-8 md:h-10 object-contain grayscale hover:grayscale-0 transition-all" />
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mailchimp_Logo_2018.svg" alt="Mailchimp Partner" className="h-8 md:h-10 object-contain grayscale hover:grayscale-0 transition-all" />
                   </div>
 
                   <div className="flex items-start justify-between gap-8 mb-8">

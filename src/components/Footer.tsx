@@ -77,9 +77,9 @@ const Footer = () => {
                 hello@vynex.io
               </p>
               <p className="text-2xl font-black tracking-extratight text-black uppercase italic leading-none hover:text-primary transition-colors cursor-pointer">
-                +962 790 720 994
+                +962 79 072 0994
               </p>
-              <p className="text-[11px] font-black tracking-[0.4em] text-black/20 mt-6 leading-relaxed uppercase">
+              <p className="text-[11px] font-black tracking-[0.4em] text-black/60 mt-6 leading-relaxed uppercase">
                 Studio d'Image <br />
                 Amman, Jordan
               </p>
@@ -93,7 +93,7 @@ const Footer = () => {
               © {currentYear} VYNEX MEDIA. LUXURY VISUAL STANDARDS.
             </p>
             <div className="flex items-center gap-12">
-              <span className="text-[10px] font-black tracking-[0.3em] uppercase text-black/20 hover:text-black cursor-pointer transition-colors">Privacy Ethics</span>
+              <a href="/privacy" className="text-[10px] font-black tracking-[0.3em] uppercase text-black/20 hover:text-primary cursor-pointer transition-colors">Privacy Ethics</a>
               <a
                 href="https://mubx.dev"
                 target="_blank"
