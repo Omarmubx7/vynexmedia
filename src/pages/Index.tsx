@@ -25,7 +25,7 @@ const Index = () => {
     ]));
   }, []);
   return (
-    <div dir="rtl" className="min-h-screen bg-background overflow-x-hidden">
+    <div dir="rtl" className="min-h-screen bg-background overflow-x-hidden bg-grain">
       <Navbar />
       <HeroSection />
       <AboutSection />

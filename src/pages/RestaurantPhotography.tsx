@@ -3,6 +3,7 @@ import { Star, Check, MessageCircle, ArrowRight } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { addSchemaMarkup, createServiceSchema, updatePageMeta } from '@/lib/seo';
+import testVideo from '@/assets/test.mp4';
 
 const RestaurantPhotography = () => {
   useEffect(() => {
@@ -54,7 +55,7 @@ const RestaurantPhotography = () => {
       {/* Video Section */}
       <section className="py-8 flex justify-center bg-background">
         <video controls width="640" className="rounded-xl shadow-lg">
-          <source src={require("@/assets/test.mp4")} type="video/mp4" />
+          <source src={testVideo} type="video/mp4" />
           متصفحك لا يدعم تشغيل الفيديو.
         </video>
       </section>
@@ -216,11 +217,10 @@ const RestaurantPhotography = () => {
               ].map((plan) => (
                 <div
                   key={plan.name}
-                  className={`rounded-xl p-8 transition-all ${
-                    plan.highlighted
-                      ? 'glass-card border-2 border-primary shadow-lg scale-105'
-                      : 'glass-card'
-                  }`}
+                  className={`rounded-xl p-8 transition-all ${plan.highlighted
+                    ? 'glass-card border-2 border-primary shadow-lg scale-105'
+                    : 'glass-card'
+                    }`}
                 >
                   {plan.highlighted && (
                     <div className="bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-bold mb-4 inline-block">
@@ -244,9 +244,8 @@ const RestaurantPhotography = () => {
                     href="https://wa.me/962790720994"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`btn-primary w-full flex items-center justify-center gap-2 ${
-                      plan.highlighted ? 'btn-primary' : 'border border-primary text-primary'
-                    }`}
+                    className={`btn-primary w-full flex items-center justify-center gap-2 ${plan.highlighted ? 'btn-primary' : 'border border-primary text-primary'
+                      }`}
                   >
                     احجز الآن
                     <ArrowRight className="w-5 h-5" />

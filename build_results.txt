@@ -1,0 +1,37 @@
+
+> vite_react_shadcn_ts@0.0.0 build
+> vite build
+
+[36mvite v5.4.19 [32mbuilding for production...[36m[39m
+transforming...
+Browserslist: browsers data (caniuse-lite) is 8 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+
+warn - The class `ease-[cubic-bezier(0.77,0,0.175,1)]` is ambiguous and matches multiple utilities.
+warn - If this is content and not a class, replace it with `ease-&lsqb;cubic-bezier(0.77,0,0.175,1)&rsqb;` to silence this warning.
+[vite:css] @import must precede all other statements (besides @charset or empty @layer)
+3  |  @tailwind utilities;
+4  |  
+5  |  @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap');
+   |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+6  |  
+7  |  @layer base {
+[32mΓ£ô[39m 1723 modules transformed.
+rendering chunks...
+computing gzip size...
+[2mdist/[22m[32massets/2-NHEeukAN.png      [39m[1m[2m  4.29 kB[22m[1m[22m
+[2mdist/[22m[32mindex.html                 [39m[1m[2m  5.11 kB[22m[1m[22m[2m Γöé gzip:   1.75 kB[22m
+[2mdist/[22m[32massets/3-8zIB56Yg.png      [39m[1m[2m  7.10 kB[22m[1m[22m
+[2mdist/[22m[32massets/5-CihwnePd.png      [39m[1m[2m  7.18 kB[22m[1m[22m
+[2mdist/[22m[32massets/4-BnphvJHV.png      [39m[1m[2m  7.23 kB[22m[1m[22m
+[2mdist/[22m[32massets/1-CmwOFgbI.png      [39m[1m[2m 12.60 kB[22m[1m[22m
+[2mdist/[22m[32massets/6-By0Rir4Z.png      [39m[1m[2m 20.77 kB[22m[1m[22m
+[2mdist/[22m[35massets/index-CrE7bh6Q.css  [39m[1m[2m 80.92 kB[22m[1m[22m[2m Γöé gzip:  13.32 kB[22m
+[2mdist/[22m[36massets/index-C1ydgyfe.js   [39m[1m[33m529.34 kB[39m[22m[2m Γöé gzip: 155.56 kB[22m
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+[32mΓ£ô built in 9.68s[39m

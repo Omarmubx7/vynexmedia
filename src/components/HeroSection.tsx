@@ -1,13 +1,5 @@
 import { ArrowDown } from 'lucide-react';
-import grid1 from '@/assets/1.png';
-import grid2 from '@/assets/2.png';
-import grid3 from '@/assets/3.png';
-import grid4 from '@/assets/4.png';
-import grid5 from '@/assets/5.png';
-import grid6 from '@/assets/6.png';
-import grid7 from '@/assets/7.png';
-import grid8 from '@/assets/8.png';
-import grid9 from '@/assets/9.png';
+import MagneticButton from './ui/MagneticButton';
 
 const HeroSection = () => {
   return (
@@ -15,58 +7,68 @@ const HeroSection = () => {
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white pt-20"
     >
-      {/* Dot Motif Background */}
-      <div className="absolute inset-0 bg-dots opacity-[0.4] z-0" />
+      {/* Visual Layers */}
+      <div className="absolute inset-0 bg-grid z-0" />
+      <div className="absolute inset-0 bg-dots opacity-[0.2] z-0" />
 
-      {/* Decorative vertical lines */}
-      <div className="absolute top-0 left-12 w-[1px] h-full bg-black/[0.03] z-0 hidden lg:block" />
-      <div className="absolute top-0 right-12 w-[1px] h-full bg-black/[0.03] z-0 hidden lg:block" />
+      {/* Vertical architectural lines */}
+      <div className="absolute top-0 left-[20%] w-[1px] h-full bg-black/[0.03] z-0 hidden lg:block" />
+      <div className="absolute top-0 right-[20%] w-[1px] h-full bg-black/[0.03] z-0 hidden lg:block" />
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col items-center text-center max-w-[1000px] mx-auto">
+        <div className="flex flex-col items-center text-center max-w-[1200px] mx-auto">
 
-          <div className="mb-8 animate-fade-up">
-            <span className="inline-block py-1.5 px-4 bg-black text-white text-[10px] sm:text-[11px] uppercase tracking-[0.3em] font-bold rounded-full mb-6">
-              Amman's Premiere Visual Studio
+          <div className="mb-12 animate-fade-up">
+            <span className="inline-block py-1 px-3 border border-black/10 text-[9px] uppercase tracking-[0.4em] font-bold rounded-full mb-6">
+              Studio d'Image & Contenu
             </span>
           </div>
 
-          <div className="overflow-hidden mb-8">
-            <h1 className="text-[12vw] sm:text-[10vw] lg:text-[130px] font-bold leading-[0.9] tracking-tighter text-black uppercase animate-reveal italic">
-              Vynex <span className="text-primary not-italic">Media</span>
+          <div className="overflow-hidden mb-4">
+            <h1 className="text-[14vw] lg:text-[180px] font-black leading-[0.8] tracking-extratight text-black uppercase animate-reveal italic">
+              Vynex <br /> <span className="text-primary not-italic text-outline">Media</span>
             </h1>
           </div>
 
-          <div className="max-w-2xl mx-auto animate-fade-up delay-200">
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight text-black mb-8 leading-[1.1]">
-              نصوّر <span className="text-primary">شغلك</span> بطريقة تخليه يبيع عنك
-            </h2>
-            <p className="text-base sm:text-lg text-black/60 mb-12 max-w-xl mx-auto leading-relaxed">
-              استوديو تصوير إبداعي نشتغل مع البراندات الطموحة والمتاجر المميزة عشان نطلع لهم صور وفيديوهات تشهي وتشد الزبون.
+          <div className="max-w-3xl mx-auto animate-fade-up delay-200">
+            <p className="text-xl sm:text-2xl font-bold tracking-tight text-black/40 mb-16 leading-relaxed max-w-2xl mx-auto uppercase italic lowercase">
+              Excellence. <span className="text-black/10">/</span> Agility. <span className="text-black/10">/</span> Commitment.
             </p>
+
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold tracking-extratight text-black mb-12 leading-[1] max-w-4xl mx-auto">
+              نصوّر <span className="text-primary italic">رؤيتك</span> بكل <span className="text-outline text-black">تفصيل.</span>
+            </h2>
           </div>
 
-          <div className="animate-fade-up delay-300 flex flex-col sm:flex-row gap-6 justify-center w-full sm:w-auto">
-            <a
-              href="#contact"
-              className="px-10 py-5 bg-black text-white text-[13px] uppercase tracking-[0.2em] font-bold hover:bg-primary transition-all duration-500 rounded-sm"
-            >
-              Book a session
-            </a>
-            <a
-              href="#portfolio"
-              className="px-10 py-5 bg-white text-black border border-black/10 text-[13px] uppercase tracking-[0.2em] font-bold hover:border-black transition-all duration-500 rounded-sm"
-            >
-              Our Works
-            </a>
+          <div className="animate-fade-up delay-300 flex flex-wrap gap-8 justify-center items-center">
+            <MagneticButton strength={40}>
+              <a
+                href="#contact"
+                className="group relative px-12 py-6 bg-black text-white text-[12px] uppercase tracking-[0.3em] font-bold overflow-hidden transition-all duration-500 rounded-sm"
+              >
+                <span className="relative z-10">Start a Project</span>
+                <div className="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+              </a>
+            </MagneticButton>
+
+            <MagneticButton strength={20}>
+              <a
+                href="#portfolio"
+                className="group px-12 py-6 bg-transparent text-black border border-black/10 text-[12px] uppercase tracking-[0.3em] font-bold hover:border-black transition-all duration-500 rounded-sm overflow-hidden relative"
+              >
+                <span className="relative z-10">Our Works</span>
+              </a>
+            </MagneticButton>
           </div>
 
           {/* Scroll Down */}
-          <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce hidden md:block opacity-40">
-            <a href="#about" className="flex flex-col items-center gap-3">
-              <span className="text-[10px] uppercase tracking-[0.3em] font-bold rotate-90 mb-4 translate-y-4">Scroll</span>
-              <ArrowDown size={14} strokeWidth={3} />
-            </a>
+          <div className="absolute bottom-12 left-1/2 -translate-x-1/2 hidden md:block opacity-20 hover:opacity-100 transition-opacity">
+            <MagneticButton strength={20}>
+              <a href="#about" className="flex flex-col items-center gap-4">
+                <span className="text-[9px] uppercase tracking-[0.5em] font-bold translate-y-2">Navigate</span>
+                <ArrowDown size={12} strokeWidth={2} />
+              </a>
+            </MagneticButton>
           </div>
         </div>
       </div>

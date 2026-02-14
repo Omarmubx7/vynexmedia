@@ -1,95 +1,108 @@
-import { Camera, Utensils, Film, Users, ChevronLeft } from 'lucide-react';
+import { Camera, Utensils, Film, Users, Plus } from 'lucide-react';
+import MagneticButton from './ui/MagneticButton';
 
 const services = [
   {
     icon: Camera,
-    title: 'تصوير منتجات',
-    audience: 'متاجر أونلاين، براندات ناشئة، مشاريع منزلية',
-    result: 'صور مرتبة وواضحة تخلي العميل يفهم المنتج من أول نظرة.',
-    package: 'باقة ستارت أب: 10 صور منتجات + 1 ريل قصير',
+    title: 'Product Narrative',
+    audience: 'Brands, Creators, Small Studios',
+    result: 'High-fidelity imagery that communicates value instantly.',
+    package: 'Starter: 10 Assets + 1 Reel',
   },
   {
     icon: Utensils,
-    title: 'تصوير مطاعم وكافيهات',
-    audience: 'مطاعم، كافيهات، وأي مكان يقدم تجربة حلوة',
-    result: 'صور وفيديوهات تخلي الناس تقول: لازم أروح أجرب.',
-    package: 'تغطية 2–3 أطباق مميزة + ريل أجواء المكان',
+    title: 'Gastronomy Content',
+    audience: 'Restaurants, Cafes, Fine Dining',
+    result: 'Sensory storytelling that drives reservations.',
+    package: 'Hero Package: 5 Top Dishes + Atmosphere Reel',
   },
   {
     icon: Film,
-    title: 'مونتاج ريلز وتيك توك',
-    audience: 'أصحاب مشاريع عندهم فيديو خام أو محتوى يحتاج ترتيب',
-    result: 'ريلز سريعة، جذابة، جاهزة للنشر مع موسيقى وترتيب نصوص.',
+    title: 'Visual Editing',
+    audience: 'Creators with RAW content needing refinement',
+    result: 'Polished, high-engagement edits for Reels & TikTok.',
     package: null,
   },
   {
     icon: Users,
-    title: 'إدارة محتوى سوشيال ميديا',
-    audience: 'براندات تحتاج تخطيط محتوى، تقويم شهري، وجدولة منشورات',
-    result: 'محتوى منتظم ومنظم يخلي حسابك فعّال بدون ما تتعب.',
-    package: 'خطة محتوى شهرية + 8 تصاميم + 4 ريلز',
+    title: 'Identity Support',
+    audience: 'Brands looking for consistent visual strategy',
+    result: 'Seamless social management for professional growth.',
+    package: 'Full Plan: 8 Designs + 4 Reels monthly',
   },
 ];
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="py-24 md:py-40 bg-white relative overflow-hidden">
+    <section id="services" className="py-24 md:py-48 bg-white relative overflow-hidden">
+      <div className="absolute inset-0 bg-grid opacity-[0.2] z-0" />
       <div className="absolute top-0 left-0 w-full h-[1px] bg-black/5" />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-[1400px] mx-auto">
           {/* Header */}
-          <div className="mb-24 flex flex-col items-center text-center">
-            <span className="inline-block py-1.5 px-4 bg-primary/10 text-primary text-[10px] uppercase tracking-[0.3em] font-bold rounded-full mb-8">
-              What We Do
+          <div className="mb-32">
+            <span className="inline-block py-1.5 px-4 bg-primary/10 text-primary text-[10px] uppercase tracking-[0.4em] font-bold rounded-full mb-10">
+              Expertise
             </span>
-            <h2 className="text-4xl md:text-8xl font-bold tracking-tighter text-black uppercase italic leading-[0.8] mb-12">
-              Services <br /> <span className="text-primary not-italic">Offerings.</span>
-            </h2>
-            <p className="text-lg text-black/40 max-w-xl leading-relaxed">
-              حلول بصرية متكاملة مصممة عشان ترفع من قيمة براندك وتوصل رسالتك للجمهور الصح بطريقة احترافية.
-            </p>
+            <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12">
+              <h2 className="text-5xl md:text-9xl font-black tracking-extratight text-black uppercase italic leading-[0.8]">
+                Service <br /> <span className="text-primary not-italic text-outline text-black">Matrix.</span>
+              </h2>
+              <p className="text-xl font-bold tracking-extratight text-black/40 max-w-sm leading-relaxed uppercase italic">
+                Integrated visual solutions designed to elevate your brand identity and drive measurable impact.
+              </p>
+            </div>
           </div>
 
-          {/* Services Grid */}
+          {/* Border Grid Services */}
           <div className="grid lg:grid-cols-2 gap-[1px] bg-black/5 border border-black/5 rounded-sm overflow-hidden">
             {services.map((service, index) => (
               <div
                 key={index}
-                className="p-12 md:p-24 bg-white group hover:bg-black transition-all duration-700 relative overflow-hidden"
+                className="p-12 md:p-32 bg-white group transition-all duration-700 relative overflow-hidden"
               >
-                {/* Number Background */}
-                <div className="absolute -bottom-10 -right-10 text-[200px] font-bold text-black/[0.02] group-hover:text-white/[0.03] transition-colors leading-none pointer-events-none tracking-tighter">
+                {/* Number Overlay */}
+                <div className="absolute top-10 right-10 text-[100px] font-black text-black/[0.03] group-hover:text-primary/10 transition-colors leading-none pointer-events-none tracking-extratight text-outline">
                   0{index + 1}
                 </div>
 
                 <div className="relative z-10 flex flex-col h-full">
-                  <div className="mb-12 group-hover:scale-110 transition-transform duration-700 origin-left">
-                    <service.icon className="w-12 h-12 text-primary group-hover:text-white transition-colors" strokeWidth={1} />
+                  <div className="mb-16">
+                    <div className="w-16 h-16 rounded-full border border-black/5 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-700">
+                      <service.icon className="w-8 h-8 text-black group-hover:text-white transition-colors" strokeWidth={1} />
+                    </div>
                   </div>
 
-                  <h3 className="text-3xl md:text-5xl font-bold text-black mb-6 tracking-tighter group-hover:text-white transition-colors">
+                  <h3 className="text-4xl md:text-6xl font-black text-black mb-10 tracking-extratight uppercase italic group-hover:text-primary transition-colors">
                     {service.title}
                   </h3>
 
-                  <p className="text-black/40 text-lg group-hover:text-white/40 transition-colors mb-8 leading-relaxed">
+                  <p className="text-black/40 text-xl group-hover:text-black/60 transition-colors mb-16 leading-relaxed font-bold tracking-tight">
                     {service.result}
                   </p>
 
-                  <div className="mt-auto pt-8 border-t border-black/5 group-hover:border-white/10 transition-colors">
-                    <p className="text-[11px] font-bold tracking-[0.3em] uppercase text-black group-hover:text-white mb-2">Ideal For</p>
-                    <p className="text-black/60 group-hover:text-white/60 transition-colors">
-                      {service.audience}
-                    </p>
-                  </div>
-
-                  {service.package && (
-                    <div className="mt-8">
-                      <span className="inline-block py-2 px-6 border border-primary text-primary group-hover:bg-primary group-hover:text-white text-[11px] font-bold uppercase tracking-widest rounded-full transition-all duration-500">
-                        {service.package}
-                      </span>
+                  <div className="mt-auto pt-10 border-t border-black/[0.05]">
+                    <div className="flex items-center justify-between mb-8">
+                      <div>
+                        <p className="text-[10px] font-black tracking-[0.4em] uppercase text-black/20 mb-2">Ideal For</p>
+                        <p className="text-black/60 font-medium tracking-tight">
+                          {service.audience}
+                        </p>
+                      </div>
+                      <MagneticButton strength={20}>
+                        <div className="w-12 h-12 rounded-full border border-black/5 flex items-center justify-center group-hover:border-black transition-all">
+                          <Plus className="w-5 h-5" />
+                        </div>
+                      </MagneticButton>
                     </div>
-                  )}
+
+                    {service.package && (
+                      <div className="inline-block py-2.5 px-6 border border-black/10 text-black text-[10px] font-black uppercase tracking-[0.2em] rounded-full group-hover:border-primary group-hover:text-primary transition-all">
+                        {service.package}
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}
