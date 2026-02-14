@@ -43,14 +43,22 @@ const AboutSection = () => {
               </div>
             </div>
 
-            <div className="relative aspect-[4/5] overflow-hidden rounded-sm animate-fade-up delay-200 cursor-none">
-              <img
-                src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1200&auto=format&fit=crop"
-                alt="Vynex Media Studio DNA"
-                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 scale-110 hover:scale-100"
-              />
+            <div className="relative aspect-[4/5] overflow-hidden rounded-sm animate-fade-up delay-200 cursor-none bg-black/5">
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-full object-cover grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-1000 scale-110 hover:scale-100"
+              >
+                <source
+                  src="https://player.vimeo.com/external/494252666.sd.mp4?s=721e25e94f1c7d6e6b4e7a83d3e6d8a3d3d3d3d3&profile_id=165"
+                  type="video/mp4"
+                />
+              </video>
+              <div className="absolute inset-0 bg-neutral-900/10 mix-blend-overlay pointer-events-none" />
               <div className="absolute bottom-10 left-10 text-[10px] font-black tracking-[0.5em] text-white/40 uppercase vertical-text">
-                EST. 2024 / AMMAN
+                DNA / MOTION ARCHIVE
               </div>
             </div>
           </div>
