@@ -33,11 +33,11 @@ const AboutSection = () => {
               </h2>
               <div className="space-y-12 text-2xl text-black/60 leading-relaxed max-w-xl font-bold tracking-tight uppercase italic">
                 <p>
-                  We are not an agency. We are a boutique visual collective. Every frame is a calculated move in your brand's master narrative.
+                  We are a boutique marketing and visual studio. Every frame, campaign, and concept is a calculated move in your brand’s master narrative.
                 </p>
                 <div dir="rtl" className="text-right border-r-4 border-primary pr-12 py-4">
                   <p className="text-4xl md:text-5xl font-black text-black leading-tight font-cairo italic">
-                    إحنا مو وكالة ضخمة — إحنا فريق يهتم بكل تفصيلة.
+                    إحنا فريق تسويق وبصريات مهتم بكل تفصيلة ببراندك.
                   </p>
                 </div>
               </div>
@@ -71,8 +71,8 @@ const AboutSection = () => {
               { title: 'Logic', desc: 'Strategic concepts from the first frame.' },
             ].map((value, idx) => (
               <div key={idx} className="bg-white p-24 md:p-32 group hover:bg-black transition-all duration-700">
-                <h4 className="text-[10px] font-black tracking-[0.5em] uppercase text-black/20 group-hover:text-primary mb-12 transition-colors">
-                  0{idx + 1}
+                <h4 className="flex items-center gap-2 text-[10px] font-black tracking-[0.5em] uppercase text-black/20 group-hover:text-primary mb-12 transition-colors">
+                  0{idx + 1} <span className="w-1 h-1 rounded-full bg-current opacity-30" />
                 </h4>
                 <p className="text-4xl font-black tracking-extratight text-black leading-tight group-hover:text-white transition-colors uppercase italic mb-8">
                   {value.title}

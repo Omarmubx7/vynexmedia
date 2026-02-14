@@ -4,9 +4,9 @@ import MagneticButton from './ui/MagneticButton';
 
 const navLinks = [
   { href: '/#hero', label: 'Home' },
-  { href: '/#story', label: 'Story' },
-  { href: '/#expertise', label: 'Expertise' },
-  { href: '/#portfolio', label: 'Portfolio' },
+  { href: '/#story', label: 'Our DNA' },
+  { href: '/#expertise', label: 'Services' },
+  { href: '/#portfolio', label: 'Collaborations' },
   { href: '/#contact', label: 'Contact' },
 ];
 

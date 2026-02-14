@@ -25,26 +25,38 @@ const HeroSection = () => {
           </div>
 
           <div className="overflow-hidden mb-4">
-            <h1 className="text-[14vw] lg:text-[180px] font-black leading-[0.8] tracking-extratight text-black uppercase animate-reveal italic">
-              Vynex <br /> <span className="text-primary not-italic text-outline">Media</span>
+            <h1 className="text-[8vw] lg:text-[100px] font-black leading-[0.9] tracking-extratight text-black uppercase animate-reveal italic max-w-6xl">
+              Vynex Media – Boutique marketing & visual studio from Amman.
             </h1>
           </div>
+          <p className="text-xl font-bold tracking-extratight text-black/40 uppercase italic mb-12 animate-fade-up">
+            Crafting your vision one frame at a time.
+          </p>
 
-          <div className="grid md:grid-cols-3 gap-12 md:gap-24 items-start w-full mt-32 border-t border-black/5 pt-24 animate-fade-up delay-400">
+          <div className="grid md:grid-cols-3 gap-8 md:gap-16 items-start w-full mt-24 border-t border-black/5 pt-16 animate-fade-up delay-400">
             {[
-              { title: 'Excellence.', desc: 'Undeviating commitment to quality.' },
-              { title: 'Agility.', desc: 'Rapid response in a shifting market.' },
-              { title: 'Commitment.', desc: 'Dedicated partnership beyond the frame.' },
+              { title: 'Excellence', desc: 'Undeviating commitment to quality.' },
+              { title: 'Agility', desc: 'Rapid response in a shifting market.' },
+              { title: 'Commitment', desc: 'Dedicated partnership beyond the frame.' },
             ].map((item, idx) => (
-              <div key={idx} className="text-left group cursor-none">
-                <h3 className="text-4xl md:text-5xl font-black tracking-extratight text-black uppercase italic mb-4 group-hover:text-primary transition-colors">
-                  {item.title}
-                </h3>
-                <p className="text-[10px] font-black tracking-[0.4em] text-black/20 uppercase">
+              <div key={idx} className="flex flex-col items-start text-left group cursor-none">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                  <h3 className="text-3xl font-black tracking-extratight text-black uppercase italic group-hover:text-primary transition-colors">
+                    {item.title}
+                  </h3>
+                </div>
+                <p className="text-[10px] font-black tracking-[0.4em] text-black/20 uppercase pl-6">
                   {item.desc}
                 </p>
               </div>
             ))}
+          </div>
+
+          <div className="text-left w-full mt-16 pl-6 animate-fade-up delay-500">
+            <p className="text-xl font-bold tracking-extratight text-black/60 uppercase italic leading-relaxed max-w-2xl">
+              We design campaigns, content, and strategies that grow ambitious brands.
+            </p>
           </div>
 
           <div dir="rtl" className="w-full mt-32 text-right">
@@ -81,6 +93,13 @@ const HeroSection = () => {
                 <ArrowDown size={16} strokeWidth={1} />
               </a>
             </MagneticButton>
+          </div>
+
+          {/* Dot Separator */}
+          <div className="mt-40 flex justify-center gap-4 opacity-10">
+            {[...Array(5)].map((_, i) => (
+              <div key={i} className="w-1 h-1 rounded-full bg-black" />
+            ))}
           </div>
         </div>
       </div>

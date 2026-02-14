@@ -115,8 +115,13 @@ const PortfolioSection = () => {
               </h2>
             </div>
             <p className="text-xl font-bold tracking-extratight text-black/40 max-w-sm leading-relaxed mb-4 uppercase italic">
-              Premium visual storytelling. We translate brand identity into cinematic motion fragments.
+              Selected campaigns and content with measurable marketing impact.
             </p>
+            <div className="flex gap-2 opacity-10 mb-8">
+              {[...Array(3)].map((_, i) => (
+                <div key={i} className="w-1 h-1 rounded-full bg-black" />
+              ))}
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-black/5 gap-[1px] border border-black/5 overflow-hidden animate-fade-up">

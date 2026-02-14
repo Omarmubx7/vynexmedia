@@ -2,10 +2,10 @@ import { MessageCircle, Instagram } from 'lucide-react';
 import MagneticButton from './ui/MagneticButton';
 
 const quickLinks = [
-  { href: '#hero', label: 'Story' },
-  { href: '#services', label: 'Expertise' },
-  { href: '#portfolio', label: 'Archive' },
-  { href: '#contact', label: 'Liaison' },
+  { href: '#story', label: 'Our DNA' },
+  { href: '#expertise', label: 'Services' },
+  { href: '#portfolio', label: 'Collaborations' },
+  { href: '#contact', label: 'Contact' },
 ];
 
 const Footer = () => {
@@ -54,6 +54,13 @@ const Footer = () => {
                   </a>
                 </MagneticButton>
               </div>
+            </div>
+
+            {/* Regional Reach / Cregg Inspired */}
+            <div className="md:col-span-2 lg:col-span-4 border-t border-black/5 pt-12 mb-12">
+              <p className="text-xl md:text-2xl font-bold tracking-extratight text-black/60 uppercase italic leading-relaxed max-w-4xl">
+                From Amman to brands across the region, we serve ambitious businesses with unwavering commitment to excellence and innovation.
+              </p>
             </div>
 
             {/* Links Block */}

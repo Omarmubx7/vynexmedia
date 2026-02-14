@@ -6,28 +6,28 @@ const services = [
     icon: Camera,
     title: 'Product Narrative',
     audience: 'Brands, Creators, Small Studios',
-    result: 'High-fidelity imagery that communicates value instantly.',
+    result: 'High-fidelity imagery supporting campaigns and launches.',
     package: 'Starter: 10 Assets + 1 Reel',
   },
   {
     icon: Utensils,
     title: 'Gastronomy Content',
     audience: 'Restaurants, Cafes, Fine Dining',
-    result: 'Sensory storytelling that drives reservations.',
+    result: 'Sensory storytelling and content packages that drive reservations.',
     package: 'Hero Package: 5 Top Dishes + Atmosphere Reel',
   },
   {
     icon: Film,
     title: 'Visual Editing',
     audience: 'Creators with RAW content needing refinement',
-    result: 'Polished, high-engagement edits for Reels & TikTok.',
+    result: 'Polished edits aligned with your campaign objectives.',
     package: null,
   },
   {
     icon: Users,
     title: 'Identity Support',
     audience: 'Brands looking for consistent visual strategy',
-    result: 'Seamless social management for professional growth.',
+    result: 'Content calendars, social media management, and visual strategy.',
     package: 'Full Plan: 8 Designs + 4 Reels monthly',
   },
 ];
@@ -49,8 +49,8 @@ const ServicesSection = () => {
               <h2 className="text-5xl md:text-9xl font-black tracking-extratight text-black uppercase italic leading-[0.8] animate-reveal">
                 Service <br /> <span className="text-primary not-italic text-outline text-black">Matrix.</span>
               </h2>
-              <p className="text-xl font-bold tracking-extratight text-black/40 max-w-sm leading-relaxed uppercase italic">
-                Integrated visual solutions designed to elevate your brand identity and drive measurable impact.
+              <p className="text-xl font-bold tracking-extratight text-black/40 max-w-sm leading-relaxed mb-4 uppercase italic">
+                Integrated marketing and visual solutions designed to elevate your brand and drive measurable growth.
               </p>
             </div>
           </div>

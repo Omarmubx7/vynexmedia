@@ -43,9 +43,24 @@ const WhyUsSection = () => {
                 Why <br /> <span className="text-primary not-italic text-outline text-white">Vynex?</span>
               </h2>
             </div>
-            <p className="text-xl font-bold tracking-extratight text-white/40 max-w-sm leading-relaxed mb-4 uppercase italic">
-              We uphold a standard of excellence that distinguishes your brand in the Jordanian landscape.
-            </p>
+            <div className="max-w-xl">
+              <p className="text-xl font-bold tracking-extratight text-white/40 max-w-sm leading-relaxed mb-12 uppercase italic">
+                We uphold a standard of excellence that distinguishes your brand in the Jordanian landscape.
+              </p>
+
+              <div className="space-y-6 mb-16">
+                {[
+                  'Campaign and content strategy, not just production.',
+                  'Optimized for conversions, not only aesthetics.',
+                  'Boutique partnership from brief to measurable results.'
+                ].map((bullet, i) => (
+                  <div key={i} className="flex items-center gap-4 group">
+                    <div className="w-2 h-2 rounded-full border border-primary group-hover:bg-primary transition-all duration-500" />
+                    <p className="text-[12px] md:text-sm font-bold tracking-widest text-white/60 uppercase">{bullet}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* Border Grid Promises */}
