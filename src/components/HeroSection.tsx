@@ -5,11 +5,10 @@ const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white pt-20"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-transparent pt-20"
     >
       {/* Visual Layers */}
-      <div className="absolute inset-0 bg-grid z-0" />
-      <div className="absolute inset-0 bg-dots opacity-[0.2] z-0" />
+      {/* Visual separators removed in favor of DotGridCanvas */}
 
       {/* Vertical architectural lines */}
       <div className="absolute top-0 left-[20%] w-[1px] h-full bg-black/[0.03] z-0 hidden lg:block" />
@@ -25,15 +24,15 @@ const HeroSection = () => {
           </div>
 
           <div className="overflow-hidden mb-4">
-            <h1 className="text-[8vw] lg:text-[100px] font-black leading-[0.9] tracking-extratight text-black uppercase animate-reveal italic max-w-6xl">
-              Vynex Media – Boutique marketing & visual studio from Amman.
+            <h1 className="text-[8vw] lg:text-[120px] font-black leading-[1.1] tracking-extratight text-white uppercase animate-reveal italic max-w-6xl">
+              Vynex Media ::: Boutique marketing & visual studio from Amman.
             </h1>
           </div>
           <p className="text-xl font-bold tracking-extratight text-black/40 uppercase italic mb-12 animate-fade-up">
             Crafting your vision one frame at a time.
           </p>
 
-          <div className="grid md:grid-cols-3 gap-8 md:gap-16 items-start w-full mt-24 border-t border-black/5 pt-16 animate-fade-up delay-400">
+          <div className="grid md:grid-cols-3 gap-8 md:gap-16 items-start w-full mt-24 border-t border-white/10 pt-16 animate-fade-up delay-400">
             {[
               { title: 'Excellence', desc: 'Undeviating commitment to quality.' },
               { title: 'Agility', desc: 'Rapid response in a shifting market.' },
@@ -41,12 +40,12 @@ const HeroSection = () => {
             ].map((item, idx) => (
               <div key={idx} className="flex flex-col items-start text-left group cursor-none">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                  <h3 className="text-3xl font-black tracking-extratight text-black uppercase italic group-hover:text-primary transition-colors">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_10px_#00FF00]" />
+                  <h3 className="text-3xl font-black tracking-extratight text-white uppercase italic group-hover:text-primary transition-colors">
                     {item.title}
                   </h3>
                 </div>
-                <p className="text-[10px] font-black tracking-[0.4em] text-black/20 uppercase pl-6">
+                <p className="text-[10px] font-black tracking-[0.4em] text-white/20 uppercase pl-6">
                   {item.desc}
                 </p>
               </div>
@@ -54,14 +53,14 @@ const HeroSection = () => {
           </div>
 
           <div className="text-left w-full mt-16 pl-6 animate-fade-up delay-500">
-            <p className="text-xl font-bold tracking-extratight text-black/60 uppercase italic leading-relaxed max-w-2xl">
+            <p className="text-xl font-bold tracking-extratight text-white/50 uppercase italic leading-relaxed max-w-2xl">
               We design campaigns, content, and strategies that grow ambitious brands.
             </p>
           </div>
 
           <div dir="rtl" className="w-full mt-32 text-right">
-            <h2 className="text-4xl md:text-7xl font-black text-black leading-[1.1] max-w-5xl font-cairo animate-reveal">
-              نصوّر <span className="text-primary italic">رؤيتك</span> بكل <span className="text-outline text-black">تفصيـــل.</span>
+            <h2 className="text-4xl md:text-7xl font-black text-white leading-[1.1] max-w-5xl font-cairo animate-reveal">
+              نصوّر <span className="text-primary italic">رؤيتك</span> بكل <span className="text-outline text-white">تفصيـــل.</span>
             </h2>
           </div>
 

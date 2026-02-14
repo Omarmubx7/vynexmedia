@@ -24,8 +24,8 @@ const Footer = () => {
             <div className="lg:col-span-2">
               <MagneticButton strength={20}>
                 <a href="#hero" className="flex items-center gap-1 mb-10 group">
-                  <span className="text-4xl font-black tracking-extratight text-black uppercase">Vynex</span>
-                  <span className="w-2.5 h-2.5 rounded-full bg-primary mt-5"></span>
+                  <span className="text-4xl font-black tracking-extratight text-white uppercase">Vynex</span>
+                  <span className="text-primary text-3xl font-black mt-3 transition-transform group-hover:scale-150 duration-500">:::</span>
                 </a>
               </MagneticButton>
               <p className="text-3xl font-black tracking-extratight text-black/80 max-w-sm mb-16 uppercase italic leading-[0.8]">
@@ -107,20 +107,20 @@ const Footer = () => {
           </div>
 
           {/* Bottom Bar */}
-          <div className="pt-16 border-t border-black/5 flex flex-col md:flex-row justify-between items-center gap-10">
-            <p className="text-[10px] font-black tracking-[0.3em] uppercase text-black/20">
+          <div className="pt-16 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-10">
+            <p className="text-[10px] font-black tracking-[0.3em] uppercase text-white/20">
               © {currentYear} VYNEX MEDIA. LUXURY VISUAL STANDARDS.
             </p>
             <div className="flex items-center gap-12">
-              <a href="/privacy" className="text-[10px] font-black tracking-[0.3em] uppercase text-black/20 hover:text-primary cursor-pointer transition-colors">Privacy Ethics</a>
+              <a href="/privacy" className="text-[10px] font-black tracking-[0.3em] uppercase text-white/40 hover:text-primary cursor-pointer transition-colors">Privacy Ethics</a>
               <a
                 href="https://mubx.dev"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-3"
+                className="group flex items-center gap-3 px-4 py-1.5 rounded-full border border-white/5 hover:border-primary transition-all duration-500"
               >
-                <span className="text-[10px] font-black tracking-[0.3em] uppercase text-black/20 group-hover:text-black transition-colors">Crafted by</span>
-                <span className="text-[10px] font-black tracking-[0.3em] uppercase text-black underline decoration-primary/30 underline-offset-4 decoration-2">mubx.dev</span>
+                <span className="text-[10px] font-black tracking-[0.3em] uppercase text-white/20 group-hover:text-white transition-colors">Crafted by</span>
+                <span className="text-[10px] font-black tracking-[0.3em] uppercase text-primary font-black">mubx.dev</span>
               </a>
             </div>
           </div>

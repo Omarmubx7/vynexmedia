@@ -6,39 +6,38 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    /* Pure White */
-    --foreground: 0 0% 2%;
-    /* Deep Black */
+    --background: 0 0% 0%;
+    /* Pure Black #000000 */
+    --foreground: 0 0% 100%;
+    /* Pure White #FFFFFF */
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 2%;
+    --card: 0 0% 0%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 2%;
+    --popover: 0 0% 0%;
+    --popover-foreground: 0 0% 100%;
 
-    /* Keep the signature orange but make it more refined */
-    --primary: 38 91% 55%;
-    --primary-foreground: 0 0% 100%;
+    /* Neon Green Accent #00FF00 */
+    --primary: 120 100% 50%;
+    --primary-foreground: 0 0% 0%;
 
-    --secondary: 0 0% 9%;
-    /* Charcoal Gray */
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 35%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
 
-    --accent: 0 0% 9%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 120 100% 50%;
+    --accent-foreground: 0 0% 0%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 0 0% 2%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 120 100% 50%;
 
-    --radius: 0.1rem;
+    --radius: 0rem;
   }
 
   :focus-visible {
@@ -99,12 +98,12 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 99px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: rgba(0, 0, 0, 0.3);
+    background: #00FF00;
   }
 
   h1,
@@ -260,8 +259,7 @@
 
 @layer utilities {
   .bg-dots {
-    background-image: radial-gradient(#e5e5e5 1px, transparent 1px);
-    background-size: 24px 24px;
+    display: none;
   }
 
   .text-balance {

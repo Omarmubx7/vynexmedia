@@ -13,6 +13,7 @@ import RestaurantPhotography from "./pages/RestaurantPhotography";
 import ContentPackages from "./pages/ContentPackages";
 import SmoothScroll from "./components/ui/SmoothScroll";
 import CustomCursor from "./components/ui/CustomCursor";
+import DotGridCanvas from "./components/ui/DotGridCanvas";
 
 const queryClient = new QueryClient();
 
@@ -20,6 +21,7 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <SmoothScroll>
+        <DotGridCanvas />
         <CustomCursor />
         <Toaster />
         <Sonner />

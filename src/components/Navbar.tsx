@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
 import MagneticButton from './ui/MagneticButton';
 
 const navLinks = [
@@ -13,6 +14,14 @@ const navLinks = [
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+
+  const isActive = (href: string) => {
+    if (href.startsWith('/#')) {
+      return location.hash === href.replace('/', '');
+    }
+    return location.pathname === href;
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,8 +43,8 @@ const Navbar = () => {
           {/* Logo - Magnetic */}
           <MagneticButton strength={20}>
             <a href="#hero" className="group flex items-center gap-1.5 py-2">
-              <span className="text-2xl font-black tracking-extratight text-black uppercase transition-transform duration-300">Vynex</span>
-              <span className="w-1.5 h-1.5 rounded-full bg-primary mt-3 group-hover:scale-150 transition-transform"></span>
+              <span className="text-2xl font-black tracking-extratight text-white uppercase transition-transform duration-300">Vynex</span>
+              <span className="text-primary text-xl font-black mt-1 group-hover:scale-150 transition-transform">:::</span>
             </a>
           </MagneticButton>
 
@@ -45,10 +54,12 @@ const Navbar = () => {
               <MagneticButton key={link.href} strength={15}>
                 <a
                   href={link.href}
-                  className="text-black/40 hover:text-black transition-all duration-500 font-bold text-[11px] uppercase tracking-[0.3em] relative group py-2"
+                  className={`px-6 py-2 rounded-full transition-all duration-500 font-bold text-[11px] uppercase tracking-[0.3em] relative group ${isActive(link.href)
+                    ? 'bg-primary text-black'
+                    : 'text-white/40 hover:text-white'
+                    }`}
                 >
                   {link.label}
-                  <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-primary transition-all duration-500 group-hover:w-full"></span>
                 </a>
               </MagneticButton>
             ))}

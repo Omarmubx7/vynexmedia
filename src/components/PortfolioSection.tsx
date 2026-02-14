@@ -100,8 +100,8 @@ const PortfolioItem = ({ item }: { item: typeof portfolioItems[0] }) => {
 
 const PortfolioSection = () => {
   return (
-    <section id="portfolio" className="py-24 md:py-40 bg-white relative overflow-hidden">
-      <div className="absolute inset-0 bg-grid opacity-[0.2] z-0" />
+    <section id="portfolio" className="py-24 md:py-40 bg-transparent relative overflow-hidden">
+      {/* Grid utility removed to show DotGridCanvas */}
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-[1400px] mx-auto">
@@ -110,21 +110,21 @@ const PortfolioSection = () => {
               <span className="inline-block py-1.5 px-4 bg-primary/10 text-primary text-[10px] uppercase tracking-[0.3em] font-bold rounded-full mb-8">
                 Archive
               </span>
-              <h2 className="text-4xl md:text-8xl font-black tracking-extratight text-black uppercase italic leading-[0.8] mb-0 animate-reveal">
-                Motion <br /> <span className="text-primary not-italic text-outline text-black">Reels.</span>
+              <h2 className="text-4xl md:text-8xl font-black tracking-extratight text-white uppercase italic leading-[0.8] mb-0 animate-reveal">
+                Motion <br /> <span className="text-primary not-italic text-outline text-white">Reels.</span>
               </h2>
             </div>
-            <p className="text-xl font-bold tracking-extratight text-black/40 max-w-sm leading-relaxed mb-4 uppercase italic">
+            <p className="text-xl font-bold tracking-extratight text-white/40 max-w-sm leading-relaxed mb-4 uppercase italic">
               Selected campaigns and content with measurable marketing impact.
             </p>
             <div className="flex gap-2 opacity-10 mb-8">
               {[...Array(3)].map((_, i) => (
-                <div key={i} className="w-1 h-1 rounded-full bg-black" />
+                <div key={i} className="w-1 h-1 rounded-full bg-white" />
               ))}
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-black/5 gap-[1px] border border-black/5 overflow-hidden animate-fade-up">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-white/5 gap-[1px] border border-white/5 overflow-hidden animate-fade-up">
             {portfolioItems.map((item, index) => (
               <PortfolioItem key={index} item={item} />
             ))}
@@ -138,13 +138,13 @@ const PortfolioSection = () => {
                 rel="noopener noreferrer"
                 className="group flex flex-col items-center gap-10"
               >
-                <div className="w-24 h-24 rounded-full border border-black/5 group-hover:bg-black group-hover:border-black transition-all duration-700 flex items-center justify-center relative">
-                  <ArrowRight className="w-8 h-8 group-hover:text-white transition-colors absolute group-hover:translate-x-4 opacity-0 group-hover:opacity-100 duration-500" />
-                  <Instagram className="w-8 h-8 group-hover:text-white transition-colors group-hover:-translate-x-4 duration-500" />
+                <div className="w-24 h-24 rounded-full border border-white/5 group-hover:bg-primary group-hover:border-primary transition-all duration-700 flex items-center justify-center relative shadow-[0_0_20px_#00FF0000] group-hover:shadow-[0_0_40px_#00FF0080]">
+                  <ArrowRight className="w-8 h-8 group-hover:text-black transition-colors absolute group-hover:translate-x-4 opacity-0 group-hover:opacity-100 duration-500" />
+                  <Instagram className="w-8 h-8 text-white group-hover:text-black transition-colors group-hover:-translate-x-4 duration-500" />
                 </div>
                 <div className="text-center">
-                  <h4 className="text-[11px] font-bold tracking-[0.5em] uppercase text-black/20 mb-3 group-hover:text-primary transition-colors">Visual Archive</h4>
-                  <p className="text-4xl font-black tracking-extratight italic uppercase">Portfolio on Instagram</p>
+                  <h4 className="text-[11px] font-bold tracking-[0.5em] uppercase text-white/20 mb-3 group-hover:text-primary transition-colors">Visual Archive</h4>
+                  <p className="text-4xl font-black tracking-extratight italic uppercase text-white">Portfolio on Instagram</p>
                 </div>
               </a>
             </MagneticButton>

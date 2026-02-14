@@ -26,10 +26,8 @@ const promises = [
 
 const WhyUsSection = () => {
   return (
-    <section className="py-24 md:py-48 bg-[#050505] text-white relative overflow-hidden">
-      {/* Visual Layers */}
-      <div className="absolute inset-0 bg-grid opacity-[0.05] invert z-0" />
-      <div className="absolute inset-0 bg-dots opacity-[0.02] invert z-0" />
+    <section className="py-24 md:py-48 bg-transparent text-white relative overflow-hidden">
+      {/* Visual separators removed in favor of DotGridCanvas */}
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-[1400px] mx-auto">
@@ -64,9 +62,9 @@ const WhyUsSection = () => {
           </div>
 
           {/* Border Grid Promises */}
-          <div className="grid md:grid-cols-2 gap-[1px] bg-white/10 border border-white/10 overflow-hidden rounded-sm">
+          <div className="grid md:grid-cols-2 gap-[1px] bg-white/10 border border-white/10 overflow-hidden rounded-none">
             {promises.map((promise, index) => (
-              <div key={index} className="p-16 md:p-24 bg-[#050505] group transition-all duration-700 hover:bg-[#0a0a0a] relative overflow-hidden">
+              <div key={index} className="p-16 md:p-24 bg-black group transition-all duration-700 hover:bg-[#080808] relative overflow-hidden">
                 <div className="relative z-10">
                   <div className="mb-16">
                     <div className="w-16 h-16 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-700">
@@ -74,11 +72,11 @@ const WhyUsSection = () => {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-24 opacity-40 hover:opacity-100 transition-opacity duration-1000">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Partner" className="h-8 md:h-10 object-contain grayscale hover:grayscale-0 transition-all" />
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Meta_Platforms_Inc._logo.svg" alt="Meta Partner" className="h-8 md:h-10 object-contain grayscale hover:grayscale-0 transition-all" />
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Notion-logo.svg" alt="Notion Partner" className="h-8 md:h-10 object-contain grayscale hover:grayscale-0 transition-all" />
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mailchimp_Logo_2018.svg" alt="Mailchimp Partner" className="h-8 md:h-10 object-contain grayscale hover:grayscale-0 transition-all" />
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-24 opacity-60 hover:opacity-100 transition-opacity duration-1000">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Partner" className="h-8 md:h-10 object-contain invert brightness-200 grayscale hover:grayscale-0 transition-all" />
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Meta_Platforms_Inc._logo.svg" alt="Meta Partner" className="h-8 md:h-10 object-contain invert brightness-200 grayscale hover:grayscale-0 transition-all" />
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Notion-logo.svg" alt="Notion Partner" className="h-8 md:h-10 object-contain invert brightness-200 grayscale hover:grayscale-0 transition-all" />
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mailchimp_Logo_2018.svg" alt="Mailchimp Partner" className="h-8 md:h-10 object-contain invert brightness-200 grayscale hover:grayscale-0 transition-all" />
                   </div>
 
                   <div className="flex items-start justify-between gap-8 mb-8">
