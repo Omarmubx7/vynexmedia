@@ -24,7 +24,7 @@ const steps = [
 
 const ProcessSection = () => {
     return (
-        <section id="process" className="py-24 md:py-48 bg-white relative overflow-hidden">
+        <section id="process" className="py-24 md:py-48 bg-black relative overflow-hidden">
             <div className="absolute inset-x-0 bottom-0 h-1/2 bg-grid opacity-[0.2] z-0" />
             <div className="absolute top-0 right-0 w-1/4 h-full bg-dots opacity-[0.1] z-0" />
 
@@ -35,8 +35,8 @@ const ProcessSection = () => {
                         <span className="inline-block py-1.5 px-4 bg-primary/10 text-primary text-[10px] uppercase tracking-[0.4em] font-bold rounded-full mb-10">
                             Methodology
                         </span>
-                        <h2 className="text-5xl md:text-9xl font-black tracking-extratight text-black uppercase italic leading-[0.8]">
-                            How We <br /> <span className="text-primary not-italic text-outline text-black">Deliver.</span>
+                        <h2 className="text-5xl md:text-9xl font-black tracking-extratight text-[var(--foreground)] uppercase italic leading-[0.8]">
+                            How We <br /> <span className="text-primary not-italic text-outline text-[var(--foreground)]">Deliver.</span>
                         </h2>
                     </div>
 
@@ -46,17 +46,17 @@ const ProcessSection = () => {
                             <div key={index} className="relative group">
                                 {/* Number Overlay */}
                                 <div className="flex items-center gap-6 mb-12">
-                                    <span className="text-6xl md:text-8xl font-black text-black/[0.03] group-hover:text-primary/10 transition-all tracking-extratight text-outline">
+                                    <span className="text-6xl md:text-8xl font-black text-[var(--foreground)]/[0.03] group-hover:text-primary/10 transition-all tracking-extratight text-outline">
                                         {step.number}
                                     </span>
-                                    <div className="h-px flex-1 bg-black/[0.05] group-hover:bg-primary/20 transition-all duration-700" />
+                                    <div className="h-px flex-1 bg-[var(--foreground)]/[0.05] group-hover:bg-primary/20 transition-all duration-700" />
                                 </div>
 
                                 <div className="space-y-8">
-                                    <h3 className="text-3xl md:text-5xl font-black tracking-extratight text-black uppercase italic group-hover:text-primary transition-colors">
+                                    <h3 className="text-3xl md:text-5xl font-black tracking-extratight text-[var(--foreground)] uppercase italic group-hover:text-primary transition-colors">
                                         {step.title}
                                     </h3>
-                                    <p className="text-xl text-black/40 leading-relaxed font-bold tracking-tight uppercase italic underline decoration-primary/10 underline-offset-8">
+                                    <p className="text-xl text-[var(--foreground)]/40 leading-relaxed font-bold tracking-tight uppercase italic underline decoration-primary/10 underline-offset-8">
                                         {step.description}
                                     </p>
                                 </div>

@@ -28,7 +28,7 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   return (
-    <section id="testimonials" className="py-24 md:py-48 bg-white relative overflow-hidden">
+    <section id="testimonials" className="py-24 md:py-48 bg-black relative overflow-hidden">
       <div className="absolute inset-0 bg-grid opacity-[0.2] z-0" />
       <div className="absolute top-0 right-0 w-1/3 h-full bg-dots opacity-[0.1] z-0" />
 
@@ -40,11 +40,11 @@ const TestimonialsSection = () => {
               <span className="inline-block py-1.5 px-4 bg-primary/10 text-primary text-[10px] uppercase tracking-[0.4em] font-bold rounded-full mb-10">
                 Praise
               </span>
-              <h2 className="text-5xl md:text-9xl font-black tracking-extratight text-black uppercase italic leading-[0.8]">
-                Client <br /> <span className="text-primary not-italic text-outline text-black">Stories.</span>
+              <h2 className="text-5xl md:text-9xl font-black tracking-extratight text-[var(--foreground)] uppercase italic leading-[0.8]">
+                Client <br /> <span className="text-primary not-italic text-outline text-[var(--foreground)]">Stories.</span>
               </h2>
             </div>
-            <p className="text-xl font-bold tracking-extratight text-black/40 max-w-sm leading-relaxed mb-4 uppercase italic">
+            <p className="text-xl font-bold tracking-extratight text-[var(--foreground)]/40 max-w-sm leading-relaxed mb-4 uppercase italic">
               Authentic narratives from visionaries who leveraged our lens to scale their impact.
             </p>
           </div>
@@ -57,15 +57,15 @@ const TestimonialsSection = () => {
                 className="group relative flex flex-col h-full animate-fade-up"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="flex-1 pb-12 border-b border-black/[0.05]">
-                  <p className="text-2xl font-black tracking-extratight text-black/80 leading-relaxed italic uppercase mb-12">
+                <div className="flex-1 pb-12 border-b border-[var(--foreground)]/[0.05]">
+                  <p className="text-2xl font-black tracking-extratight text-[var(--foreground)]/80 leading-relaxed italic uppercase mb-12">
                     "{t.quote}"
                   </p>
                 </div>
 
                 <div className="pt-10 flex items-center justify-between">
                   <div>
-                    <h4 className="text-[12px] font-black tracking-[0.4em] text-black uppercase mb-1">
+                    <h4 className="text-[12px] font-black tracking-[0.4em] text-[var(--foreground)] uppercase mb-1">
                       {t.author}
                     </h4>
                     <p className="text-[10px] font-bold tracking-[0.2em] text-primary uppercase">
@@ -78,8 +78,8 @@ const TestimonialsSection = () => {
           </div>
 
           {/* Client Logos - Subtle Grid */}
-          <div className="pt-32 border-t border-black/5">
-            <h4 className="text-[10px] font-black tracking-[0.6em] uppercase text-black/10 text-center mb-24">Global Collaborators</h4>
+          <div className="pt-32 border-t border-[var(--foreground)]/5">
+            <h4 className="text-[10px] font-black tracking-[0.6em] uppercase text-[var(--foreground)]/10 text-center mb-24">Global Collaborators</h4>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-16 items-center justify-items-center opacity-20 hover:opacity-100 transition-opacity duration-1000">
               {clientLogos.map((logo, i) => (
                 <div key={i} className="grayscale hover:grayscale-0 transition-all duration-700 w-full max-w-[140px] h-24 flex items-center justify-center filter group">

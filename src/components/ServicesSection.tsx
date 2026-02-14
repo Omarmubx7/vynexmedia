@@ -33,7 +33,7 @@ const ServicesSection = () => {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-[1px] bg-white/10 border border-white/10">
+        <div className="grid md:grid-cols-2 gap-[1px] bg-[var(--foreground)]/10 border border-[var(--foreground)]/10">
           {services.map((service, index) => (
             <div
               key={index}
@@ -41,17 +41,17 @@ const ServicesSection = () => {
             >
               <div className="flex flex-col h-full">
                 <div className="flex justify-between items-start mb-12">
-                  <span className="text-[12px] font-bold tracking-[0.3em] text-white/20 uppercase group-hover:text-primary transition-colors">
+                  <span className="text-[12px] font-bold tracking-[0.3em] text-[var(--foreground)]/20 uppercase group-hover:text-primary transition-colors">
                     0{index + 1}
                   </span>
-                  <service.icon className="w-8 h-8 text-white/20 group-hover:text-primary transition-colors" strokeWidth={1} />
+                  <service.icon className="w-8 h-8 text-[var(--foreground)]/20 group-hover:text-primary transition-colors" strokeWidth={1} />
                 </div>
 
-                <h3 className="text-3xl font-bold text-white mb-6 uppercase tracking-tight">
+                <h3 className="text-3xl font-bold text-[var(--foreground)] mb-6 uppercase tracking-tight">
                   {service.title}
                 </h3>
 
-                <p className="text-white/60 mb-12 max-w-sm font-medium leading-relaxed">
+                <p className="text-[var(--foreground)]/60 mb-12 max-w-sm font-medium leading-relaxed">
                   {service.desc}
                 </p>
 

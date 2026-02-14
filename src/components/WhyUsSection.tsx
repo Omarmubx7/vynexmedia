@@ -31,7 +31,7 @@ const WhyUsSection = () => {
             </h2>
           </div>
           <div>
-            <p className="text-[20px] md:text-[24px] leading-relaxed text-white mb-12">
+            <p className="text-[20px] md:text-[24px] leading-relaxed text-[var(--foreground)] mb-12">
               We uphold a standard of excellence that distinguishes your brand in the digital landscape.
             </p>
             <div className="space-y-6">
@@ -42,24 +42,24 @@ const WhyUsSection = () => {
               ].map((bullet, i) => (
                 <div key={i} className="flex items-center gap-4 group">
                   <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                  <p className="text-[16px] font-medium text-white/70 uppercase tracking-tight">{bullet}</p>
+                  <p className="text-[16px] font-medium text-[var(--foreground)]/70 uppercase tracking-tight">{bullet}</p>
                 </div>
               ))}
             </div>
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-[1px] bg-white/10 border border-white/10">
+        <div className="grid md:grid-cols-2 gap-[1px] bg-[var(--foreground)]/10 border border-[var(--foreground)]/10">
           {promises.map((promise, index) => (
             <div key={index} className="p-12 md:p-16 bg-black group hover:bg-[#050505] transition-colors flex flex-col justify-between">
               <div>
-                <span className="text-[12px] font-bold tracking-[0.3em] text-white/20 uppercase group-hover:text-primary transition-colors mb-8 block">
+                <span className="text-[12px] font-bold tracking-[0.3em] text-[var(--foreground)]/20 uppercase group-hover:text-primary transition-colors mb-8 block">
                   Promise 0{index + 1}
                 </span>
-                <h3 className="text-3xl font-bold text-white mb-6 uppercase tracking-tight">
+                <h3 className="text-3xl font-bold text-[var(--foreground)] mb-6 uppercase tracking-tight">
                   {promise.title}
                 </h3>
-                <p className="text-white/60 font-medium leading-relaxed max-w-sm mb-12">
+                <p className="text-[var(--foreground)]/60 font-medium leading-relaxed max-w-sm mb-12">
                   {promise.desc}
                 </p>
               </div>

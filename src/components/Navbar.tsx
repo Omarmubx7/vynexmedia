@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowRight } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import MagneticButton from './ui/MagneticButton';
 
 const navLinks = [
@@ -29,7 +29,7 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-300 h-[80px] flex items-center ${isScrolled
-        ? 'bg-[rgba(0,0,0,0.8)] backdrop-blur-[10px] border-b border-white/10 shadow-none'
+        ? 'bg-[rgba(0,0,0,0.8)] backdrop-blur-[10px] border-b border-[var(--foreground)]/10 shadow-none'
         : 'bg-transparent'
         }`}
     >
@@ -39,7 +39,7 @@ const Navbar = () => {
           <MagneticButton strength={20}>
             <a href="#hero" className="group flex items-center gap-2 py-2">
               <span className="logo-dots text-[12px] tracking-[2px] text-primary group-hover:scale-110 transition-transform">:::</span>
-              <span className="text-[16px] font-semibold text-white uppercase">Vynex Media</span>
+              <span className="text-[16px] font-semibold text-[var(--foreground)] uppercase">Vynex Media</span>
             </a>
           </MagneticButton>
 
@@ -51,7 +51,7 @@ const Navbar = () => {
                   href={link.href}
                   className={`px-6 py-2.5 rounded-full transition-all duration-300 font-medium text-[15px] relative group ${isActive(link.href)
                     ? 'bg-primary text-black'
-                    : 'text-white/70 hover:bg-white/10 hover:text-white'
+                    : 'text-[var(--foreground)]/70 hover:bg-[var(--foreground)]/10 hover:text-[var(--foreground)]'
                     }`}
                 >
                   {link.label}
@@ -65,7 +65,7 @@ const Navbar = () => {
             <MagneticButton strength={25}>
               <a
                 href="#contact"
-                className="px-8 py-3 bg-white text-black text-[14px] font-bold hover:bg-primary transition-colors rounded-sm flex items-center gap-2"
+                className="px-8 py-3 bg-[#666] text-black text-[14px] font-bold hover:bg-primary transition-colors rounded-sm flex items-center gap-2"
               >
                 Start a Project <span>→</span>
               </a>
@@ -74,7 +74,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className={`md:hidden p-2 z-[1001] transition-colors duration-300 ${isOpen ? 'text-white' : 'text-white'}`}
+            className="md:hidden p-2 z-[1001] transition-colors duration-300 text-[var(--foreground)]"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X size={24} strokeWidth={1} /> : <Menu size={24} strokeWidth={1} />}
@@ -92,7 +92,7 @@ const Navbar = () => {
             <a
               key={link.href}
               href={link.href}
-              className="text-[32px] font-bold text-white uppercase tracking-tight"
+              className="text-[32px] font-bold text-[var(--foreground)] uppercase tracking-tight"
               onClick={() => setIsOpen(false)}
             >
               {link.label}

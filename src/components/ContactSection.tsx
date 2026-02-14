@@ -88,11 +88,11 @@ const ContactSection = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const inputBase = "w-full bg-transparent border-b border-black/10 py-5 text-black placeholder:text-black/20 focus:outline-none focus:border-primary transition-all text-xl font-bold tracking-tight";
+  const inputBase = "w-full bg-transparent border-b border-[var(--foreground)]/10 py-5 text-[var(--foreground)] placeholder:text-[var(--foreground)]/20 focus:outline-none focus:border-primary transition-all text-xl font-bold tracking-tight";
   const inputError = "border-red-500 focus:border-red-500";
 
   return (
-    <section id="contact" className="py-24 md:py-48 bg-white relative overflow-hidden">
+    <section id="contact" className="py-24 md:py-48 bg-black relative overflow-hidden">
       <div className="absolute inset-0 bg-grid opacity-[0.2] z-0" />
       <div className="absolute top-0 left-0 w-1/2 h-full bg-dots opacity-[0.1] z-0" />
 
@@ -105,20 +105,20 @@ const ContactSection = () => {
               <span className="inline-block py-1.5 px-4 bg-primary/10 text-primary text-[10px] uppercase tracking-[0.4em] font-bold rounded-full mb-10">
                 Liaison
               </span>
-              <h2 className="text-5xl md:text-9xl font-black tracking-extratight text-black mb-16 uppercase italic leading-[0.8]">
-                Start a <br /> <span className="text-primary not-italic text-outline text-black">Project.</span>
+              <h2 className="text-5xl md:text-9xl font-black tracking-extratight text-[var(--foreground)] mb-16 uppercase italic leading-[0.8]">
+                Start a <br /> <span className="text-primary not-italic text-outline text-[var(--foreground)]">Project.</span>
               </h2>
 
               <div className="space-y-16 mb-20">
                 <div className="group cursor-pointer">
-                  <h4 className="text-[10px] font-black tracking-[0.5em] uppercase text-black/20 mb-4 group-hover:text-primary transition-colors">Direct Inquiry</h4>
-                  <p className="text-4xl font-black tracking-extratight uppercase">
+                  <h4 className="text-[10px] font-black tracking-[0.5em] uppercase text-[var(--foreground)]/20 mb-4 group-hover:text-primary transition-colors">Direct Inquiry</h4>
+                  <p className="text-4xl font-black tracking-extratight uppercase text-[var(--foreground)]">
                     hello@vynex.io
                   </p>
                 </div>
                 <div className="group cursor-pointer">
-                  <h4 className="text-[10px] font-black tracking-[0.5em] uppercase text-black/20 mb-4 group-hover:text-primary transition-colors">Global Link</h4>
-                  <p className="text-4xl font-black tracking-extratight uppercase">
+                  <h4 className="text-[10px] font-black tracking-[0.5em] uppercase text-[var(--foreground)]/20 mb-4 group-hover:text-primary transition-colors">Global Link</h4>
+                  <p className="text-4xl font-black tracking-extratight uppercase text-[var(--foreground)]">
                     +962 79 072 0994
                   </p>
                 </div>
@@ -132,19 +132,19 @@ const ContactSection = () => {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-8 group"
                 >
-                  <div className="w-20 h-20 rounded-full border border-black/5 flex items-center justify-center group-hover:bg-[#25D366] group-hover:border-[#25D366] transition-all duration-700">
-                    <MessageCircle size={32} className="group-hover:text-white transition-colors" strokeWidth={1.5} />
+                  <div className="w-20 h-20 rounded-full border border-[var(--foreground)]/5 flex items-center justify-center group-hover:bg-[#25D366] group-hover:border-[#25D366] transition-all duration-700">
+                    <MessageCircle size={32} className="text-[var(--foreground)] group-hover:text-white transition-colors" strokeWidth={1.5} />
                   </div>
                   <div>
-                    <h4 className="text-[10px] font-black tracking-[0.5em] uppercase text-black/20 mb-2">Instant Channel</h4>
-                    <p className="text-3xl font-black tracking-extratight uppercase italic">WhatsApp Concierge</p>
+                    <h4 className="text-[10px] font-black tracking-[0.5em] uppercase text-[var(--foreground)]/20 mb-2">Instant Channel</h4>
+                    <p className="text-3xl font-black tracking-extratight uppercase italic text-[var(--foreground)]">WhatsApp Concierge</p>
                   </div>
                 </a>
               </MagneticButton>
             </div>
 
             {/* Right side: Minimal Form */}
-            <div className="bg-white/50 backdrop-blur-xl border border-black/5 p-12 md:p-20 rounded-sm">
+            <div className="bg-[var(--foreground)]/5 backdrop-blur-xl border border-[var(--foreground)]/5 p-12 md:p-20 rounded-sm">
               <form onSubmit={handleSubmit} className="space-y-16">
                 <div className="grid md:grid-cols-2 gap-x-12 gap-y-16">
                   {/* Name */}
@@ -157,7 +157,7 @@ const ContactSection = () => {
                       aria-label="Full Name"
                       aria-invalid={!!errors.name}
                     />
-                    <label className="absolute -top-5 left-0 text-[9px] font-black tracking-[0.3em] uppercase text-black/40 group-focus-within:text-primary transition-colors">Full Name</label>
+                    <label className="absolute -top-5 left-0 text-[9px] font-black tracking-[0.3em] uppercase text-[var(--foreground)]/40 group-focus-within:text-primary transition-colors">Full Name</label>
                   </div>
 
                   {/* WhatsApp */}
@@ -170,7 +170,7 @@ const ContactSection = () => {
                       aria-label="WhatsApp Number"
                       aria-invalid={!!errors.whatsapp}
                     />
-                    <label className="absolute -top-5 left-0 text-[9px] font-black tracking-[0.3em] uppercase text-black/40 group-focus-within:text-primary transition-colors">Digital Contact</label>
+                    <label className="absolute -top-5 left-0 text-[9px] font-black tracking-[0.3em] uppercase text-[var(--foreground)]/40 group-focus-within:text-primary transition-colors">Digital Contact</label>
                   </div>
 
                   {/* Project Type */}
@@ -182,12 +182,12 @@ const ContactSection = () => {
                       aria-label="Selection of Expertise"
                       aria-invalid={!!errors.projectType}
                     >
-                      <option value="" disabled>Select Expertise</option>
+                      <option value="" disabled className="bg-black">Select Expertise</option>
                       {projectTypes.map((type) => (
-                        <option key={type.value} value={type.value}>{type.label}</option>
+                        <option key={type.value} value={type.value} className="bg-black">{type.label}</option>
                       ))}
                     </select>
-                    <label className="absolute -top-5 left-0 text-[9px] font-black tracking-[0.3em] uppercase text-black/40 group-focus-within:text-primary transition-colors">Inquiry Type</label>
+                    <label className="absolute -top-5 left-0 text-[9px] font-black tracking-[0.3em] uppercase text-[var(--foreground)]/40 group-focus-within:text-primary transition-colors">Inquiry Type</label>
                   </div>
 
                   {/* Budget */}
@@ -199,7 +199,7 @@ const ContactSection = () => {
                       placeholder="e.g. 500 - 1000 JOD"
                       aria-label="Estimated Scale in JOD"
                     />
-                    <label className="absolute -top-5 left-0 text-[9px] font-black tracking-[0.3em] uppercase text-black/40 group-focus-within:text-primary transition-colors">Resource Tier (JOD)</label>
+                    <label className="absolute -top-5 left-0 text-[9px] font-black tracking-[0.3em] uppercase text-[var(--foreground)]/40 group-focus-within:text-primary transition-colors">Resource Tier (JOD)</label>
                   </div>
 
                   {/* Social/Link */}
@@ -210,7 +210,7 @@ const ContactSection = () => {
                       className={inputBase}
                       placeholder="@handle or website.com"
                     />
-                    <label className="absolute -top-5 left-0 text-[9px] font-black tracking-[0.3em] uppercase text-black/20 group-focus-within:text-primary transition-colors">Visual Reference</label>
+                    <label className="absolute -top-5 left-0 text-[9px] font-black tracking-[0.3em] uppercase text-[var(--foreground)]/20 group-focus-within:text-primary transition-colors">Visual Reference</label>
                   </div>
                 </div>
 
@@ -227,14 +227,14 @@ const ContactSection = () => {
                       element.style.height = element.scrollHeight + 'px';
                     }}
                   />
-                  <label className="absolute -top-5 left-0 text-[9px] font-black tracking-[0.3em] uppercase text-black/20 group-focus-within:text-primary transition-colors">Vision Statement</label>
+                  <label className="absolute -top-5 left-0 text-[9px] font-black tracking-[0.3em] uppercase text-[var(--foreground)]/20 group-focus-within:text-primary transition-colors">Vision Statement</label>
                 </div>
 
                 {/* Submit Button */}
                 <MagneticButton strength={20} className="w-full">
                   <button
                     type="submit" disabled={isSubmitting}
-                    className="w-full h-24 bg-black text-white flex items-center justify-center gap-8 text-[13px] font-black uppercase tracking-[0.4em] hover:bg-primary transition-all duration-700 disabled:opacity-50 group overflow-hidden relative"
+                    className="w-full h-24 bg-black text-[var(--foreground)] flex items-center justify-center gap-8 text-[13px] font-black uppercase tracking-[0.4em] hover:bg-primary hover:text-black transition-all duration-700 disabled:opacity-50 group overflow-hidden relative"
                   >
                     {isSubmitting ? (
                       <Loader2 className="w-8 h-8 animate-spin" />

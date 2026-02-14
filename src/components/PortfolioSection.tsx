@@ -49,7 +49,7 @@ const PortfolioSection = () => {
         <div className="grid md:grid-cols-2 gap-10 lg:gap-20">
           {portfolioItems.map((item, index) => (
             <div key={index} className="group cursor-pointer">
-              <div className="aspect-[16/9] overflow-hidden bg-white/5 relative mb-8">
+              <div className="aspect-[16/9] overflow-hidden bg-[var(--foreground)]/5 relative mb-8">
                 <video
                   src={item.video}
                   className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-700"
@@ -62,8 +62,8 @@ const PortfolioSection = () => {
               </div>
               <div className="flex justify-between items-start">
                 <div>
-                  <h3 className="text-2xl font-bold text-white uppercase tracking-tight mb-2">{item.title}</h3>
-                  <p className="text-white/40 text-[14px] font-medium uppercase tracking-[0.2em]">{item.category}</p>
+                  <h3 className="text-2xl font-bold text-[var(--foreground)] uppercase tracking-tight mb-2">{item.title}</h3>
+                  <p className="text-[var(--foreground)]/40 text-[14px] font-medium uppercase tracking-[0.2em]">{item.category}</p>
                 </div>
                 <div className="opacity-0 group-hover:opacity-100 transition-opacity">
                   <span className="text-primary text-2xl font-bold">→</span>

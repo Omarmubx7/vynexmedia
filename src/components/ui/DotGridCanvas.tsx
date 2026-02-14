@@ -83,7 +83,7 @@ const DotGridCanvas: React.FC = () => {
 
                 ctx.beginPath();
                 ctx.arc(dot.x, dot.y, dot.radius, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(255, 255, 255, ${dot.opacity})`;
+                ctx.fillStyle = `rgba(204, 204, 204, ${dot.opacity})`;
                 ctx.fill();
             });
 
