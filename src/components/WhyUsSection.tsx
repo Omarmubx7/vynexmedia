@@ -1,4 +1,4 @@
-import { MessageSquare, Package, Image, RefreshCw, ArrowUpRight } from 'lucide-react';
+import { MessageSquare, Package, Image, RefreshCw, ArrowRight } from 'lucide-react';
 import MagneticButton from './ui/MagneticButton';
 
 const promises = [
@@ -83,7 +83,7 @@ const WhyUsSection = () => {
                     <h3 className="text-3xl md:text-5xl font-black text-white tracking-extratight uppercase italic group-hover:text-primary transition-colors">
                       {promise.title}
                     </h3>
-                    <ArrowUpRight className="w-6 h-6 text-white/10 group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
+                    <ArrowRight className="w-6 h-6 text-white/10 group-hover:text-primary group-hover:translate-x-2 transition-all" />
                   </div>
 
                   <p className="text-white/40 text-xl leading-relaxed max-w-sm font-bold tracking-tight">
@@ -97,8 +97,8 @@ const WhyUsSection = () => {
           {/* Magnetic CTA for Bottom */}
           <div className="mt-32 flex justify-center">
             <MagneticButton strength={30}>
-              <a href="#contact" className="group px-16 py-6 bg-white text-black text-[12px] uppercase tracking-[0.4em] font-black hover:bg-primary hover:text-white transition-all duration-700 rounded-sm italic">
-                Join our legacy
+              <a href="#contact" className="group px-16 py-6 bg-white text-black text-[12px] uppercase tracking-[0.4em] font-black hover:bg-primary hover:text-white transition-all duration-700 rounded-sm italic flex items-center gap-3">
+                Join our legacy <span className="group-hover:translate-x-1 transition-transform">→</span>
               </a>
             </MagneticButton>
           </div>

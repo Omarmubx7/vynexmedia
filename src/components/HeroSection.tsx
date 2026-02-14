@@ -18,7 +18,7 @@ const HeroSection = () => {
         <div className="flex flex-col items-center text-center max-w-[1200px] mx-auto">
 
           <div className="mb-12 animate-fade-up">
-            <span className="inline-block py-1 px-3 border border-black/10 text-[9px] uppercase tracking-[0.4em] font-bold rounded-full mb-6">
+            <span className="inline-block py-1 px-3 border border-white/10 text-[9px] uppercase tracking-[0.4em] font-bold rounded-full mb-6 text-white/40">
               Studio d'Image & Contenu
             </span>
           </div>
@@ -28,7 +28,7 @@ const HeroSection = () => {
               Vynex Media ::: Boutique marketing & visual studio from Amman.
             </h1>
           </div>
-          <p className="text-xl font-bold tracking-extratight text-black/40 uppercase italic mb-12 animate-fade-up">
+          <p className="text-xl font-bold tracking-extratight text-white/20 uppercase italic mb-12 animate-fade-up">
             Crafting your vision one frame at a time.
           </p>
 
@@ -68,9 +68,10 @@ const HeroSection = () => {
             <MagneticButton strength={40}>
               <a
                 href="#contact"
-                className="group relative px-12 py-6 bg-black text-white text-[12px] uppercase tracking-[0.3em] font-bold overflow-hidden transition-all duration-500 rounded-sm"
+                className="group relative px-12 py-6 bg-white text-black text-[12px] uppercase tracking-[0.3em] font-bold overflow-hidden transition-all duration-500 rounded-sm flex items-center gap-3"
               >
                 <span className="relative z-10">Start a Project</span>
+                <span className="relative z-10 group-hover:translate-x-1 transition-transform">→</span>
                 <div className="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
               </a>
             </MagneticButton>
@@ -78,9 +79,10 @@ const HeroSection = () => {
             <MagneticButton strength={20}>
               <a
                 href="#portfolio"
-                className="group px-12 py-6 bg-transparent text-black border border-black/10 text-[12px] uppercase tracking-[0.3em] font-bold hover:border-black transition-all duration-500 rounded-sm overflow-hidden relative"
+                className="group px-12 py-6 bg-transparent text-white border border-white/10 text-[12px] uppercase tracking-[0.3em] font-bold hover:border-primary transition-all duration-500 rounded-sm overflow-hidden relative flex items-center gap-3"
               >
                 <span className="relative z-10">Our Works</span>
+                <span className="relative z-10 group-hover:translate-x-1 transition-transform text-primary">→</span>
               </a>
             </MagneticButton>
           </div>
@@ -89,7 +91,7 @@ const HeroSection = () => {
           <div className="absolute bottom-12 left-1/2 -translate-x-1/2 hidden md:block opacity-20 hover:opacity-100 transition-opacity">
             <MagneticButton strength={20}>
               <a href="#story" className="flex flex-col items-center gap-4">
-                <ArrowDown size={16} strokeWidth={1} />
+                <ArrowDown size={16} strokeWidth={1} className="text-white" />
               </a>
             </MagneticButton>
           </div>
@@ -97,7 +99,7 @@ const HeroSection = () => {
           {/* Dot Separator */}
           <div className="mt-40 flex justify-center gap-4 opacity-10">
             {[...Array(5)].map((_, i) => (
-              <div key={i} className="w-1 h-1 rounded-full bg-black" />
+              <div key={i} className="w-1 h-1 rounded-full bg-white" />
             ))}
           </div>
         </div>

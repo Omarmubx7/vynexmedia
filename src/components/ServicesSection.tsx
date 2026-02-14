@@ -1,4 +1,4 @@
-import { Camera, Utensils, Film, Users, Plus } from 'lucide-react';
+import { Camera, Utensils, Film, Users, ArrowRight } from 'lucide-react';
 import MagneticButton from './ui/MagneticButton';
 
 const services = [
@@ -91,7 +91,7 @@ const ServicesSection = () => {
                       </div>
                       <MagneticButton strength={20}>
                         <div className="w-12 h-12 rounded-full border border-white/5 flex items-center justify-center group-hover:border-primary group-hover:shadow-[0_0_15px_#00FF0050] transition-all">
-                          <Plus className="w-5 h-5 text-white/40 group-hover:text-primary" />
+                          <ArrowRight className="w-5 h-5 text-white/40 group-hover:text-primary transition-transform group-hover:translate-x-1" />
                         </div>
                       </MagneticButton>
                     </div>

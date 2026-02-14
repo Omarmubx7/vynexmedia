@@ -144,7 +144,9 @@ const PortfolioSection = () => {
                 </div>
                 <div className="text-center">
                   <h4 className="text-[11px] font-bold tracking-[0.5em] uppercase text-white/20 mb-3 group-hover:text-primary transition-colors">Visual Archive</h4>
-                  <p className="text-4xl font-black tracking-extratight italic uppercase text-white">Portfolio on Instagram</p>
+                  <p className="text-4xl font-black tracking-extratight italic uppercase text-white flex items-center justify-center gap-3">
+                    Portfolio on Instagram <span className="group-hover:translate-x-2 transition-transform">→</span>
+                  </p>
                 </div>
               </a>
             </MagneticButton>

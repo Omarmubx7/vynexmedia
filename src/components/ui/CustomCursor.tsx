@@ -57,8 +57,8 @@ const CustomCursor = () => {
                 opacity: isHidden ? 0 : 1,
             }}
             animate={{
-                scale: isPointer ? 2.5 : 1,
-                backgroundColor: isPointer ? 'rgba(245, 166, 35, 0.4)' : 'rgba(245, 166, 35, 1)',
+                scale: isPointer ? 2 : 1,
+                backgroundColor: isPointer ? 'rgba(0, 255, 0, 0.4)' : 'rgba(0, 255, 0, 1)',
             }}
             transition={{ type: 'spring', damping: 20, stiffness: 300 }}
         />

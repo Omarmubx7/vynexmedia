@@ -11,9 +11,10 @@ const DotGridCanvas: React.FC = () => {
         const ctx = canvas.getContext('2d');
         if (!ctx) return;
 
-        const dots: { x: number; y: number; baseX: number; baseY: number }[] = [];
-        const dotSpacing = 20;
-        const dotRadius = 1;
+        const dots: { x: number; y: number; baseX: number; baseY: number; phase: number }[] = [];
+        const dotSpacing = 15;
+        const dotRadius = 1.5;
+        let time = 0;
 
         const handleResize = () => {
             canvas.width = window.innerWidth;
@@ -25,7 +26,13 @@ const DotGridCanvas: React.FC = () => {
             dots.length = 0;
             for (let x = 0; x < canvas.width; x += dotSpacing) {
                 for (let y = 0; y < canvas.height; y += dotSpacing) {
-                    dots.push({ x, y, baseX: x, baseY: y });
+                    dots.push({
+                        x,
+                        y,
+                        baseX: x,
+                        baseY: y,
+                        phase: Math.random() * Math.PI * 2
+                    });
                 }
             }
         };
@@ -35,23 +42,30 @@ const DotGridCanvas: React.FC = () => {
         };
 
         const animate = () => {
+            time += 0.01;
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
             dots.forEach(dot => {
-                const dx = mouseRef.current.x - dot.x;
-                const dy = mouseRef.current.y - dot.y;
+                const waveX = Math.sin(time + dot.baseX * 0.01) * 2;
+                const waveY = Math.cos(time + dot.baseY * 0.01) * 2;
+
+                const currentX = dot.baseX + waveX;
+                const currentY = dot.baseY + waveY;
+
+                const dx = mouseRef.current.x - currentX;
+                const dy = mouseRef.current.y - currentY;
                 const distance = Math.sqrt(dx * dx + dy * dy);
 
                 let scale = 1;
-                let opacity = 0.15;
+                let opacity = 0.08;
 
-                if (distance < 150) {
-                    scale = 1 + (150 - distance) / 50;
-                    opacity = 0.4 + (150 - distance) / 250;
+                if (distance < 250) {
+                    scale = 1 + (250 - distance) / 50;
+                    opacity = 0.3 + (250 - distance) / 300;
                 }
 
                 ctx.beginPath();
-                ctx.arc(dot.x, dot.y, dotRadius * scale, 0, Math.PI * 2);
+                ctx.arc(currentX, currentY, dotRadius * scale, 0, Math.PI * 2);
                 ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`;
                 ctx.fill();
             });

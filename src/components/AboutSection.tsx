@@ -64,15 +64,15 @@ const AboutSection = () => {
           </div>
 
           {/* Narrative Block 2: The Philosophy */}
-          <div className="grid lg:grid-cols-3 gap-[1px] bg-black/5 border border-black/5 animate-fade-up delay-300">
+          <div className="grid lg:grid-cols-3 gap-[1px] bg-white/5 border border-white/5 animate-fade-up delay-300">
             {[
-              { title: 'Connection', desc: 'Personal interaction over corporate scale.' },
-              { title: 'Growth', desc: 'Visuals as a vehicle for business expansion.' },
-              { title: 'Logic', desc: 'Strategic concepts from the first frame.' },
+              { title: 'Excellence', desc: 'Undeviating commitment to quality.' },
+              { title: 'Agility', desc: 'Rapid response in a shifting market.' },
+              { title: 'Commitment', desc: 'Dedicated partnership beyond the frame.' },
             ].map((value, idx) => (
               <div key={idx} className="bg-black p-24 md:p-32 group hover:bg-[#080808] transition-all duration-700">
                 <h4 className="flex items-center gap-2 text-[10px] font-black tracking-[0.5em] uppercase text-white/20 group-hover:text-primary mb-12 transition-colors">
-                  0{idx + 1} <span className="w-1 h-1 rounded-full bg-primary shadow-[0_0_5px_#00FF00]" />
+                  0{idx + 1} <span className="w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_10px_#00FF00]" />
                 </h4>
                 <p className="text-4xl font-black tracking-extratight text-white leading-tight transition-colors uppercase italic mb-8">
                   {value.title}

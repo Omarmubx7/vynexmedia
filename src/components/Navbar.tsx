@@ -34,7 +34,7 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${isScrolled
-        ? 'bg-white/90 backdrop-blur-2xl py-3 border-b border-black/[0.05]'
+        ? 'bg-black/90 backdrop-blur-2xl py-3 border-b border-white/5'
         : 'bg-transparent py-8'
         }`}
     >
@@ -70,7 +70,7 @@ const Navbar = () => {
             <MagneticButton strength={25}>
               <a
                 href="#contact"
-                className="px-10 py-4 bg-black text-white text-[11px] uppercase tracking-[0.3em] font-bold hover:bg-primary transition-all duration-500 border border-black group overflow-hidden relative"
+                className="px-10 py-4 bg-white text-black text-[11px] uppercase tracking-[0.3em] font-bold hover:bg-primary hover:text-black transition-all duration-500 border border-transparent group overflow-hidden relative shadow-[0_0_20px_#00FF0000] hover:shadow-[0_0_30px_#00FF0080]"
               >
                 <span className="relative z-10">Start a Project</span>
                 <div className="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
@@ -80,7 +80,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-black p-2 z-50"
+            className={`md:hidden p-2 z-50 transition-colors duration-300 ${isOpen ? 'text-white' : 'text-white'}`}
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X size={24} strokeWidth={1} /> : <Menu size={24} strokeWidth={1} />}
@@ -90,17 +90,17 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden fixed inset-0 bg-white z-40 transition-all duration-700 ease-[cubic-bezier(0.77,0,0.175,1)] ${isOpen ? 'translate-y-0' : '-translate-y-full'
+        className={`md:hidden fixed inset-0 bg-black z-40 transition-all duration-700 ease-[cubic-bezier(0.77,0,0.175,1)] ${isOpen ? 'translate-y-0' : '-translate-y-full'
           }`}
       >
-        <div className="absolute inset-0 bg-dots opacity-[0.2]" />
+        <div className="absolute inset-0 bg-dots opacity-[0.05] invert" />
 
         <div className="px-10 py-32 flex flex-col gap-10 h-full relative z-10">
           {navLinks.map((link, idx) => (
             <a
               key={link.href}
               href={link.href}
-              className={`text-5xl font-black tracking-extratight text-black uppercase italic transition-all duration-700 delay-[${idx * 50}ms] ${isOpen ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}
+              className={`text-5xl font-black tracking-extratight text-white uppercase italic transition-all duration-700 delay-[${idx * 50}ms] ${isOpen ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}
               onClick={() => setIsOpen(false)}
             >
               {link.label}
@@ -109,7 +109,7 @@ const Navbar = () => {
           <div className="mt-auto pb-20">
             <a
               href="#contact"
-              className="w-full py-6 bg-black text-white text-center font-bold tracking-[0.3em] text-sm uppercase rounded-sm"
+              className="w-full block py-6 bg-white text-black text-center font-bold tracking-[0.3em] text-sm uppercase rounded-sm hover:bg-primary transition-colors"
               onClick={() => setIsOpen(false)}
             >
               Start Project
