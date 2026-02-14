@@ -25,31 +25,43 @@ const promises = [
 
 const WhyUsSection = () => {
   return (
-    <section className="py-[72px] md:py-24 bg-white">
-      <div className="max-w-[1200px] mx-auto px-4">
-        {/* Header */}
-        <div className="text-center mb-14">
-          <h2 className="section-title text-foreground mb-3">ليش تختارنا؟</h2>
-          <p className="text-muted-foreground text-base max-w-lg mx-auto">
-            وعود ملموسة مش كلام عام
-          </p>
-        </div>
+    <section className="py-24 md:py-40 bg-[#050505] text-white relative overflow-hidden">
+      {/* Background Dots for dark mode feel */}
+      <div className="absolute inset-0 bg-dots opacity-[0.03] invert z-0" />
 
-        {/* Promises Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 max-w-5xl mx-auto">
-          {promises.map((promise, index) => (
-            <div key={index} className="glass-card p-6 text-center group">
-              <div className="w-14 h-14 rounded-full bg-secondary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-secondary/20 group-hover:scale-105 transition-all">
-                <promise.icon className="w-6 h-6 text-secondary" />
-              </div>
-              <h3 className="text-base font-semibold text-foreground mb-2">
-                {promise.title}
-              </h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                {promise.description}
-              </p>
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="max-w-[1400px] mx-auto">
+          {/* Header */}
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-20 gap-8">
+            <div className="max-w-2xl">
+              <span className="inline-block py-1.5 px-4 bg-white/10 text-white text-[10px] uppercase tracking-[0.3em] font-bold rounded-full mb-8">
+                The Vynex Promise
+              </span>
+              <h2 className="text-4xl md:text-7xl font-bold tracking-tighter text-white uppercase italic leading-[0.9]">
+                Why <br /> <span className="text-primary not-italic">Vynex?</span>
+              </h2>
             </div>
-          ))}
+            <p className="text-lg text-white/60 max-w-sm leading-relaxed mb-4">
+              نلتزم بوعود ملموسة ونتائج حقيقية تخلي براندك يبرز في السوق الأردني.
+            </p>
+          </div>
+
+          {/* Promises Grid */}
+          <div className="grid md:grid-cols-2 gap-[1px] bg-white/5 border border-white/5 overflow-hidden rounded-sm">
+            {promises.map((promise, index) => (
+              <div key={index} className="p-12 md:p-20 bg-[#050505] group transition-all duration-700 hover:bg-[#0a0a0a]">
+                <div className="mb-12 transition-transform duration-500 group-hover:-translate-y-2">
+                  <promise.icon className="w-12 h-12 text-primary" strokeWidth={1.5} />
+                </div>
+                <h3 className="text-3xl font-bold text-white mb-6 tracking-tight">
+                  {promise.title}
+                </h3>
+                <p className="text-white/40 text-lg leading-relaxed max-w-sm">
+                  {promise.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -33,57 +33,67 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="py-[72px] md:py-24">
-      <div className="max-w-[1200px] mx-auto px-4">
-        {/* Header */}
-        <div className="text-center mb-14">
-          <h2 className="section-title text-foreground mb-3">خدماتنا</h2>
-          <p className="text-muted-foreground text-base max-w-lg mx-auto">
-            كل خدمة مصممة عشان تخدم نوع معين من المشاريع — اختار اللي يناسبك
-          </p>
-        </div>
+    <section id="services" className="py-24 md:py-40 bg-white relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-full h-[1px] bg-black/5" />
 
-        {/* Services Grid */}
-        <div className="grid md:grid-cols-2 gap-5 lg:gap-6">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className="glass-card p-6 group cursor-pointer hover:border-primary/40 transition-all duration-300"
-            >
-              {/* Icon */}
-              <div className="w-12 h-12 rounded-xl bg-primary/8 flex items-center justify-center mb-5 group-hover:bg-primary/15 transition-colors">
-                <service.icon className="w-6 h-6 text-primary group-hover:scale-110 transition-transform" />
-              </div>
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="max-w-[1400px] mx-auto">
+          {/* Header */}
+          <div className="mb-24 flex flex-col items-center text-center">
+            <span className="inline-block py-1.5 px-4 bg-primary/10 text-primary text-[10px] uppercase tracking-[0.3em] font-bold rounded-full mb-8">
+              What We Do
+            </span>
+            <h2 className="text-4xl md:text-8xl font-bold tracking-tighter text-black uppercase italic leading-[0.8] mb-12">
+              Services <br /> <span className="text-primary not-italic">Offerings.</span>
+            </h2>
+            <p className="text-lg text-black/40 max-w-xl leading-relaxed">
+              حلول بصرية متكاملة مصممة عشان ترفع من قيمة براندك وتوصل رسالتك للجمهور الصح بطريقة احترافية.
+            </p>
+          </div>
 
-              {/* Content */}
-              <h3 className="text-xl font-semibold text-foreground mb-3 text-right">
-                {service.title}
-              </h3>
-
-              {/* Audience */}
-              <div className="flex items-start gap-2 mb-2">
-                <ChevronLeft className="w-4 h-4 text-secondary mt-1 flex-shrink-0" />
-                <p className="text-muted-foreground text-sm">
-                  <span className="text-foreground font-medium">لمين: </span>
-                  {service.audience}
-                </p>
-              </div>
-
-              {/* Result */}
-              <p className="text-muted-foreground text-sm leading-relaxed mb-4 text-right">
-                {service.result}
-              </p>
-
-              {/* Package */}
-              {service.package && (
-                <div className="bg-primary/5 border border-primary/15 rounded-full px-4 py-2 text-right inline-block">
-                  <p className="text-primary font-semibold text-xs">
-                    📦 {service.package}
-                  </p>
+          {/* Services Grid */}
+          <div className="grid lg:grid-cols-2 gap-[1px] bg-black/5 border border-black/5 rounded-sm overflow-hidden">
+            {services.map((service, index) => (
+              <div
+                key={index}
+                className="p-12 md:p-24 bg-white group hover:bg-black transition-all duration-700 relative overflow-hidden"
+              >
+                {/* Number Background */}
+                <div className="absolute -bottom-10 -right-10 text-[200px] font-bold text-black/[0.02] group-hover:text-white/[0.03] transition-colors leading-none pointer-events-none tracking-tighter">
+                  0{index + 1}
                 </div>
-              )}
-            </div>
-          ))}
+
+                <div className="relative z-10 flex flex-col h-full">
+                  <div className="mb-12 group-hover:scale-110 transition-transform duration-700 origin-left">
+                    <service.icon className="w-12 h-12 text-primary group-hover:text-white transition-colors" strokeWidth={1} />
+                  </div>
+
+                  <h3 className="text-3xl md:text-5xl font-bold text-black mb-6 tracking-tighter group-hover:text-white transition-colors">
+                    {service.title}
+                  </h3>
+
+                  <p className="text-black/40 text-lg group-hover:text-white/40 transition-colors mb-8 leading-relaxed">
+                    {service.result}
+                  </p>
+
+                  <div className="mt-auto pt-8 border-t border-black/5 group-hover:border-white/10 transition-colors">
+                    <p className="text-[11px] font-bold tracking-[0.3em] uppercase text-black group-hover:text-white mb-2">Ideal For</p>
+                    <p className="text-black/60 group-hover:text-white/60 transition-colors">
+                      {service.audience}
+                    </p>
+                  </div>
+
+                  {service.package && (
+                    <div className="mt-8">
+                      <span className="inline-block py-2 px-6 border border-primary text-primary group-hover:bg-primary group-hover:text-white text-[11px] font-bold uppercase tracking-widest rounded-full transition-all duration-500">
+                        {service.package}
+                      </span>
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

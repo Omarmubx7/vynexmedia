@@ -23,39 +23,48 @@ const steps = [
 
 const ProcessSection = () => {
     return (
-        <section className="py-[72px] md:py-24">
-            <div className="max-w-[1200px] mx-auto px-4">
-                {/* Header */}
-                <div className="text-center mb-14">
-                    <h2 className="section-title text-foreground mb-3">طريقة العمل</h2>
-                    <p className="text-muted-foreground text-base max-w-lg mx-auto">
-                        3 خطوات بسيطة وتبدأ معنا
-                    </p>
-                </div>
+        <section id="process" className="py-24 md:py-40 bg-white relative overflow-hidden">
+            <div className="absolute inset-x-0 bottom-0 h-1/2 bg-dots opacity-[0.2] z-0" />
 
-                {/* Steps */}
-                <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-                    {steps.map((step, index) => (
-                        <div key={index} className="relative text-center">
-                            {/* Step Number */}
-                            <div className="text-5xl font-bold text-primary/15 mb-3">
-                                {step.number}
+            <div className="container mx-auto px-6 relative z-10">
+                <div className="max-w-[1400px] mx-auto">
+                    {/* Header */}
+                    <div className="mb-24">
+                        <span className="inline-block py-1.5 px-4 bg-primary/10 text-primary text-[10px] uppercase tracking-[0.3em] font-bold rounded-full mb-8">
+                            Process
+                        </span>
+                        <h2 className="text-4xl md:text-8xl font-bold tracking-tighter text-black uppercase italic leading-[0.8] mb-12">
+                            How We <br /> <span className="text-primary not-italic">Deliver.</span>
+                        </h2>
+                    </div>
+
+                    {/* Steps Grid */}
+                    <div className="grid md:grid-cols-3 gap-16 lg:gap-32">
+                        {steps.map((step, index) => (
+                            <div key={index} className="relative group">
+                                {/* Number and Line */}
+                                <div className="flex items-center gap-4 mb-8">
+                                    <span className="text-4xl md:text-6xl font-black text-black/5 group-hover:text-primary transition-colors tracking-tighter line-height-none">
+                                        {step.number}
+                                    </span>
+                                    <div className="h-[1px] flex-1 bg-black/10 group-hover:bg-primary/30 transition-colors" />
+                                </div>
+
+                                <div className="space-y-6">
+                                    <h3 className="text-3xl font-bold tracking-tight text-black mb-4">
+                                        {step.title}
+                                    </h3>
+                                    <p className="text-lg text-black/60 leading-relaxed font-medium">
+                                        {step.description}
+                                    </p>
+                                </div>
+
+                                <div className="mt-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 translate-y-4 group-hover:translate-y-0 text-primary">
+                                    <step.icon className="w-8 h-8" strokeWidth={1.5} />
+                                </div>
                             </div>
-
-                            {/* Icon */}
-                            <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                                <step.icon className="w-6 h-6 text-primary" />
-                            </div>
-
-                            {/* Content */}
-                            <h3 className="text-lg font-semibold text-foreground mb-2">
-                                {step.title}
-                            </h3>
-                            <p className="text-muted-foreground text-sm leading-relaxed">
-                                {step.description}
-                            </p>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>

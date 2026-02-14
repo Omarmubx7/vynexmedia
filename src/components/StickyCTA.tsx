@@ -18,13 +18,15 @@ const StickyCTA = () => {
 
   return (
     <div className="sticky-cta md:hidden">
-      <a
-        href="#contact"
-        className="btn-primary w-full flex items-center justify-center gap-2 text-lg animate-glow-pulse"
-      >
-        <MessageCircle className="w-5 h-5" />
-        احجز جلسة استشارة مجانية
-      </a>
+      <div className="bg-white border-t border-black/5 p-4 backdrop-blur-xl">
+        <a
+          href="#contact"
+          className="w-full h-16 bg-black text-white rounded-full flex items-center justify-center gap-4 text-sm font-bold uppercase tracking-[0.2em] transition-all active:scale-95"
+        >
+          <MessageCircle className="w-5 h-5 text-primary" />
+          <span>Start a Project</span>
+        </a>
+      </div>
     </div>
   );
 };

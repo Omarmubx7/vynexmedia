@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Send, MessageCircle, Loader2, AlertCircle } from 'lucide-react';
+import { ArrowRight, MessageCircle, Loader2, AlertCircle } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 
@@ -93,154 +93,154 @@ const ContactSection = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const inputBase = "w-full bg-white border rounded-xl px-4 py-3 text-foreground text-right focus:outline-none focus:ring-2 transition-all text-sm";
-  const inputValid = "border-border focus:ring-primary/40 focus:border-primary";
-  const inputError = "border-red-500 focus:ring-red-500/50";
+  const inputBase = "w-full bg-transparent border-b border-black/10 py-4 text-black text-right focus:outline-none focus:border-primary transition-all text-lg font-medium";
+  const inputError = "border-red-500 focus:border-red-500";
 
   return (
-    <section id="contact" className="py-[72px] md:py-24 bg-white">
-      <div className="max-w-[1200px] mx-auto px-4">
-        <div className="max-w-2xl mx-auto">
-          {/* Header */}
-          <div className="text-center mb-10">
-            <h2 className="section-title text-foreground mb-3">جاهز نشتغل على محتواك؟</h2>
-            <p className="text-muted-foreground text-base">
-              عبّي النموذج وراح نرجع لك بأنسب حل لمشروعك
-            </p>
-          </div>
+    <section id="contact" className="py-24 md:py-40 bg-white relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-dots opacity-[0.2] z-0" />
 
-          {/* Form */}
-          <form onSubmit={handleSubmit} className="glass-card p-6 md:p-10">
-            <div className="grid md:grid-cols-2 gap-5 mb-5">
-              {/* Name */}
-              <div>
-                <label htmlFor="name" className="block text-foreground font-medium mb-1.5 text-right text-sm">
-                  الاسم
-                </label>
-                <input
-                  type="text" id="name" name="name" value={formData.name}
-                  onChange={handleChange} required
-                  className={`${inputBase} ${errors.name ? inputError : inputValid}`}
-                  placeholder="اسمك الكريم"
-                />
-                {errors.name && (
-                  <div className="flex items-center gap-1 mt-1.5 text-red-500 text-xs">
-                    <AlertCircle className="w-3.5 h-3.5" /><span>{errors.name}</span>
-                  </div>
-                )}
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="grid lg:grid-cols-2 gap-32 items-start">
+
+            {/* Left side: Editorial Typography & Info */}
+            <div className="lg:sticky lg:top-40">
+              <span className="inline-block py-1.5 px-4 bg-primary/10 text-primary text-[10px] uppercase tracking-[0.3em] font-bold rounded-full mb-8">
+                Contact Us
+              </span>
+              <h2 className="text-4xl md:text-8xl font-bold tracking-tighter text-black mb-12 uppercase italic leading-[0.8]">
+                Start a <br /> <span className="text-primary not-italic">Project.</span>
+              </h2>
+
+              <div className="space-y-12 mb-16">
+                <div>
+                  <h4 className="text-[11px] font-bold tracking-[0.3em] uppercase text-black/40 mb-4">Email Us</h4>
+                  <p className="text-3xl font-bold tracking-tighter hover:text-primary transition-colors cursor-pointer">
+                    hello@vynexmedia.com
+                  </p>
+                </div>
+                <div>
+                  <h4 className="text-[11px] font-bold tracking-[0.3em] uppercase text-black/40 mb-4">Call Us</h4>
+                  <p className="text-3xl font-bold tracking-tighter hover:text-primary transition-colors cursor-pointer">
+                    +962 790 720 994
+                  </p>
+                </div>
               </div>
 
-              {/* Project Type */}
-              <div>
-                <label htmlFor="projectType" className="block text-foreground font-medium mb-1.5 text-right text-sm">
-                  نوع المشروع
-                </label>
-                <select
-                  id="projectType" name="projectType" value={formData.projectType}
-                  onChange={handleChange} required
-                  className={`${inputBase} ${errors.projectType ? inputError : inputValid}`}
+              {/* WhatsApp Quick Link */}
+              <a
+                href="https://wa.me/962790720994"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-6 group"
+              >
+                <div className="w-16 h-16 rounded-full border border-black flex items-center justify-center group-hover:bg-black group-hover:text-white transition-all duration-500">
+                  <MessageCircle size={28} />
+                </div>
+                <div className="text-right">
+                  <h4 className="text-[11px] font-bold tracking-[0.3em] uppercase text-black mb-1">Quick Chat</h4>
+                  <p className="text-2xl font-bold tracking-tighter">Click to open WhatsApp</p>
+                </div>
+              </a>
+            </div>
+
+            {/* Right side: Minimal Form */}
+            <div className="bg-white p-2">
+              <form onSubmit={handleSubmit} className="space-y-12">
+                <div className="grid md:grid-cols-2 gap-x-12 gap-y-12">
+                  {/* Name */}
+                  <div className="relative group">
+                    <input
+                      type="text" id="name" name="name" value={formData.name}
+                      onChange={handleChange} required
+                      className={`${inputBase} ${errors.name ? inputError : ""}`}
+                      placeholder="اسمك الكريم"
+                    />
+                    <label className="absolute -top-4 right-0 text-[10px] font-bold tracking-[0.2em] uppercase text-black/40">Name</label>
+                  </div>
+
+                  {/* WhatsApp */}
+                  <div className="relative group">
+                    <input
+                      type="tel" id="whatsapp" name="whatsapp" value={formData.whatsapp}
+                      onChange={handleChange} required
+                      className={`${inputBase} ${errors.whatsapp ? inputError : ""}`}
+                      placeholder="+962 7XX XXX XXX"
+                    />
+                    <label className="absolute -top-4 right-0 text-[10px] font-bold tracking-[0.2em] uppercase text-black/40">WhatsApp</label>
+                  </div>
+
+                  {/* Project Type */}
+                  <div className="relative group">
+                    <select
+                      id="projectType" name="projectType" value={formData.projectType}
+                      onChange={handleChange} required
+                      className={inputBase}
+                    >
+                      <option value="">اختر نوع المشروع</option>
+                      {projectTypes.map((type) => (
+                        <option key={type.value} value={type.value}>{type.label}</option>
+                      ))}
+                    </select>
+                    <label className="absolute -top-4 right-0 text-[10px] font-bold tracking-[0.2em] uppercase text-black/40">Project Type</label>
+                  </div>
+
+                  {/* Budget */}
+                  <div className="relative group">
+                    <input
+                      type="text" id="budget" name="budget" value={formData.budget}
+                      onChange={handleChange}
+                      className={inputBase}
+                      placeholder="مثال: 100-200"
+                    />
+                    <label className="absolute -top-4 right-0 text-[10px] font-bold tracking-[0.2em] uppercase text-black/40">Budget (Approx)</label>
+                  </div>
+
+                  {/* Social/Link */}
+                  <div className="relative group md:col-span-2">
+                    <input
+                      type="text" id="instagram" name="instagram" value={formData.instagram}
+                      onChange={handleChange}
+                      className={inputBase}
+                      placeholder="@username / link"
+                    />
+                    <label className="absolute -top-4 right-0 text-[10px] font-bold tracking-[0.2em] uppercase text-black/40">Instagram / Web Link</label>
+                  </div>
+                </div>
+
+                {/* Message */}
+                <div className="relative group">
+                  <textarea
+                    id="message" name="message" value={formData.message}
+                    onChange={handleChange} rows={1}
+                    className={`${inputBase} resize-none overflow-hidden h-auto`}
+                    placeholder="Tell us about your project..."
+                    onInput={(e) => {
+                      const element = e.target as HTMLTextAreaElement;
+                      element.style.height = 'auto';
+                      element.style.height = element.scrollHeight + 'px';
+                    }}
+                  />
+                  <label className="absolute -top-4 right-0 text-[10px] font-bold tracking-[0.2em] uppercase text-black/40">Project Details</label>
+                </div>
+
+                {/* Submit Button */}
+                <button
+                  type="submit" disabled={isSubmitting}
+                  className="w-full h-20 bg-black text-white flex items-center justify-center gap-4 text-xl font-bold uppercase tracking-widest hover:bg-primary transition-all duration-500 disabled:opacity-50 group rounded-full overflow-hidden relative"
                 >
-                  <option value="">اختر نوع المشروع</option>
-                  {projectTypes.map((type) => (
-                    <option key={type.value} value={type.value}>{type.label}</option>
-                  ))}
-                </select>
-                {errors.projectType && (
-                  <div className="flex items-center gap-1 mt-1.5 text-red-500 text-xs">
-                    <AlertCircle className="w-3.5 h-3.5" /><span>{errors.projectType}</span>
-                  </div>
-                )}
-              </div>
-
-              {/* WhatsApp */}
-              <div>
-                <label htmlFor="whatsapp" className="block text-foreground font-medium mb-1.5 text-right text-sm">
-                  رقم الواتساب
-                </label>
-                <input
-                  type="tel" id="whatsapp" name="whatsapp" value={formData.whatsapp}
-                  onChange={handleChange} required
-                  className={`${inputBase} ${errors.whatsapp ? inputError : inputValid}`}
-                  placeholder="+962 7XX XXX XXX"
-                />
-                {errors.whatsapp && (
-                  <div className="flex items-center gap-1 mt-1.5 text-red-500 text-xs">
-                    <AlertCircle className="w-3.5 h-3.5" /><span>{errors.whatsapp}</span>
-                  </div>
-                )}
-              </div>
-
-              {/* Budget */}
-              <div>
-                <label htmlFor="budget" className="block text-foreground font-medium mb-1.5 text-right text-sm">
-                  ميزانيتك التقريبية
-                </label>
-                <input
-                  type="text" id="budget" name="budget" value={formData.budget}
-                  onChange={handleChange}
-                  className={`${inputBase} ${inputValid}`}
-                  placeholder="مثال: 100-200 دينار"
-                />
-              </div>
-
-              {/* Instagram/Website */}
-              <div className="md:col-span-2">
-                <label htmlFor="instagram" className="block text-foreground font-medium mb-1.5 text-right text-sm">
-                  رابط إنستغرام أو موقعك (اختياري)
-                </label>
-                <input
-                  type="text" id="instagram" name="instagram" value={formData.instagram}
-                  onChange={handleChange}
-                  className={`${inputBase} ${inputValid}`}
-                  placeholder="@username أو رابط الموقع"
-                />
-              </div>
+                  {isSubmitting ? (
+                    <Loader2 className="w-8 h-8 animate-spin" />
+                  ) : (
+                    <>
+                      <span>Send Message</span>
+                      <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform" />
+                    </>
+                  )}
+                </button>
+              </form>
             </div>
-
-            {/* Message */}
-            <div className="mb-6">
-              <div className="flex justify-between items-center mb-1.5">
-                <label htmlFor="message" className="block text-foreground font-medium text-right flex-1 text-sm">
-                  رسالة قصيرة عن اللي تحتاجه
-                </label>
-                <span className="text-xs text-muted-foreground ml-3">
-                  {formData.message.length}/1000
-                </span>
-              </div>
-              <textarea
-                id="message" name="message" value={formData.message}
-                onChange={handleChange} rows={3} maxLength={1000}
-                className={`${inputBase} resize-none ${errors.message ? inputError : inputValid}`}
-                placeholder="أخبرنا عن مشروعك واللي تبحث عنه..."
-              />
-            </div>
-
-            {/* Submit */}
-            <button
-              type="submit" disabled={isSubmitting}
-              className="btn-primary w-full text-base flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {isSubmitting ? <Loader2 className="w-5 h-5 animate-spin" /> : <Send className="w-5 h-5" />}
-              {isSubmitting ? 'جاري الإرسال...' : 'أرسل طلبك'}
-            </button>
-
-            <p className="text-center text-muted-foreground text-xs mt-3">
-              نرجع لك خلال 24 ساعة على واتساب برسالة صوتية نشرح فيها أنسب باقة لك 🎙️
-            </p>
-          </form>
-
-          {/* WhatsApp Direct */}
-          <div className="mt-8 text-center">
-            <p className="text-muted-foreground text-sm mb-3">أو تواصل معنا مباشرة</p>
-            <a
-              href="https://wa.me/962790720994?text=%D8%AD%D8%A7%D8%A8%D8%A8%20%D8%A3%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D8%AA%D8%B5%D9%88%D9%8A%D8%B1%20%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%D9%8A"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20BD5A] text-white font-semibold px-6 py-3 rounded-full transition-all hover:-translate-y-1 text-sm"
-            >
-              <MessageCircle className="w-5 h-5" />
-              <span>حابب أستفسر عن تصوير لمشروعي</span>
-            </a>
           </div>
         </div>
       </div>

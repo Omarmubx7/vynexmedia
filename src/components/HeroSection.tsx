@@ -10,81 +10,64 @@ import grid8 from '@/assets/8.png';
 import grid9 from '@/assets/9.png';
 
 const HeroSection = () => {
-  const gridImages = [grid1, grid2, grid3, grid4, grid5, grid6, grid7, grid8, grid9];
-
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white pt-20"
     >
-      <div className="container mx-auto px-4 relative z-10 pt-24 pb-16">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20 max-w-[1200px] mx-auto">
-          {/* Text Content */}
-          <div className="flex-1 text-center lg:text-right">
-            <div className="animate-fade-up">
-              <h1 className="text-3xl md:text-4xl lg:text-[40px] font-bold leading-tight mb-6">
-                <span className="text-foreground">نصوّر شغلك بطريقة</span>
-                <br />
-                <span className="gradient-text">تخليه يبيع عنك</span>
-              </h1>
-            </div>
+      {/* Dot Motif Background */}
+      <div className="absolute inset-0 bg-dots opacity-[0.4] z-0" />
 
-            <div className="animate-fade-up delay-100">
-              <p className="text-base md:text-lg text-muted-foreground mb-4 max-w-xl mx-auto lg:mx-0 lg:mr-0 leading-relaxed">
-                استوديو تصوير في عمّان نشتغل مع البراندات الصغيرة والمتاجر عشان نطلع لهم صور وفيديوهات تشهي وتشد الزبون.
-              </p>
-            </div>
+      {/* Decorative vertical lines */}
+      <div className="absolute top-0 left-12 w-[1px] h-full bg-black/[0.03] z-0 hidden lg:block" />
+      <div className="absolute top-0 right-12 w-[1px] h-full bg-black/[0.03] z-0 hidden lg:block" />
 
-            <div className="animate-fade-up delay-200">
-              <p className="text-sm text-secondary font-medium mb-8 italic">
-                A small visual studio in Amman, obsessed with clean shots and tasty frames.
-              </p>
-            </div>
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="flex flex-col items-center text-center max-w-[1000px] mx-auto">
 
-            <div className="animate-fade-up delay-300 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <a href="#contact" className="btn-primary text-base">
-                احجز جلسة استشارة مجانية
-              </a>
-              <a href="#portfolio" className="btn-outline text-base">
-                شوف أعمالنا
-              </a>
-            </div>
+          <div className="mb-8 animate-fade-up">
+            <span className="inline-block py-1.5 px-4 bg-black text-white text-[10px] sm:text-[11px] uppercase tracking-[0.3em] font-bold rounded-full mb-6">
+              Amman's Premiere Visual Studio
+            </span>
           </div>
 
-          {/* Phone Mockup */}
-          <div className="flex-1 max-w-sm lg:max-w-md animate-fade-up delay-400">
-            <div className="relative">
-              <div className="relative bg-foreground/10 rounded-[3rem] p-3 shadow-lg animate-float">
-                <div className="bg-white rounded-[2.5rem] overflow-hidden aspect-[9/19]">
-                  {/* Phone Notch */}
-                  <div className="absolute top-6 left-1/2 -translate-x-1/2 w-24 h-6 bg-foreground/10 rounded-full z-10" />
-
-                  {/* Instagram-like Grid */}
-                  <div className="p-4 pt-12 grid grid-cols-3 gap-1">
-                    {gridImages.map((image, i) => (
-                      <div
-                        key={i}
-                        className="aspect-square rounded-sm overflow-hidden"
-                      >
-                        <img
-                          src={image}
-                          alt={`عمل سابق ${i + 1}`}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="overflow-hidden mb-8">
+            <h1 className="text-[12vw] sm:text-[10vw] lg:text-[130px] font-bold leading-[0.9] tracking-tighter text-black uppercase animate-reveal italic">
+              Vynex <span className="text-primary not-italic">Media</span>
+            </h1>
           </div>
-        </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce hidden md:block">
-          <a href="#about" className="text-muted-foreground hover:text-primary transition-colors">
-            <ArrowDown size={28} />
-          </a>
+          <div className="max-w-2xl mx-auto animate-fade-up delay-200">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight text-black mb-8 leading-[1.1]">
+              نصوّر <span className="text-primary">شغلك</span> بطريقة تخليه يبيع عنك
+            </h2>
+            <p className="text-base sm:text-lg text-black/60 mb-12 max-w-xl mx-auto leading-relaxed">
+              استوديو تصوير إبداعي نشتغل مع البراندات الطموحة والمتاجر المميزة عشان نطلع لهم صور وفيديوهات تشهي وتشد الزبون.
+            </p>
+          </div>
+
+          <div className="animate-fade-up delay-300 flex flex-col sm:flex-row gap-6 justify-center w-full sm:w-auto">
+            <a
+              href="#contact"
+              className="px-10 py-5 bg-black text-white text-[13px] uppercase tracking-[0.2em] font-bold hover:bg-primary transition-all duration-500 rounded-sm"
+            >
+              Book a session
+            </a>
+            <a
+              href="#portfolio"
+              className="px-10 py-5 bg-white text-black border border-black/10 text-[13px] uppercase tracking-[0.2em] font-bold hover:border-black transition-all duration-500 rounded-sm"
+            >
+              Our Works
+            </a>
+          </div>
+
+          {/* Scroll Down */}
+          <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce hidden md:block opacity-40">
+            <a href="#about" className="flex flex-col items-center gap-3">
+              <span className="text-[10px] uppercase tracking-[0.3em] font-bold rotate-90 mb-4 translate-y-4">Scroll</span>
+              <ArrowDown size={14} strokeWidth={3} />
+            </a>
+          </div>
         </div>
       </div>
     </section>

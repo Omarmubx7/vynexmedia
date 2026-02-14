@@ -14,9 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Cairo', 'Inter', 'sans-serif'],
-        heading: ['Cairo', 'Inter', 'sans-serif'],
-        body: ['Cairo', 'Inter', 'sans-serif'],
+        sans: ['Inter', 'Cairo', 'sans-serif'],
+        heading: ['Inter', 'Cairo', 'sans-serif'],
         cairo: ['Cairo', 'sans-serif'],
         inter: ['Inter', 'sans-serif'],
       },
@@ -54,14 +53,12 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Vynex custom colors
-        vynex: {
-          orange: "hsl(var(--primary))",
-          dark: "hsl(var(--dark-brown))",
-          black: "hsl(var(--warm-black))",
-          cream: "hsl(var(--cream))",
-          glow: "hsl(var(--glow-orange))",
-        },
+        // Luxury Luxury Neutral Palette
+        luxury: {
+          black: "#050505",
+          gray: "#F0F0F0",
+          dots: "#E5E5E5",
+        }
       },
       borderRadius: {
         lg: "var(--radius)",

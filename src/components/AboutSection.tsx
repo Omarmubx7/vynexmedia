@@ -17,55 +17,66 @@ const values = [
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-[72px] md:py-24 relative">
-      <div className="max-w-[1200px] mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Content */}
-          <div className="text-right">
-            <h2 className="section-title text-foreground mb-6 animated-underline inline-block">
-              مين إحنا؟
-            </h2>
+    <section id="about" className="py-24 md:py-40 relative bg-white overflow-hidden">
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-dots opacity-[0.2] z-0" />
 
-            <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-4">
-              بدأنا Vynex Media من حب حقيقي للتصوير، خصوصاً تصوير الأكل والمنتجات. كنا نشوف أصحاب مشاريع صغيرة ومطاعم عندهم شغل حلو بس ما يعرفوا يوصلوه للناس بالطريقة الصح.
-            </p>
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="grid lg:grid-cols-2 gap-20 items-start">
 
-            <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-4">
-              فقررنا نبني استوديو صغير في عمّان متخصص بالإنتاج البصري للبراندات الناشئة والمتاجر والمطاعم. إحنا مو وكالة ضخمة — إحنا فريق صغير يحب الشغل الإبداعي ويهتم بكل تفصيلة.
-            </p>
+            {/* Left side: Editorial Typography */}
+            <div className="lg:sticky lg:top-40">
+              <span className="inline-block py-1.5 px-4 bg-primary/10 text-primary text-[10px] uppercase tracking-[0.3em] font-bold rounded-full mb-8">
+                Our Story
+              </span>
+              <h2 className="text-4xl md:text-7xl font-bold tracking-tighter text-black mb-12 uppercase italic leading-[0.9]">
+                Crafting <br /> <span className="text-primary not-italic">Identity.</span>
+              </h2>
 
-            <p className="text-base text-secondary font-semibold leading-relaxed mb-8">
-              نشتغل معك خطوة بخطوة من الفكرة لآخر فوتو وريّل، ونركز على نتيجة حقيقية مش بس صورة حلوة.
-            </p>
+              <div className="space-y-8 text-lg text-black/60 leading-relaxed max-w-xl">
+                <p>
+                  بدأنا Vynex Media من حب حقيقي للتصوير، خصوصاً تصوير الأكل والمنتجات. كنا نشوف أصحاب مشاريع صغيرة ومطاعم عندهم شغل حلو بس ما يعرفوا يوصلوه للناس بالطريقة الصح.
+                </p>
+                <p className="font-medium text-black italic">
+                  "إحنا مو وكالة ضخمة — إحنا فريق صغير يحب الشغل الإبداعي ويهتم بكل تفصيلة."
+                </p>
+                <p>
+                  نشتغل معك خطوة بخطوة من الفكرة لآخر فوتو وريّل، ونركز على نتيجة حقيقية مش بس صورة حلوة.
+                </p>
+              </div>
+            </div>
 
-            {/* Values */}
-            <div className="space-y-3">
+            {/* Right side: Values Cards */}
+            <div className="grid gap-4 mt-12 lg:mt-0">
               {values.map((value, index) => (
                 <div
                   key={index}
-                  className="flex items-center gap-4 p-4 glass-card"
+                  className="group bg-white border border-black/5 p-12 transition-all duration-500 hover:border-primary/20 hover:shadow-2xl hover:shadow-primary/5 rounded-sm relative overflow-hidden"
                 >
-                  <div className="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <value.icon className="w-5 h-5 text-primary" />
+                  <div className="absolute top-0 right-0 p-4 opacity-[0.05] group-hover:opacity-10 transition-opacity">
+                    <value.icon size={120} strokeWidth={1} />
                   </div>
-                  <p className="text-foreground font-medium text-sm">{value.text}</p>
+                  <div className="relative z-10">
+                    <span className="text-[10px] font-bold tracking-[0.4em] text-primary/40 mb-4 block uppercase leading-none">
+                      Value 0{index + 1}
+                    </span>
+                    <p className="text-2xl md:text-3xl font-bold tracking-tight text-black leading-tight">
+                      {value.text}
+                    </p>
+                  </div>
                 </div>
               ))}
-            </div>
-          </div>
 
-          {/* Visual Element */}
-          <div className="relative order-first lg:order-last">
-            <div className="relative">
-              <div className="aspect-square max-w-sm mx-auto relative">
-                <div className="absolute inset-0 border-2 border-primary/20 rounded-3xl rotate-6 transition-transform hover:rotate-12" />
-                <div className="absolute inset-0 border-2 border-secondary/15 rounded-3xl -rotate-3 transition-transform hover:-rotate-6" />
-                <div className="absolute inset-0 bg-white rounded-3xl flex items-center justify-center shadow-sm border border-border">
-                  <div className="text-center p-8">
-                    <span className="text-7xl md:text-8xl font-bold gradient-text">V</span>
-                    <p className="text-secondary font-bold text-lg mt-4">Visual Studio</p>
-                    <p className="text-muted-foreground text-sm mt-1">عمّان، الأردن</p>
-                  </div>
+              {/* Location Badge */}
+              <div className="mt-8 p-12 border border-black/5 flex items-center justify-between rounded-sm">
+                <div>
+                  <h4 className="text-[11px] font-bold tracking-[0.3em] uppercase text-black mb-1">Based in</h4>
+                  <p className="text-2xl font-bold tracking-tighter">Amman, Jordan</p>
+                </div>
+                <div className="w-12 h-[1px] bg-black/10" />
+                <div className="text-right">
+                  <h4 className="text-[11px] font-bold tracking-[0.3em] uppercase text-black mb-1">Timezone</h4>
+                  <p className="text-2xl font-bold tracking-tighter">GMT+3</p>
                 </div>
               </div>
             </div>
